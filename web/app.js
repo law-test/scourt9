@@ -1,0 +1,335 @@
+/* 법원직.com — SPA (민법위키 하랑재와 동일 틀)
+   데이터: window.CIVPROC (민사소송법 통합본 v022) + window.LAWTEXT (조문 본문) */
+(function () {
+  "use strict";
+  var D = window.CIVPROC || { articles: [], ox: [], bucket: [], tree: [], stats: {} };
+  var LT = window.LAWTEXT || {};
+  var SUBJECTS = ["헌법", "민법", "민사소송법", "형법", "형사소송법", "상법", "부동산등기법"];
+  var READY = "민사소송법";
+
+  function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+  function el(sel){ return document.querySelector(sel); }
+  function artNum(k){ var m=/제(\d+)조(?:의(\d+))?/.exec(k); return m?(parseInt(m[1],10)+(m[2]?parseInt(m[2],10)/100:0)):99999; }
+  var store={
+    get:function(k,d){ try{ var v=localStorage.getItem("bwj_"+k); return v==null?d:JSON.parse(v);}catch(e){return d;} },
+    set:function(k,v){ try{ localStorage.setItem("bwj_"+k,JSON.stringify(v)); }catch(e){} }
+  };
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+  function route(){
+    var raw=location.hash.replace(/^#/,"")||"/";
+    var sp=raw.split("?"); var path=sp[0]; var params=new URLSearchParams(sp[1]||"");
+    var parts=path.split("/").filter(Boolean);
+    var r={view:"home"};
+    if(parts[0]==="sub"){ r.view="sub"; r.sub=decodeURIComponent(parts[1]||""); r.art=parts[2]?decodeURIComponent(parts[2]):null; }
+    else if(parts[0]==="cbt"){ r.view="cbt"; r.art=params.get("art"); r.pyeon=params.get("pyeon"); r.scope=params.get("scope"); }
+    else if(parts[0]==="board"){ r.view="board"; }
+    else if(parts[0]==="news"){ r.view="news"; }
+    return r;
+  }
+
+  function renderNav(r){
+    var h="";
+    SUBJECTS.forEach(function(s){
+      var on=(r.view==="sub"&&r.sub===s)?"active":"";
+      h+='<a class="'+on+'" href="#/sub/'+encodeURIComponent(s)+'">'+esc(s)+'</a>';
+    });
+    h+='<span class="sep"></span>';
+    h+='<a class="feat'+(r.view==="cbt"?" active":"")+'" href="#/cbt">🎮 CBT 게임센터</a>';
+    h+='<a class="'+(r.view==="board"?"active":"")+'" href="#/board">자유게시판</a>';
+    h+='<a class="'+(r.view==="news"?"active":"")+'" href="#/news">뉴스</a>';
+    el("#nav").innerHTML=h;
+  }
+
+  function grouped(){
+    var map=new Map();
+    (D.tree||[]).forEach(function(p){ map.set(p.pyeon,{pyeon:p.pyeon,jangs:p.jangs.map(function(j){return {jang:j.jang,arts:[]};})}); });
+    D.articles.forEach(function(a){
+      var pg=map.get(a.pyeon); if(!pg){ pg={pyeon:a.pyeon,jangs:[]}; map.set(a.pyeon,pg); }
+      var jg=null; for(var i=0;i<pg.jangs.length;i++){ if(pg.jangs[i].jang===a.jang){ jg=pg.jangs[i]; break; } }
+      if(!jg){ jg={jang:a.jang,arts:[]}; pg.jangs.push(jg); }
+      jg.arts.push(a);
+    });
+    var out=[]; map.forEach(function(p){ p.jangs=p.jangs.filter(function(j){return j.arts.length;}); if(p.jangs.length) out.push(p); });
+    return out;
+  }
+  function artTitle(k){ return LT[k]?LT[k].title:""; }
+  function artLabel(k,a){ var t=artTitle(k); if(t) return t; if(a&&a.atoms&&a.atoms[0]) return a.atoms[0].o.slice(0,18)+"…"; return ""; }
+
+  function tocHTML(activeArt){
+    var g=grouped(); var h='<h3>민사소송법 · 목차</h3>';
+    g.forEach(function(p){
+      var hasActive=p.jangs.some(function(j){return j.arts.some(function(a){return a.art===activeArt;});});
+      h+='<div class="pyeon"><button data-toggle>'+(hasActive?"▾":"▸")+' '+esc(p.pyeon)+'</button>';
+      h+='<div class="pbody'+(hasActive?"":" hide")+'">';
+      p.jangs.forEach(function(j){
+        if(j.jang && j.jang!==p.pyeon && !/^(재심|독촉|공시|판결의)/.test(j.jang)) h+='<div class="jang">'+esc(j.jang)+'</div>';
+        h+='<div class="arts">';
+        j.arts.forEach(function(a){
+          var on=a.art===activeArt?"active":"";
+          h+='<a class="'+on+'" href="#/sub/민사소송법/'+encodeURIComponent(a.art)+'" title="'+esc(artLabel(a.art,a))+'">'+esc(a.art)+'<span class="c">'+a.count+(a.freqMax>=2?" ★":"")+'</span></a>';
+        });
+        h+='</div>';
+      });
+      h+='</div></div>';
+    });
+    return h;
+  }
+  function bindToc(){
+    document.querySelectorAll(".toc [data-toggle]").forEach(function(b){
+      b.addEventListener("click",function(){
+        var body=b.nextElementSibling; body.classList.toggle("hide");
+        b.textContent=(body.classList.contains("hide")?"▸":"▾")+b.textContent.slice(1);
+      });
+    });
+  }
+
+  function renderSubjectHome(c){
+    var s=D.stats||{}; var g=grouped();
+    var h='<div class="main">';
+    h+='<div class="hero"><h1>민사소송법</h1><p>법원직 9급 기출 OX를 조문별로 정리하고, CBT 게임센터에서 풀이합니다. 2007–2025 전 회차 · 공식 확정정답표 검증완료.</p>';
+    h+='<div class="stat-row">'
+      +'<div class="stat"><b>'+(s.atoms||0)+'</b><span>통합 법리(atom)</span></div>'
+      +'<div class="stat"><b>'+(s.articles||0)+'</b><span>조문</span></div>'
+      +'<div class="stat"><b>'+(s.ox||0)+'</b><span>OX 문항</span></div>'
+      +'<div class="stat"><b>'+(s.freq||0)+'</b><span>★ 빈출</span></div></div></div>';
+    h+='<div class="cta"><div><div class="big">바로 CBT 게임센터에서 풀어보기</div><div class="sm">전체 '+(s.ox||0)+'문항 · 빈출만/편별/조문별 필터</div></div><a class="btn-play" href="#/cbt">🎮 OX 풀기</a></div>';
+    h+='<div class="sect-h"><b>편별 보기</b><span>조문을 눌러 본문·출제이력 확인</span></div>';
+    h+='<div class="grid-pyeon">';
+    g.forEach(function(p){
+      var artsAll=[]; p.jangs.forEach(function(j){ artsAll=artsAll.concat(j.arts); });
+      var first=artsAll[0]; var ox=0; artsAll.forEach(function(a){ ox+=a.count; });
+      h+='<div class="pcard"><h4><a href="#/sub/민사소송법/'+encodeURIComponent(first.art)+'">'+esc(p.pyeon)+'</a></h4>';
+      p.jangs.forEach(function(j){
+        var cnt=0; j.arts.forEach(function(a){cnt+=a.count;});
+        var label=(j.jang&&!/^(재심|독촉|공시|판결의)/.test(j.jang)&&j.jang!==p.pyeon)?j.jang:"조문";
+        h+='<div class="jl">'+esc(label)+' · '+j.arts.length+'개 조문 · OX '+cnt+'</div>';
+      });
+      h+='</div>';
+    });
+    h+='</div>';
+    if(D.bucket&&D.bucket.length){
+      h+='<div class="cta" style="margin-top:14px"><div><div class="big">판례·논점 '+D.bucket.length+'건</div><div class="sm">특정 조문에 매이지 않는 기출 논점 — CBT에서 풀이</div></div><a class="btn-play" href="#/cbt">🎮 풀기</a></div>';
+    }
+    h+='</div>';
+    c.innerHTML='<div class="wrap"><aside class="toc">'+tocHTML(null)+'</aside>'+h+'</div>';
+    bindToc();
+  }
+
+  function findArt(k){ for(var i=0;i<D.articles.length;i++){ if(D.articles[i].art===k) return D.articles[i]; } return null; }
+  function renderArticle(c,r){
+    var a=findArt(r.art);
+    if(!a){ renderSubjectHome(c); return; }
+    var lt=LT[r.art]; var nO=0,nX=0,fr=0;
+    a.atoms.forEach(function(at){ nO++; nX+=at.x.length; if(at.freq>=2)fr++; });
+    var h='<div class="main">';
+    h+='<div class="crumb">민사소송법 › '+esc(a.pyeon)+' › '+esc(a.jang)+'</div>';
+    h+='<div class="h-art"><h1>'+esc(r.art)+'</h1>'+(lt?'<span class="sub">'+esc(lt.title)+'</span>':'')+'</div>';
+    if(lt){ h+='<div class="lawbox"><div class="t">조문</div>'+esc(lt.body).replace(/\n/g,"<br>")+'</div>'; }
+    else { h+='<div class="lawbox" style="color:var(--ink3)">조문 본문은 순차 적재 중입니다. 출제이력과 CBT로 학습할 수 있습니다.</div>'; }
+    h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">대표 법리(O) '+nO+' · 함정(X) '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
+      +'<a class="btn-play" href="#/cbt?art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
+    var allsrc={};
+    a.atoms.forEach(function(at){
+      (at.sources||[]).forEach(function(s){ var y=(String(s).match(/\d{4}/)||[])[0]; if(y) allsrc[y]=(allsrc[y]||0)+1; });
+      (at.x||[]).forEach(function(xx){ if(xx.src){ var y2=(String(xx.src).match(/\d{4}/)||[])[0]; if(y2) allsrc[y2]=(allsrc[y2]||0)+1; } });
+    });
+    var years=Object.keys(allsrc).sort().reverse();
+    if(years.length){
+      h+='<div class="sect-h"><b>출제 이력</b><span>이 조문이 출제된 연도 (지문 수)</span></div><div class="meta" style="margin:0 0 4px">';
+      years.forEach(function(y){ h+='<span class="chip">'+y+' · '+allsrc[y]+'</span>'; });
+      h+='</div>';
+    }
+    h+='</div>';
+    c.innerHTML='<div class="wrap"><aside class="toc">'+tocHTML(r.art)+'</aside>'+h+'</div>';
+    bindToc();
+    var act=document.querySelector(".toc a.active"); if(act && act.scrollIntoView) act.scrollIntoView({block:"center"});
+  }
+
+  function renderPlaceholder(c,sub){
+    c.innerHTML='<div class="wrap single"><div class="ph"><h2>'+esc(sub)+' — 준비 중</h2><p>민사소송법과 동일한 틀(조문 위키 + CBT 게임센터)로 추가됩니다.<br>현재 <a href="#/sub/민사소송법">민사소송법</a> 데이터가 완성되어 있습니다.</p></div></div>';
+  }
+
+  var game=null;
+  function poolFor(opts){
+    var pool=D.ox.slice();
+    if(opts.art) pool=pool.filter(function(o){return o.art===opts.art;});
+    else if(opts.pyeon) pool=pool.filter(function(o){return o.pyeon===opts.pyeon;});
+    if(opts.scope==="wrong"){ var w=store.get("wrong",[]); var set={}; w.forEach(function(id){set[id]=1;}); pool=pool.filter(function(o){return set[o.id];}); }
+    if(opts.freqOnly) pool=pool.filter(function(o){return o.freq>=2;});
+    return pool;
+  }
+  function renderCBT(c,r){
+    if(game&&game.active){ drawGame(c); return; }
+    var opts={art:r.art||null,pyeon:r.pyeon||null,scope:r.scope||"all",freqOnly:false,count:20};
+    var avail=poolFor(opts).length;
+    var wrongN=store.get("wrong",[]).length;
+    var pyeonOpts=(D.tree||[]).map(function(p){return p.pyeon;});
+    var h='<div class="cbt-wrap"><div class="cbt-setup">';
+    h+='<h2>🎮 CBT 게임센터</h2><p style="color:var(--ink2);margin:4px 0 0">민사소송법 기출 OX '+(D.stats.ox||0)+'문항 · 맞히면 콤보가 쌓입니다.</p>';
+    h+='<div class="field"><label>범위</label><div class="opts" id="scope">'
+      +'<button class="opt'+((opts.scope!=="wrong")?" on":"")+'" data-scope="all">전체</button>'
+      +'<button class="opt'+((opts.scope==="wrong")?" on":"")+'" data-scope="wrong">오답노트 ('+wrongN+')</button>'
+      +'</div></div>';
+    h+='<div class="field"><label>편 선택 (선택)</label><div class="opts" id="pyeon">'
+      +'<button class="opt'+(!opts.pyeon?" on":"")+'" data-pyeon="">전체 편</button>';
+    pyeonOpts.forEach(function(p){ h+='<button class="opt'+(opts.pyeon===p?" on":"")+'" data-pyeon="'+esc(p)+'">'+esc(p.replace(/^제\d편 /,""))+'</button>'; });
+    h+='</div></div>';
+    if(opts.art) h+='<div class="field"><label>조문</label><div class="opts"><button class="opt on">'+esc(opts.art)+'</button><button class="opt" data-clearart>해제</button></div></div>';
+    h+='<div class="field"><label>옵션</label><div class="opts"><button class="opt" id="freq">★ 빈출만</button></div></div>';
+    h+='<div class="field"><label>문항 수</label><div class="opts" id="count">'
+      +'<button class="opt" data-count="10">10</button><button class="opt on" data-count="20">20</button>'
+      +'<button class="opt" data-count="50">50</button><button class="opt" data-count="0">전체</button></div></div>';
+    h+='<div style="margin-top:18px"><button class="btn-play" id="start" style="width:100%;justify-content:center">시작하기 <span id="availn">('+avail+'문항)</span></button></div>';
+    h+='</div></div>';
+    c.innerHTML=h;
+
+    var cur={art:opts.art||null,pyeon:"",scope:(opts.scope==="wrong"?"wrong":"all"),freqOnly:false,count:20};
+    function refresh(){ el("#availn").textContent="("+poolFor(cur).length+"문항)"; }
+    function sel(box,b){ el(box).querySelectorAll(".opt").forEach(function(x){x.classList.remove("on");}); b.classList.add("on"); }
+    el("#scope").addEventListener("click",function(e){ var b=e.target.closest("[data-scope]"); if(!b)return; cur.scope=b.getAttribute("data-scope"); sel("#scope",b); refresh(); });
+    el("#pyeon").addEventListener("click",function(e){ var b=e.target.closest("[data-pyeon]"); if(!b)return; cur.pyeon=b.getAttribute("data-pyeon"); cur.art=null; sel("#pyeon",b); refresh(); });
+    el("#count").addEventListener("click",function(e){ var b=e.target.closest("[data-count]"); if(!b)return; cur.count=parseInt(b.getAttribute("data-count"),10); sel("#count",b); });
+    el("#freq").addEventListener("click",function(){ cur.freqOnly=!cur.freqOnly; el("#freq").classList.toggle("on",cur.freqOnly); refresh(); });
+    var ca=document.querySelector("[data-clearart]"); if(ca) ca.addEventListener("click",function(){ location.hash="#/cbt"; });
+    el("#start").addEventListener("click",function(){ startGame(cur); });
+  }
+  function startGame(cur){
+    var pool=poolFor(cur);
+    if(!pool.length){ alert("해당 범위에 문항이 없습니다."); return; }
+    pool=shuffle(pool); if(cur.count>0) pool=pool.slice(0,cur.count);
+    game={pool:pool,i:0,score:0,combo:0,maxcombo:0,wrong:[],answered:false,active:true};
+    drawGame(el("#content"));
+  }
+  function drawGame(c){
+    var g=game; if(g.i>=g.pool.length){ drawEnd(c); return; }
+    var q=g.pool[g.i];
+    var h='<div class="cbt-wrap">';
+    h+='<div class="scorebar"><div class="sb"><b>'+(g.i+1)+'/'+g.pool.length+'</b><span>진행</span></div>'
+      +'<div class="sb"><b>'+g.score+'</b><span>점수</span></div>'
+      +'<div class="sb"><b>🔥'+g.combo+'</b><span>콤보</span></div></div>';
+    h+='<div class="q-card"><div class="q-top"><span>CBT 풀이</span><span class="flame">최고 콤보 '+g.maxcombo+'</span></div>';
+    h+='<span class="q-art">'+esc(q.art)+(q.freq>=2?' · ★빈출':'')+'</span>';
+    h+='<div class="q-stmt">'+esc(q.stmt)+'</div>';
+    h+='<div class="ox-btns"><button class="b-o" data-ans="O">O (맞다)</button><button class="b-x" data-ans="X">X (틀리다)</button></div>';
+    h+='<div id="rv"></div></div></div>';
+    c.innerHTML=h;
+    g.answered=false;
+    c.querySelectorAll("[data-ans]").forEach(function(b){ b.addEventListener("click",function(){ answer(b.getAttribute("data-ans")); }); });
+  }
+  function answer(choice){
+    var g=game; if(g.answered) return; g.answered=true;
+    var q=g.pool[g.i]; var correct=(choice===q.ans); var gain=0;
+    if(correct){ g.combo++; g.maxcombo=Math.max(g.maxcombo,g.combo); gain=10+Math.min(g.combo,10); g.score+=gain; }
+    else { g.combo=0; g.wrong.push(q); var w=store.get("wrong",[]); if(w.indexOf(q.id)<0){ w.push(q.id); store.set("wrong",w); } }
+    var src=(q.sources||[]).filter(Boolean).join(", ");
+    var h='<div class="reveal '+(correct?"ok":"no")+'">';
+    h+='<div class="v">'+(correct?"정답! ":"오답 ")+'· 옳은 답은 「'+q.ans+'」</div>';
+    if(q.ans==="X"){ h+='<div>이 지문은 <b>틀린 지문(함정)</b>입니다.</div>'; if(q.truth) h+='<div class="truth"><b>옳은 법리:</b> '+esc(q.truth)+'</div>'; }
+    else { h+='<div>이 지문은 <b>옳은 지문</b>입니다.</div>'; }
+    h+='<div class="truth"><b>근거:</b> '+esc(q.ref||"-")+(src?' &nbsp;<b>출처:</b> '+esc(src):'')+'</div></div>';
+    h+='<div class="bar"><span>점수 +'+gain+'</span><button class="next" id="next">'+(g.i+1>=g.pool.length?"결과 보기":"다음 →")+'</button></div>';
+    el("#rv").innerHTML=h;
+    el("#content").querySelectorAll("[data-ans]").forEach(function(b){ b.disabled=true; b.style.opacity=.55; });
+    var cb=el("#content").querySelector('[data-ans="'+q.ans+'"]'); if(cb){ cb.style.opacity=1; cb.style.outline="3px solid "+(q.ans==="O"?"#5dcaa5":"#f0a0a0"); }
+    el("#next").addEventListener("click",function(){ g.i++; drawGame(el("#content")); window.scrollTo(0,0); });
+  }
+  function drawEnd(c){
+    var g=game; var n=g.pool.length; var right=n-g.wrong.length; var pct=Math.round(right/n*100);
+    var h='<div class="cbt-wrap"><div class="q-card" style="text-align:center">';
+    h+='<h2 style="margin:0 0 6px">결과</h2>';
+    h+='<div style="font-size:42px;font-weight:800;color:var(--brand-d)">'+pct+'<span style="font-size:20px">점</span></div>';
+    h+='<p style="color:var(--ink2)">'+n+'문항 중 <b>'+right+'</b>개 정답 · 최고 콤보 🔥'+g.maxcombo+'</p>';
+    h+='<div style="display:flex;gap:10px;justify-content:center;margin-top:8px"><button class="btn-play" id="again">다시 풀기</button><a class="opt" href="#/sub/민사소송법" style="display:inline-flex;align-items:center">위키로</a></div>';
+    if(g.wrong.length){
+      h+='<div style="text-align:left;margin-top:20px"><div class="sect-h"><b>틀린 문항 ('+g.wrong.length+') — 오답노트 저장됨</b></div>';
+      g.wrong.forEach(function(q){
+        h+='<div class="card"><div class="row"><span class="'+(q.ans==="X"?"tag-x":"tag-o")+'">'+q.ans+'</span><div><div class="stmt" style="font-size:13.5px">'+esc(q.stmt)+'</div>'
+          +(q.ans==="X"&&q.truth?'<div class="truth" style="border:none;padding:6px 0 0"><b>옳은 법리:</b> '+esc(q.truth)+'</div>':'')
+          +'<div class="meta"><span class="chip">'+esc(q.art)+'</span><span class="ref">'+esc(q.ref||"")+'</span></div></div></div></div>';
+      });
+      h+='</div>';
+    }
+    h+='</div></div>';
+    c.innerHTML=h;
+    el("#again").addEventListener("click",function(){ game=null; location.hash="#/cbt"; render(); });
+  }
+
+  function renderBoard(c){
+    var posts=store.get("posts",null);
+    if(!posts){ posts=[{t:"법원직 9급 민소 OX, 이렇게 돌리니 회독이 빨라요",a:"합격기원",d:"2026-06-10",cat:"후기"},
+                       {t:"제216조 기판력 객관적 범위 — 상계 항변 정리 공유",a:"민소러",d:"2026-06-08",cat:"자료"}]; store.set("posts",posts); }
+    var h='<div class="wrap single"><div class="main">';
+    h+='<div class="sect-h"><b>자유게시판</b><span>수험 후기·자료·질문</span></div><div class="panel">';
+    posts.forEach(function(p){ h+='<div class="li"><span class="cat">'+esc(p.cat||"일반")+'</span><span class="ti">'+esc(p.t)+'</span><span class="mt">'+esc(p.a)+' · '+esc(p.d)+'</span></div>'; });
+    h+='</div>';
+    h+='<div class="card" style="margin-top:14px"><b style="display:block;margin-bottom:8px">새 글 쓰기</b>'
+      +'<input id="pt" placeholder="제목" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px">'
+      +'<input id="pa" placeholder="닉네임" style="width:100%;padding:9px;border:1px solid var(--line);border-radius:8px;margin-bottom:8px">'
+      +'<button class="btn-play" id="post">등록</button> <span class="ref">데모: 이 브라우저에 저장됩니다. 배포 시 Supabase 연동.</span></div>';
+    h+='</div></div>';
+    c.innerHTML=h;
+    el("#post").addEventListener("click",function(){
+      var t=el("#pt").value.trim(); if(!t) return;
+      var a=el("#pa").value.trim()||"익명"; var d=new Date().toISOString().slice(0,10);
+      posts.unshift({t:t,a:a,d:d,cat:"일반"}); store.set("posts",posts); renderBoard(c);
+    });
+  }
+
+  function renderNews(c){
+    var items=[{t:"법원공무원 채용시험 일정·과목 안내 (예시 항목)",s:"법원직.com",d:"2026"},
+               {t:"민사소송법 개정 시행 (2025-07-12) — 소장 접수 보류 등",s:"국가법령정보",d:"2025-07"},
+               {t:"기출 OX 통합본 v022 업데이트 (2007–2025 검증완료)",s:"법원직.com",d:"2026-06"}];
+    var h='<div class="wrap single"><div class="main"><div class="sect-h"><b>뉴스</b><span>공지·법령개정·업데이트 (예시 — 배포 시 연동)</span></div><div class="panel">';
+    items.forEach(function(p){ h+='<div class="li"><span class="ti">'+esc(p.t)+'</span><span class="mt">'+esc(p.s)+' · '+esc(p.d)+'</span></div>'; });
+    h+='</div></div></div>';
+    c.innerHTML=h;
+  }
+
+  function bindSearch(){
+    var q=el("#q");
+    q.addEventListener("input",function(){
+      var v=q.value.trim(); var toc=document.querySelector(".toc"); if(!toc) return;
+      toc.querySelectorAll(".pbody").forEach(function(b){ b.classList.remove("hide"); });
+      toc.querySelectorAll(".arts a").forEach(function(a){
+        var hit=!v || a.textContent.indexOf(v)>=0 || (a.getAttribute("title")||"").indexOf(v)>=0;
+        a.style.display=hit?"":"none";
+      });
+    });
+    el("#search").addEventListener("submit",function(e){ e.preventDefault(); });
+  }
+
+  function bindModal(){
+    var m=el("#modal");
+    document.querySelectorAll("[data-login]").forEach(function(b){ b.addEventListener("click",function(){ m.classList.add("on"); }); });
+    m.addEventListener("click",function(e){ if(e.target===m||e.target.hasAttribute("data-close")) m.classList.remove("on"); });
+    m.querySelectorAll("[data-oauth]").forEach(function(b){ b.addEventListener("click",function(){
+      var cfg=window.SUPABASE_CONFIG||{};
+      if(cfg.url&&cfg.anonKey&&window.supabase){
+        var sb=window.supabase.createClient(cfg.url,cfg.anonKey);
+        sb.auth.signInWithOAuth({provider:b.getAttribute("data-oauth")});
+      } else { alert("로그인은 Supabase 연결 후 활성화됩니다 (config.js).\n현재는 데모 모드입니다."); m.classList.remove("on"); }
+    }); });
+  }
+
+  function render(){
+    var r=route(); renderNav(r);
+    var c=el("#content");
+    if(r.view==="home"){ location.hash="#/sub/민사소송법"; return; }
+    if(r.view==="sub"){ if(r.sub===READY){ if(r.art) renderArticle(c,r); else renderSubjectHome(c); } else renderPlaceholder(c,r.sub); }
+    else if(r.view==="cbt"){ renderCBT(c,r); }
+    else if(r.view==="board") renderBoard(c);
+    else if(r.view==="news") renderNews(c);
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",function(){ if(route().view!=="cbt") game=null; render(); });
+  window.addEventListener("scroll",function(){ var t=el("#totop"); if(t) t.classList.toggle("on",window.scrollY>400); });
+
+  function boot(){
+    var t=el("#totop"); if(t) t.addEventListener("click",function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+    bindSearch(); bindModal();
+    if(!location.hash) location.hash="#/sub/민사소송법";
+    render();
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",boot); else boot();
+})();
