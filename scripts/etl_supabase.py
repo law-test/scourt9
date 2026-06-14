@@ -2,12 +2,12 @@
 # civproc.json → Supabase seed.sql (subjects, articles, atoms, atom_traps, atom_sources)
 import json, re, os
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-data = json.load(open(HERE + "/web/data/civproc.json", encoding="utf-8"))
+data = json.load(open(HERE + "/data/civproc.json", encoding="utf-8"))
 
 # lawtext.js (JS 객체 리터럴) → JSON 으로 변환해 title/body 추출
 lt = {}
 try:
-    raw = open(HERE + "/web/data/lawtext.js", encoding="utf-8").read()
+    raw = open(HERE + "/data/lawtext.js", encoding="utf-8").read()
     raw = raw[raw.index("{"): raw.rindex("}") + 1]
     raw = re.sub(r'([{,]\s*)(title|body)\s*:', r'\1"\2":', raw)
     lt = json.loads(raw)
