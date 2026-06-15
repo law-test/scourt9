@@ -4,6 +4,7 @@
   "use strict";
   var D = window.CIVPROC || { articles: [], ox: [], bucket: [], tree: [], stats: {} };
   var LT = window.LAWTEXT || {};
+  var NT = window.NOTES || {desc:{},cases:{},gist:{}};
   var SUBJECTS = ["헌법", "민법", "민사소송법", "형법", "형사소송법", "상법", "부동산등기법"];
   var READY = "민사소송법";
 
@@ -36,6 +37,11 @@
     a.slice(0,max||4).forEach(function(s){ h+='<span class="chip">'+esc(fmtSrc(s))+'</span>'; });
     if(a.length>(max||4)) h+='<span class="ref">+'+(a.length-(max||4))+'</span>';
     return h;
+  }
+
+  function linkifyRef(s){
+    s=esc(s||"");
+    return s.replace(/(\d{2,4}[가-힣]{1,3}\d+)/g, function(m){ return '<a href="https://casenote.kr/대법원/'+encodeURIComponent(m)+'" target="_blank" rel="noopener" class="caselink">'+m+'</a>'; });
   }
 
   // ===== 고득점(랭킹) =====
@@ -157,6 +163,9 @@
     h+='<div class="h-art"><h1>'+esc(r.art)+'</h1>'+(lt?'<span class="sub">'+esc(lt.title)+'</span>':'')+'</div>';
     if(lt){ h+='<div class="lawbox"><div class="t">조문</div>'+esc(lt.body).replace(/\n/g,"<br>")+'</div>'; }
     else { h+='<div class="lawbox" style="color:var(--ink3)">조문 본문은 순차 적재 중입니다.</div>'; }
+    if(NT.desc[r.art]){ h+='<div class="sect-h"><b>조문 해설</b><span>실무제요 참고 · 원문 비복제</span></div><div class="desc">'+NT.desc[r.art]+'</div>'; }
+    (NT.cases[r.art]||[]).forEach(function(cn){ var g=NT.gist[cn]; if(!g) return;
+      h+='<div class="casebox"><div class="ct"><span class="cb-no"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(cn)+'</a></span> <span class="cb-meta">'+esc(g.court)+' '+esc(g.date)+' · '+esc(g.name)+'</span></div><div class="cb-gist">'+esc(g.gist)+'</div><a class="cb-link" href="'+g.url+'" target="_blank" rel="noopener">원문 보기 →</a></div>'; });
     if(a.atoms.length){
     h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">대표 법리(O) '+nO+' · 함정(X) '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
       +'<a class="btn-play" href="#/cbt?art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
@@ -165,7 +174,7 @@
     a.atoms.slice().sort(function(x,y){return (y.freq||1)-(x.freq||1);}).forEach(function(at){
       h+='<div class="card"><div class="row"><span class="tag-o">O</span><div style="flex:1;min-width:0">';
       h+='<div class="stmt">'+esc(at.o)+'</div>';
-      h+='<div class="meta">'+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+esc(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
+      h+='<div class="meta">'+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+linkifyRef(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
       (at.x||[]).forEach(function(xx){
         h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span>'+(xx.src?' <span class="chip">'+esc(fmtSrc(xx.src))+'</span>':'')+'</div>';
       });
@@ -263,7 +272,7 @@
     h+='<div class="v">'+(correct?"정답! ":"오답 ")+'· 옳은 답은 「'+q.ans+'」</div>';
     if(q.ans==="X"){ h+='<div>이 지문은 <b>틀린 지문(함정)</b>입니다.</div>'; if(q.truth) h+='<div class="truth"><b>옳은 법리:</b> '+esc(q.truth)+'</div>'; }
     else { h+='<div>이 지문은 <b>옳은 지문</b>입니다.</div>'; }
-    h+='<div class="truth"><b>조문:</b> '+esc(q.art)+' &nbsp;<b>근거:</b> '+esc(q.ref||"-")+(src?' &nbsp;<b>출처:</b> '+esc(src):'')+'</div></div>';
+    h+='<div class="truth"><b>조문:</b> '+esc(q.art)+' &nbsp;<b>근거:</b> '+linkifyRef(q.ref||"-")+(src?' &nbsp;<b>출처:</b> '+esc(src):'')+'</div></div>';
     h+='<div class="bar"><span>점수 +'+gain+'</span><button class="next" id="next">'+(g.i+1>=g.pool.length?"결과 보기":"다음 →")+'</button></div>';
     el("#rv").innerHTML=h;
     el("#content").querySelectorAll("[data-ans]").forEach(function(b){ b.disabled=true; b.style.opacity=.55; });
