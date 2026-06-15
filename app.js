@@ -9,12 +9,43 @@
 
   function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
   function el(sel){ return document.querySelector(sel); }
-  function artNum(k){ var m=/제(\d+)조(?:의(\d+))?/.exec(k); return m?(parseInt(m[1],10)+(m[2]?parseInt(m[2],10)/100:0)):99999; }
+  var MEM={};
   var store={
-    get:function(k,d){ try{ var v=localStorage.getItem("bwj_"+k); return v==null?d:JSON.parse(v);}catch(e){return d;} },
-    set:function(k,v){ try{ localStorage.setItem("bwj_"+k,JSON.stringify(v)); }catch(e){} }
+    get:function(k,d){ if(Object.prototype.hasOwnProperty.call(MEM,k)) return MEM[k]; try{ var v=localStorage.getItem("bwj_"+k); var r=(v==null)?d:JSON.parse(v); MEM[k]=r; return r; }catch(e){ return d; } },
+    set:function(k,v){ MEM[k]=v; try{ localStorage.setItem("bwj_"+k,JSON.stringify(v)); }catch(e){} }
   };
   function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+  // 출처 라벨 포맷: "2024 문21-1" -> "24년 21번 ㄱ", "2007상 문17" -> "07년상 17번"
+  var JIMUN=["","ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ"];
+  function fmtSrc(s){
+    if(!s) return ""; s=String(s);
+    var y=s.match(/(\d{4})/); var half=/상/.test(s)?"상":(/하/.test(s)?"하":"");
+    var q=s.match(/문\s*0*(\d+)/); var sub=s.match(/-\s*(\d+)/);
+    var out="";
+    if(y) out+=y[1].slice(2)+"년"+half;
+    if(q) out+=(out?" ":"")+q[1]+"번";
+    if(sub&&JIMUN[+sub[1]]) out+=" "+JIMUN[+sub[1]];
+    return out||s;
+  }
+  function srcChips(sources, max){
+    var a=(sources||[]).filter(Boolean); var h="";
+    a.slice(0,max||4).forEach(function(s){ h+='<span class="chip">'+esc(fmtSrc(s))+'</span>'; });
+    if(a.length>(max||4)) h+='<span class="ref">+'+(a.length-(max||4))+'</span>';
+    return h;
+  }
+
+  // ===== 고득점(랭킹) =====
+  function getScores(){ return store.get("scores",[]); }
+  function addScore(rec){ var a=getScores(); a.push(rec); a.sort(function(x,y){return y.score-x.score;}); a=a.slice(0,50); store.set("scores",a); return a; }
+  function boardHTML(limit){
+    var a=getScores().slice(0,limit||10);
+    if(!a.length) return '<div class="ref" style="padding:10px">아직 기록이 없어요. CBT를 풀고 첫 고득점에 도전하세요!</div>';
+    var medal=["🥇","🥈","🥉"];
+    var h='<table class="lb"><thead><tr><th>#</th><th>닉네임</th><th>점수</th><th>정답률</th><th>범위</th><th>날짜</th></tr></thead><tbody>';
+    a.forEach(function(r,i){ h+='<tr'+(i<3?' class="top"':'')+'><td>'+(medal[i]||(i+1))+'</td><td>'+esc(r.name)+'</td><td>'+r.score+'</td><td>'+r.pct+'%</td><td>'+esc(r.scope||"-")+'</td><td>'+esc(r.date)+'</td></tr>'; });
+    h+='</tbody></table>'; return h;
+  }
 
   function route(){
     var raw=location.hash.replace(/^#/,"")||"/";
@@ -93,8 +124,8 @@
       +'<div class="stat"><b>'+(s.articles||0)+'</b><span>조문</span></div>'
       +'<div class="stat"><b>'+(s.ox||0)+'</b><span>OX 문항</span></div>'
       +'<div class="stat"><b>'+(s.freq||0)+'</b><span>★ 빈출</span></div></div></div>';
-    h+='<div class="cta"><div><div class="big">바로 CBT 게임센터에서 풀어보기</div><div class="sm">전체 '+(s.ox||0)+'문항 · 빈출만/편별/조문별 필터</div></div><a class="btn-play" href="#/cbt">🎮 OX 풀기</a></div>';
-    h+='<div class="sect-h"><b>편별 보기</b><span>조문을 눌러 본문·출제이력 확인</span></div>';
+    h+='<div class="cta"><div><div class="big">바로 CBT 게임센터에서 풀어보기</div><div class="sm">전체 '+(s.ox||0)+'문항 · 빈출만/편별/조문별 필터 · 고득점 랭킹</div></div><a class="btn-play" href="#/cbt">🎮 OX 풀기</a></div>';
+    h+='<div class="sect-h"><b>편별 보기</b><span>조문을 눌러 조문 본문 + 조문별 기출 atom 확인</span></div>';
     h+='<div class="grid-pyeon">';
     g.forEach(function(p){
       var artsAll=[]; p.jangs.forEach(function(j){ artsAll=artsAll.concat(j.arts); });
@@ -107,11 +138,7 @@
       });
       h+='</div>';
     });
-    h+='</div>';
-    if(D.bucket&&D.bucket.length){
-      h+='<div class="cta" style="margin-top:14px"><div><div class="big">판례·논점 '+D.bucket.length+'건</div><div class="sm">특정 조문에 매이지 않는 기출 논점 — CBT에서 풀이</div></div><a class="btn-play" href="#/cbt">🎮 풀기</a></div>';
-    }
-    h+='</div>';
+    h+='</div></div>';
     c.innerHTML='<div class="wrap"><aside class="toc">'+tocHTML(null)+'</aside>'+h+'</div>';
     bindToc();
   }
@@ -120,26 +147,26 @@
   function renderArticle(c,r){
     var a=findArt(r.art);
     if(!a){ renderSubjectHome(c); return; }
-    var lt=LT[r.art]; var nO=0,nX=0,fr=0;
-    a.atoms.forEach(function(at){ nO++; nX+=at.x.length; if(at.freq>=2)fr++; });
+    var lt=LT[r.art]; var nO=a.atoms.length, nX=0, fr=0;
+    a.atoms.forEach(function(at){ nX+=at.x.length; if(at.freq>=2)fr++; });
     var h='<div class="main">';
     h+='<div class="crumb">민사소송법 › '+esc(a.pyeon)+' › '+esc(a.jang)+'</div>';
     h+='<div class="h-art"><h1>'+esc(r.art)+'</h1>'+(lt?'<span class="sub">'+esc(lt.title)+'</span>':'')+'</div>';
     if(lt){ h+='<div class="lawbox"><div class="t">조문</div>'+esc(lt.body).replace(/\n/g,"<br>")+'</div>'; }
-    else { h+='<div class="lawbox" style="color:var(--ink3)">조문 본문은 순차 적재 중입니다. 출제이력과 CBT로 학습할 수 있습니다.</div>'; }
+    else { h+='<div class="lawbox" style="color:var(--ink3)">조문 본문은 순차 적재 중입니다.</div>'; }
     h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">대표 법리(O) '+nO+' · 함정(X) '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
       +'<a class="btn-play" href="#/cbt?art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
-    var allsrc={};
-    a.atoms.forEach(function(at){
-      (at.sources||[]).forEach(function(s){ var y=(String(s).match(/\d{4}/)||[])[0]; if(y) allsrc[y]=(allsrc[y]||0)+1; });
-      (at.x||[]).forEach(function(xx){ if(xx.src){ var y2=(String(xx.src).match(/\d{4}/)||[])[0]; if(y2) allsrc[y2]=(allsrc[y2]||0)+1; } });
+    // 조문별 기출 atom (판례·논문 대신)
+    h+='<div class="sect-h"><b>조문별 기출 atom</b><span>O 대표 법리 · ❌ 함정 X지문 · 출처 회차 (풀이는 CBT)</span></div>';
+    a.atoms.slice().sort(function(x,y){return (y.freq||1)-(x.freq||1);}).forEach(function(at){
+      h+='<div class="card"><div class="row"><span class="tag-o">O</span><div style="flex:1;min-width:0">';
+      h+='<div class="stmt">'+esc(at.o)+'</div>';
+      h+='<div class="meta">'+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+esc(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
+      (at.x||[]).forEach(function(xx){
+        h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span>'+(xx.src?' <span class="chip">'+esc(fmtSrc(xx.src))+'</span>':'')+'</div>';
+      });
+      h+='</div></div></div>';
     });
-    var years=Object.keys(allsrc).sort().reverse();
-    if(years.length){
-      h+='<div class="sect-h"><b>출제 이력</b><span>이 조문이 출제된 연도 (지문 수)</span></div><div class="meta" style="margin:0 0 4px">';
-      years.forEach(function(y){ h+='<span class="chip">'+y+' · '+allsrc[y]+'</span>'; });
-      h+='</div>';
-    }
     h+='</div>';
     c.innerHTML='<div class="wrap"><aside class="toc">'+tocHTML(r.art)+'</aside>'+h+'</div>';
     bindToc();
@@ -150,6 +177,7 @@
     c.innerHTML='<div class="wrap single"><div class="ph"><h2>'+esc(sub)+' — 준비 중</h2><p>민사소송법과 동일한 틀(조문 위키 + CBT 게임센터)로 추가됩니다.<br>현재 <a href="#/sub/민사소송법">민사소송법</a> 데이터가 완성되어 있습니다.</p></div></div>';
   }
 
+  // ===== CBT =====
   var game=null;
   function poolFor(opts){
     var pool=D.ox.slice();
@@ -159,6 +187,7 @@
     if(opts.freqOnly) pool=pool.filter(function(o){return o.freq>=2;});
     return pool;
   }
+  function scopeLabel(cur){ if(cur.art) return cur.art; if(cur.scope==="wrong") return "오답노트"; if(cur.pyeon) return cur.pyeon.replace(/^제\d편 /,""); return cur.freqOnly?"빈출":"전체"; }
   function renderCBT(c,r){
     if(game&&game.active){ drawGame(c); return; }
     var opts={art:r.art||null,pyeon:r.pyeon||null,scope:r.scope||"all",freqOnly:false,count:20};
@@ -169,8 +198,7 @@
     h+='<h2>🎮 CBT 게임센터</h2><p style="color:var(--ink2);margin:4px 0 0">민사소송법 기출 OX '+(D.stats.ox||0)+'문항 · 맞히면 콤보가 쌓입니다.</p>';
     h+='<div class="field"><label>범위</label><div class="opts" id="scope">'
       +'<button class="opt'+((opts.scope!=="wrong")?" on":"")+'" data-scope="all">전체</button>'
-      +'<button class="opt'+((opts.scope==="wrong")?" on":"")+'" data-scope="wrong">오답노트 ('+wrongN+')</button>'
-      +'</div></div>';
+      +'<button class="opt'+((opts.scope==="wrong")?" on":"")+'" data-scope="wrong">오답노트 ('+wrongN+')</button></div></div>';
     h+='<div class="field"><label>편 선택 (선택)</label><div class="opts" id="pyeon">'
       +'<button class="opt'+(!opts.pyeon?" on":"")+'" data-pyeon="">전체 편</button>';
     pyeonOpts.forEach(function(p){ h+='<button class="opt'+(opts.pyeon===p?" on":"")+'" data-pyeon="'+esc(p)+'">'+esc(p.replace(/^제\d편 /,""))+'</button>'; });
@@ -181,7 +209,9 @@
       +'<button class="opt" data-count="10">10</button><button class="opt on" data-count="20">20</button>'
       +'<button class="opt" data-count="50">50</button><button class="opt" data-count="0">전체</button></div></div>';
     h+='<div style="margin-top:18px"><button class="btn-play" id="start" style="width:100%;justify-content:center">시작하기 <span id="availn">('+avail+'문항)</span></button></div>';
-    h+='</div></div>';
+    h+='</div>';
+    h+='<div class="cbt-setup" style="margin-top:12px"><div class="sect-h"><b>🏆 고득점</b><span>이 브라우저 기준 · Supabase 연결 시 전체 공유 랭킹</span></div>'+boardHTML(10)+'</div>';
+    h+='</div>';
     c.innerHTML=h;
 
     var cur={art:opts.art||null,pyeon:"",scope:(opts.scope==="wrong"?"wrong":"all"),freqOnly:false,count:20};
@@ -198,18 +228,19 @@
     var pool=poolFor(cur);
     if(!pool.length){ alert("해당 범위에 문항이 없습니다."); return; }
     pool=shuffle(pool); if(cur.count>0) pool=pool.slice(0,cur.count);
-    game={pool:pool,i:0,score:0,combo:0,maxcombo:0,wrong:[],answered:false,active:true};
+    game={pool:pool,i:0,score:0,combo:0,maxcombo:0,wrong:[],answered:false,active:true,scope:scopeLabel(cur)};
     drawGame(el("#content"));
   }
   function drawGame(c){
     var g=game; if(g.i>=g.pool.length){ drawEnd(c); return; }
     var q=g.pool[g.i];
+    var srcline=(q.sources||[]).filter(Boolean).map(fmtSrc).slice(0,3).join(", ");
     var h='<div class="cbt-wrap">';
     h+='<div class="scorebar"><div class="sb"><b>'+(g.i+1)+'/'+g.pool.length+'</b><span>진행</span></div>'
       +'<div class="sb"><b>'+g.score+'</b><span>점수</span></div>'
       +'<div class="sb"><b>🔥'+g.combo+'</b><span>콤보</span></div></div>';
     h+='<div class="q-card"><div class="q-top"><span>CBT 풀이</span><span class="flame">최고 콤보 '+g.maxcombo+'</span></div>';
-    h+='<span class="q-art">'+esc(q.art)+(q.freq>=2?' · ★빈출':'')+'</span>';
+    h+='<div class="q-art">'+esc(q.art)+(srcline?' · <b>'+esc(srcline)+'</b>':'')+(q.freq>=2?' · ★빈출':'')+'</div>';
     h+='<div class="q-stmt">'+esc(q.stmt)+'</div>';
     h+='<div class="ox-btns"><button class="b-o" data-ans="O">O (맞다)</button><button class="b-x" data-ans="X">X (틀리다)</button></div>';
     h+='<div id="rv"></div></div></div>';
@@ -222,7 +253,7 @@
     var q=g.pool[g.i]; var correct=(choice===q.ans); var gain=0;
     if(correct){ g.combo++; g.maxcombo=Math.max(g.maxcombo,g.combo); gain=10+Math.min(g.combo,10); g.score+=gain; }
     else { g.combo=0; g.wrong.push(q); var w=store.get("wrong",[]); if(w.indexOf(q.id)<0){ w.push(q.id); store.set("wrong",w); } }
-    var src=(q.sources||[]).filter(Boolean).join(", ");
+    var src=(q.sources||[]).filter(Boolean).map(fmtSrc).join(", ");
     var h='<div class="reveal '+(correct?"ok":"no")+'">';
     h+='<div class="v">'+(correct?"정답! ":"오답 ")+'· 옳은 답은 「'+q.ans+'」</div>';
     if(q.ans==="X"){ h+='<div>이 지문은 <b>틀린 지문(함정)</b>입니다.</div>'; if(q.truth) h+='<div class="truth"><b>옳은 법리:</b> '+esc(q.truth)+'</div>'; }
@@ -236,22 +267,35 @@
   }
   function drawEnd(c){
     var g=game; var n=g.pool.length; var right=n-g.wrong.length; var pct=Math.round(right/n*100);
+    var nick=store.get("nick","");
     var h='<div class="cbt-wrap"><div class="q-card" style="text-align:center">';
     h+='<h2 style="margin:0 0 6px">결과</h2>';
-    h+='<div style="font-size:42px;font-weight:800;color:var(--brand-d)">'+pct+'<span style="font-size:20px">점</span></div>';
-    h+='<p style="color:var(--ink2)">'+n+'문항 중 <b>'+right+'</b>개 정답 · 최고 콤보 🔥'+g.maxcombo+'</p>';
-    h+='<div style="display:flex;gap:10px;justify-content:center;margin-top:8px"><button class="btn-play" id="again">다시 풀기</button><a class="opt" href="#/sub/민사소송법" style="display:inline-flex;align-items:center">위키로</a></div>';
+    h+='<div style="font-size:42px;font-weight:800;color:var(--brand-d)">'+g.score+'<span style="font-size:18px">점</span></div>';
+    h+='<p style="color:var(--ink2)">'+n+'문항 중 <b>'+right+'</b>개 정답 ('+pct+'%) · 최고 콤보 🔥'+g.maxcombo+'</p>';
+    h+='<div style="display:flex;gap:8px;justify-content:center;align-items:center;margin:10px 0">'
+      +'<input id="nick" placeholder="닉네임" value="'+esc(nick)+'" maxlength="12" style="padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px">'
+      +'<button class="btn-play" id="reg">🏆 고득점 등록</button></div>';
+    h+='<div id="regmsg" class="ref" style="min-height:16px"></div>';
+    h+='<div style="display:flex;gap:10px;justify-content:center;margin-top:6px"><button class="btn-play" id="again" style="background:var(--brand-l)">다시 풀기</button><a class="opt" href="#/sub/민사소송법" style="display:inline-flex;align-items:center">위키로</a></div>';
+    h+='<div style="text-align:left;margin-top:18px"><div class="sect-h"><b>🏆 고득점</b></div><div id="board">'+boardHTML(10)+'</div></div>';
     if(g.wrong.length){
-      h+='<div style="text-align:left;margin-top:20px"><div class="sect-h"><b>틀린 문항 ('+g.wrong.length+') — 오답노트 저장됨</b></div>';
+      h+='<div style="text-align:left;margin-top:18px"><div class="sect-h"><b>틀린 문항 ('+g.wrong.length+') — 오답노트 저장됨</b></div>';
       g.wrong.forEach(function(q){
         h+='<div class="card"><div class="row"><span class="'+(q.ans==="X"?"tag-x":"tag-o")+'">'+q.ans+'</span><div><div class="stmt" style="font-size:13.5px">'+esc(q.stmt)+'</div>'
           +(q.ans==="X"&&q.truth?'<div class="truth" style="border:none;padding:6px 0 0"><b>옳은 법리:</b> '+esc(q.truth)+'</div>':'')
-          +'<div class="meta"><span class="chip">'+esc(q.art)+'</span><span class="ref">'+esc(q.ref||"")+'</span></div></div></div></div>';
+          +'<div class="meta"><span class="chip">'+esc(q.art)+'</span>'+srcChips(q.sources,3)+'<span class="ref">'+esc(q.ref||"")+'</span></div></div></div></div>';
       });
       h+='</div>';
     }
     h+='</div></div>';
     c.innerHTML=h;
+    var done=false;
+    el("#reg").addEventListener("click",function(){
+      if(done){ return; }
+      var name=(el("#nick").value||"").trim()||"익명"; store.set("nick",name);
+      addScore({name:name,score:g.score,pct:pct,scope:g.scope||"전체",date:new Date().toISOString().slice(2,10).replace(/-/g,".")});
+      el("#board").innerHTML=boardHTML(10); el("#regmsg").textContent="등록 완료! (Supabase 연결 시 전체 랭킹에 반영)"; done=true;
+    });
     el("#again").addEventListener("click",function(){ game=null; location.hash="#/cbt"; render(); });
   }
 

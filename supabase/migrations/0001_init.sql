@@ -182,3 +182,15 @@ end$$ language plpgsql security definer;
 drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- ===== 고득점 랭킹 =====
+create table if not exists scores (
+  id bigserial primary key,
+  user_id uuid references auth.users(id) on delete set null,
+  name text, score int, pct int, scope text, n int,
+  created_at timestamptz default now()
+);
+create index if not exists idx_scores_top on scores(score desc);
+alter table scores enable row level security;
+drop policy if exists "scores_read" on scores;  create policy "scores_read" on scores for select using (true);
+drop policy if exists "scores_ins" on scores;   create policy "scores_ins" on scores for insert with check (true);
