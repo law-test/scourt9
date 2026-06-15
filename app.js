@@ -98,7 +98,7 @@
         h+='<div class="arts">';
         j.arts.forEach(function(a){
           var on=a.art===activeArt?"active":"";
-          h+='<a class="'+on+'" href="#/sub/민사소송법/'+encodeURIComponent(a.art)+'" title="'+esc(artLabel(a.art,a))+'">'+esc(a.art)+'<span class="c">'+a.count+(a.freqMax>=2?" ★":"")+'</span></a>';
+          h+='<a class="'+on+'" href="#/sub/민사소송법/'+encodeURIComponent(a.art)+'" title="'+esc(artLabel(a.art,a))+'">'+esc(a.art)+(a.count>0?'<span class="c">'+a.count+(a.freqMax>=2?" ★":"")+'</span>':'')+'</a>';
         });
         h+='</div>';
       });
@@ -154,6 +154,7 @@
     h+='<div class="h-art"><h1>'+esc(r.art)+'</h1>'+(lt?'<span class="sub">'+esc(lt.title)+'</span>':'')+'</div>';
     if(lt){ h+='<div class="lawbox"><div class="t">조문</div>'+esc(lt.body).replace(/\n/g,"<br>")+'</div>'; }
     else { h+='<div class="lawbox" style="color:var(--ink3)">조문 본문은 순차 적재 중입니다.</div>'; }
+    if(a.atoms.length){
     h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">대표 법리(O) '+nO+' · 함정(X) '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
       +'<a class="btn-play" href="#/cbt?art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
     // 조문별 기출 atom (판례·논문 대신)
@@ -167,6 +168,7 @@
       });
       h+='</div></div></div>';
     });
+    } else { h+='<div class="ref" style="margin-top:12px">이 조문은 기출 OX가 없습니다.</div>'; }
     h+='</div>';
     c.innerHTML='<div class="wrap"><aside class="toc">'+tocHTML(r.art)+'</aside>'+h+'</div>';
     bindToc();
@@ -234,13 +236,13 @@
   function drawGame(c){
     var g=game; if(g.i>=g.pool.length){ drawEnd(c); return; }
     var q=g.pool[g.i];
-    var srcline=(q.sources||[]).filter(Boolean).map(fmtSrc).slice(0,3).join(", ");
+    var srcline=(q.sources||[]).filter(Boolean).map(fmtSrc).join(" · ");
     var h='<div class="cbt-wrap">';
     h+='<div class="scorebar"><div class="sb"><b>'+(g.i+1)+'/'+g.pool.length+'</b><span>진행</span></div>'
       +'<div class="sb"><b>'+g.score+'</b><span>점수</span></div>'
       +'<div class="sb"><b>🔥'+g.combo+'</b><span>콤보</span></div></div>';
     h+='<div class="q-card"><div class="q-top"><span>CBT 풀이</span><span class="flame">최고 콤보 '+g.maxcombo+'</span></div>';
-    h+='<div class="q-art">'+esc(q.art)+(srcline?' · <b>'+esc(srcline)+'</b>':'')+(q.freq>=2?' · ★빈출':'')+'</div>';
+    h+='<div class="q-art">'+(srcline?'<b>'+esc(srcline)+'</b>':esc(q.art))+(q.freq>=2?' · ★빈출':'')+'</div>';
     h+='<div class="q-stmt">'+esc(q.stmt)+'</div>';
     h+='<div class="ox-btns"><button class="b-o" data-ans="O">O (맞다)</button><button class="b-x" data-ans="X">X (틀리다)</button></div>';
     h+='<div id="rv"></div></div></div>';
@@ -258,7 +260,7 @@
     h+='<div class="v">'+(correct?"정답! ":"오답 ")+'· 옳은 답은 「'+q.ans+'」</div>';
     if(q.ans==="X"){ h+='<div>이 지문은 <b>틀린 지문(함정)</b>입니다.</div>'; if(q.truth) h+='<div class="truth"><b>옳은 법리:</b> '+esc(q.truth)+'</div>'; }
     else { h+='<div>이 지문은 <b>옳은 지문</b>입니다.</div>'; }
-    h+='<div class="truth"><b>근거:</b> '+esc(q.ref||"-")+(src?' &nbsp;<b>출처:</b> '+esc(src):'')+'</div></div>';
+    h+='<div class="truth"><b>조문:</b> '+esc(q.art)+' &nbsp;<b>근거:</b> '+esc(q.ref||"-")+(src?' &nbsp;<b>출처:</b> '+esc(src):'')+'</div></div>';
     h+='<div class="bar"><span>점수 +'+gain+'</span><button class="next" id="next">'+(g.i+1>=g.pool.length?"결과 보기":"다음 →")+'</button></div>';
     el("#rv").innerHTML=h;
     el("#content").querySelectorAll("[data-ans]").forEach(function(b){ b.disabled=true; b.style.opacity=.55; });
