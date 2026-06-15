@@ -20,13 +20,16 @@
   var JIMUN=["","ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ"];
   function fmtSrc(s){
     if(!s) return ""; s=String(s);
-    var y=s.match(/(\d{4})/); var half=/상/.test(s)?"상":(/하/.test(s)?"하":"");
+    var ym=s.match(/(\d{4})\s*(상|하|a|b|A|B)?/);
+    var half=""; if(ym&&ym[2]){ var c=ym[2].toLowerCase(); half=(c==="상"||c==="a")?"상":((c==="하"||c==="b")?"하":""); }
     var q=s.match(/문\s*0*(\d+)/); var sub=s.match(/-\s*(\d+)/);
-    var out="";
-    if(y) out+=y[1].slice(2)+"년"+half;
-    if(q) out+=(out?" ":"")+q[1]+"번";
-    if(sub&&JIMUN[+sub[1]]) out+=" "+JIMUN[+sub[1]];
-    return out||s;
+    if(!ym&&!q) return s;
+    var out="법원직";
+    if(ym) out+=ym[1].slice(2)+"년"+half;
+    if(q) out+=q[1]+"번";
+    if(sub){ var n=+sub[1]; out+=(n>=1&&n<=20)?String.fromCharCode(0x245F+n):("("+n+")"); }
+    out+=" 기출";
+    return out;
   }
   function srcChips(sources, max){
     var a=(sources||[]).filter(Boolean); var h="";
