@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 37,
-  "legalReviewPending": 64
+  "legalVerified": 41,
+  "legalReviewPending": 60
  },
  "tree": [
   {
@@ -7676,7 +7676,7 @@
       "2025 법원직 9급 민법 25번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -7707,7 +7707,7 @@
       "2025 법원직 9급 민법 25번 ③"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -7738,7 +7738,7 @@
       "2025 법원직 9급 민법 25번 ②"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -13077,7 +13077,7 @@
    "sources": [
     "2025 법원직 9급 민법 25번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O81",
@@ -13090,7 +13090,7 @@
    "sources": [
     "2025 법원직 9급 민법 25번 ③"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O82",
@@ -13103,7 +13103,7 @@
    "sources": [
     "2025 법원직 9급 민법 25번 ②"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O83",
@@ -13129,7 +13129,8 @@
    "sources": [
     "2025 법원직 9급 민법 25번 ④"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "위임을 상대방에게 불리한 시기에 해지한 경우 민법 제689조 제2항에 따른 손해배상은 불리한 시기의 해지로 인하여 생긴 손해에 관한 것이며, 위임이 해지되었다는 사실 자체로부터 생기는 손해 일반을 배상한다는 뜻은 아니다."
   },
   {
    "id": "O85",
