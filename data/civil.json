@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 13,
-  "legalReviewPending": 88
+  "legalVerified": 17,
+  "legalReviewPending": 84
  },
  "tree": [
   {
@@ -10999,7 +10999,7 @@
       "2025 법원직 9급 민법 14번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "상속인은상속개시있음을안날로부터3월내에단순승인이나,한정승인또는포기를할수있고,이기간은제척기간이다.",
@@ -11009,7 +11009,7 @@
       "2025 법원직 9급 민법 14번 ②"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "상속의승인,포기는포괄적·무조건적으로하여야하고특정재산에대하여선택적으로할수없다.",
@@ -11019,7 +11019,7 @@
       "2025 법원직 9급 민법 14번 ③"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 3,
@@ -13306,7 +13306,7 @@
    "sources": [
     "2025 법원직 9급 민법 14번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O99",
@@ -13319,7 +13319,7 @@
    "sources": [
     "2025 법원직 9급 민법 14번 ②"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O100",
@@ -13332,7 +13332,7 @@
    "sources": [
     "2025 법원직 9급 민법 14번 ③"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X101",
@@ -13345,7 +13345,8 @@
    "sources": [
     "2025 법원직 9급 민법 14번 ④"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "상속포기의 효력은 피상속인의 사망으로 개시된 해당 상속에 미치며, 그 후 피상속인을 피대습자로 하여 별도로 개시되는 대습상속까지 당연히 미친다고 볼 수 없다."
   }
  ],
  "review": {

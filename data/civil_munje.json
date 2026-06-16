@@ -1098,8 +1098,8 @@
       "answer": "④",
       "answerText": "상속포기의효력은피상속인의사망으로개시된상속뿐아니라,그후피상속인을피대습자로하여개시된대습상속에까지미친다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "legalVerifiedAt": "2026-06-17",
+      "note": "상속의 승인과 포기 문항은 현행 기준으로도 공식정답 ④를 유지한다."
      },
      "articleRefs": [
       "제1019조",
@@ -1115,10 +1115,16 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
-      "status": "statute-api-verified-needs-legal-review",
+      "legalVerifiedAt": "2026-06-17",
+      "status": "legal-verified",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified"
+      "statuteCitationStatus": "verified",
+      "ruling": {
+       "status": "official-answer-maintained",
+       "ruling": "공식정답 유지",
+       "ruledBy": "user",
+       "ruledAt": "2026-06-17"
+      }
      }
     },
     {
