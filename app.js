@@ -23,14 +23,24 @@
   var JIMUN=["","ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ"];
   function fmtSrc(s){
     if(!s) return ""; s=String(s);
-    var ym=s.match(/(\d{4})\s*(상|하|a|b|A|B)?/);
-    var half=""; if(ym&&ym[2]){ var c=ym[2].toLowerCase(); half=(c==="상"||c==="a")?"상":((c==="하"||c==="b")?"하":""); }
-    var q=s.match(/문\s*0*(\d+)/); var sub=s.match(/-\s*(\d+)/);
+    var bm=s.match(/변시\s*0*(\d+)/);
+    if(bm){
+      var bq=s.match(/문\s*0*(\d+)/);
+      var bu=s.match(/(?:보기\s*)?([ㄱ-ㅎ]|[①-⑳]|[1-5])\s*$/);
+      var bout="변시"+bm[1];
+      if(bq) bout+=" "+bq[1]+"번";
+      if(bu && !/문\s*0*\d+\s*$/.test(s)) bout+=" "+bu[1];
+      return bout;
+    }
+    var ym=s.match(/(\d{4})\s*(상|하|하반기|a|b|A|B)?/);
+    var half=""; if(ym&&ym[2]){ var c=ym[2].toLowerCase(); half=(c==="상"||c==="a")?"상":((c==="하"||c==="하반기"||c==="b")?"하":""); }
+    var q=s.match(/(?:문\s*0*)?(\d+)\s*번/)||s.match(/문\s*0*(\d+)/);
+    var sub=s.match(/([①-⑳]|[ㄱ-ㅎ])\s*$/)||s.match(/-\s*(\d+)/);
     if(!ym&&!q) return s;
     var out="법원직";
     if(ym) out+=ym[1].slice(2)+"년"+half;
     if(q) out+=q[1]+"번";
-    if(sub){ var n=+sub[1]; out+=(n>=1&&n<=20)?String.fromCharCode(0x245F+n):("("+n+")"); }
+    if(sub){ var n=+sub[1]; out+=isNaN(n)?sub[1]:((n>=1&&n<=20)?String.fromCharCode(0x245F+n):("("+n+")")); }
     out+=" 기출";
     return out;
   }
@@ -39,6 +49,9 @@
     a.slice(0,max||4).forEach(function(s){ h+='<span class="chip">'+esc(fmtSrc(s))+'</span>'; });
     if(a.length>(max||4)) h+='<span class="ref">+'+(a.length-(max||4))+'</span>';
     return h;
+  }
+  function famChips(families){
+    return (families||[]).map(function(f){ return '<span class="chip">'+esc(f)+'</span>'; }).join("");
   }
   function linkifyRef(s){
     s=esc(s||"");
@@ -170,8 +183,8 @@
   function renderArticle(c,r){
     var a=findArt(r.art);
     if(!a){ renderSubjectHome(c); return; }
-    var lt=LT[r.art]; var nO=a.atoms.length, nX=0, fr=0;
-    a.atoms.forEach(function(at){ nX+=at.x.length; if(at.freq>=2)fr++; });
+    var lt=LT[r.art]; var nO=0, nX=0, fr=0;
+    a.atoms.forEach(function(at){ if(at.ans==="X") nX++; else nO++; if(at.x) nX+=at.x.length; if(at.freq>=2)fr++; });
     var h='<div class="main">';
     h+='<div class="crumb">'+esc(CURSUB)+' › '+esc(a.pyeon)+' › '+esc(a.jang)+'</div>';
     h+='<div class="h-art"><h1>'+esc(r.art)+'</h1>'+(lt?'<span class="sub">'+esc(lt.title||a.title||"")+'</span>':(a.title?'<span class="sub">'+esc(a.title)+'</span>':''))+'</div>';
@@ -181,13 +194,14 @@
     (NT.cases[r.art]||[]).forEach(function(cn){ var g=NT.gist[cn]; if(!g) return;
       h+='<div class="casebox"><div class="ct"><span class="cb-no"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(cn)+'</a></span> <span class="cb-meta">'+esc(g.court)+' '+esc(g.date)+' · '+esc(g.name)+'</span></div><div class="cb-gist">'+esc(g.gist)+'</div><a class="cb-link" href="'+g.url+'" target="_blank" rel="noopener">원문 보기 →</a></div>'; });
     if(a.atoms.length){
-    h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">대표 법리(O) '+nO+' · 함정(X) '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
+    h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">O atom '+nO+' · X atom '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
       +'<a class="btn-play" href="#/cbt?sub='+encodeURIComponent(CURSUB)+'&art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
-    h+='<div class="sect-h"><b>조문별 기출 atom</b><span>O 대표 법리 · ❌ 함정 X지문 · 출처 회차 (풀이는 CBT)</span></div>';
-    a.atoms.slice().sort(function(x,y){return (y.freq||1)-(x.freq||1);}).forEach(function(at){
-      h+='<div class="card"><div class="row"><span class="tag-o">O</span><div style="flex:1;min-width:0">';
+    h+='<div class="sect-h"><b>조문별 기출 atom</b><span>O/X 통합 atom · 법원직/변호사시험 출처 (풀이는 CBT)</span></div>';
+    a.atoms.slice().sort(function(x,y){return (y.weight||0)-(x.weight||0) || (y.freq||1)-(x.freq||1);}).forEach(function(at){
+      var ans=(at.ans==="X")?"X":"O", tag=(ans==="X")?"tag-x":"tag-o";
+      h+='<div class="card"><div class="row"><span class="'+tag+'">'+ans+'</span><div style="flex:1;min-width:0">';
       h+='<div class="stmt">'+esc(at.o)+'</div>';
-      h+='<div class="meta">'+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+linkifyRef(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
+      h+='<div class="meta">'+famChips(at.sourceFamilies)+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+linkifyRef(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
       (at.x||[]).forEach(function(xx){
         h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span>'+(xx.src?' <span class="chip">'+esc(fmtSrc(xx.src))+'</span>':'')+'</div>';
       });
