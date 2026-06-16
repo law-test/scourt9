@@ -9,7 +9,7 @@
   reg("민사소송법","civ-proc","CIVPROC","LAWTEXT","NOTES");
   reg("형사소송법","crim-proc","CRIMPROC","CRIMLAWTEXT","CRIMNOTES");
   reg("형법","penal","PENAL","PENALLAWTEXT","PENALNOTES");
-  var DEFAULT_SUB = REG["민사소송법"] ? "민사소송법" : (Object.keys(REG)[0]||"민사소송법");
+  var DEFAULT_SUB = REG["민법"] ? "민법" : (Object.keys(REG)[0]||"민법");
 
   function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
   function el(sel){ return document.querySelector(sel); }
