@@ -7,6 +7,7 @@
   function reg(name, slug, d, l, n){ if(window[d]) REG[name] = {name:name, slug:slug, data:window[d], lt:window[l]||{}, nt:window[n]||{desc:{},cases:{},gist:{}}}; }
   reg("민사소송법","civ-proc","CIVPROC","LAWTEXT","NOTES");
   reg("형사소송법","crim-proc","CRIMPROC","CRIMLAWTEXT","CRIMNOTES");
+  reg("형법","penal","PENAL","PENALLAWTEXT","PENALNOTES");
   var DEFAULT_SUB = REG["민사소송법"] ? "민사소송법" : (Object.keys(REG)[0]||"민사소송법");
 
   function esc(s){ return (s==null?"":String(s)).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
