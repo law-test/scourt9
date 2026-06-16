@@ -134,7 +134,7 @@
 
   function renderSubjectHome(c){
     var s=D.stats||{}; var g=grouped(); var hasOX=(D.ox||[]).length>0;
-    var reviewPending = D.review && D.review.status === "pending-legal-review";
+    var reviewPending = D.review && /review/.test(D.review.status || "");
     var heroText = hasOX
       ? (reviewPending
           ? '법원직 9급 기출 OX를 조문별로 정리합니다. 2025 회차 seed 구축 완료 · 현행법 검증 진행 중.'

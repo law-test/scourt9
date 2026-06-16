@@ -11,9 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 0,
-  "legalReviewPending": 101,
-  "statuteApiVerified": 101
+  "legalVerified": 4,
+  "legalReviewPending": 97
  },
  "tree": [
   {
@@ -5573,7 +5572,7 @@
       "2025 법원직 9급 민법 1번 ③"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "위③의경우송금의뢰인이착오송금임을이유로수취은행에직접송금액의반환을요청하고수취인도송금의뢰인의착오송금에의하여수취인의계좌에금원이입금된사실을인정하고수취은행에그반환을승낙하고있는경우,수취은행이수취인에대한대출채권등을자동채권으로하여수취인의계좌에착오로입금된금원상당의예금채권과상계하는것은,수취은행이선의인상태에서수취인의예금채권을담보로대출을하여그자동채권을취득한것이라거나그예금채권이이미제3자에의하여압류되었다는등의특별한사정이없는한송금의뢰인에대한관계에서신의칙에반하거나상계에관한권리를남용하는것이다.",
@@ -5583,7 +5582,7 @@
       "2025 법원직 9급 민법 1번 ④"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 2,
@@ -7901,7 +7900,7 @@
       "2025 법원직 9급 민법 1번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -12834,7 +12833,7 @@
    "sources": [
     "2025 법원직 9급 민법 1번 ③"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O63",
@@ -12847,7 +12846,7 @@
    "sources": [
     "2025 법원직 9급 민법 1번 ④"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X64",
@@ -13133,7 +13132,7 @@
    "sources": [
     "2025 법원직 9급 민법 1번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O86",
@@ -13159,7 +13158,8 @@
    "sources": [
     "2025 법원직 9급 민법 1번 ②"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "착오송금의 경우 송금의뢰인은 수취인에 대하여 송금액 상당의 부당이득반환청구권을 가지나, 수취은행에 대하여는 원칙적으로 부당이득반환청구권을 취득하지 않는다."
   },
   {
    "id": "O88",
@@ -13347,18 +13347,6 @@
  "review": {
   "status": "statute-api-verified-needs-legal-review",
   "lawAsOf": "2026-06-17",
-  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다.",
-  "statuteApiVerifiedAt": "2026-06-17",
-  "statuteApi": {
-   "provider": "korean_law MCP / law.go.kr 법령 API",
-   "lawName": "민법",
-   "lawId": "001706",
-   "mst": "284415",
-   "promulgatedAt": "2026-03-17",
-   "effectiveAt": "2026-03-17",
-   "method": "legal_analysis.verify_citations",
-   "verifiedCitationCount": 76,
-   "failedCitationCount": 0
-  }
+  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다."
  }
 }

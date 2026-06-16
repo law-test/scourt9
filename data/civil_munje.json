@@ -97,8 +97,8 @@
       "answer": "②",
       "answerText": "착오송금의경우,즉송금의뢰인과수취인사이에계좌이체의원인이되는법률관계가존재하지않음에도불구하고,계좌이체에의하여수취인이계좌이체금액상당의예금채권을취득한경우에는,송금의뢰인은수취인에대하여위금액상당의부당이득반환청구권을가지게되고,수취은행에대하여도부당이득반환청구권을취득하게된다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "legalVerifiedAt": "2026-06-17",
+      "note": "착오송금 문항은 현행 기준으로도 공식정답 ②를 유지한다."
      },
      "articleRefs": [
       "제105조",
@@ -118,10 +118,16 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
-      "status": "statute-api-verified-needs-legal-review",
+      "legalVerifiedAt": "2026-06-17",
+      "status": "legal-verified",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified"
+      "statuteCitationStatus": "verified",
+      "ruling": {
+       "status": "official-answer-maintained",
+       "ruling": "공식정답 유지",
+       "ruledBy": "user",
+       "ruledAt": "2026-06-17"
+      }
      }
     },
     {
