@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 17,
-  "legalReviewPending": 84
+  "legalVerified": 21,
+  "legalReviewPending": 80
  },
  "tree": [
   {
@@ -556,7 +556,7 @@
       "2025 법원직 9급 민법 17번 ②"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -3141,7 +3141,7 @@
       "2025 법원직 9급 민법 17번 ④"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -7759,7 +7759,7 @@
       "2025 법원직 9급 민법 17번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -12040,7 +12040,7 @@
    "sources": [
     "2025 법원직 9급 민법 17번 ②"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X2",
@@ -12053,7 +12053,8 @@
    "sources": [
     "2025 법원직 9급 민법 17번 ③"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "법인의 정관에서 정한 이사 해임사유가 발생한 경우 법인은 정관에 따라 이사를 해임할 수 있고, 별도로 법인과 이사 사이의 신뢰관계가 더 이상 유지되기 어려울 정도에 이르러야만 해임할 수 있는 것은 아니다."
   },
   {
    "id": "O3",
@@ -12446,7 +12447,7 @@
    "sources": [
     "2025 법원직 9급 민법 17번 ④"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O33",
@@ -13110,7 +13111,7 @@
    "sources": [
     "2025 법원직 9급 민법 17번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X84",
