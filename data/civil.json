@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 25,
-  "legalReviewPending": 76
+  "legalVerified": 29,
+  "legalReviewPending": 72
  },
  "tree": [
   {
@@ -4365,7 +4365,7 @@
       "2025 법원직 9급 민법 22번 ㄷ"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -6053,7 +6053,7 @@
       "2025 법원직 9급 민법 22번 ㄱ"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 3,
@@ -12579,7 +12579,8 @@
    "sources": [
     "2025 법원직 9급 민법 22번 ㄴ"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "기한의 정함이 없는 채무에 정지조건이 있는 경우 정지조건이 성취된 뒤 채권자가 이행을 청구하면 채무자는 이행청구를 받은 때부터 지체책임을 지며, 청구금액이 확정되지 않았다는 사정만으로 지체책임이 부정되는 것은 아니다."
   },
   {
    "id": "O43",
@@ -12592,7 +12593,7 @@
    "sources": [
     "2025 법원직 9급 민법 22번 ㄷ"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X44",
@@ -12605,7 +12606,8 @@
    "sources": [
     "2025 법원직 9급 민법 22번 ㄹ"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "기한의 정함이 없는 채권이 양도된 경우 채무자는 채권양도통지 등 대항요건과 이행청구의 효력이 갖추어진 때를 기준으로 지체책임을 부담하는 것이지, 채권이 양도된 때부터 당연히 이행지체책임을 부담하는 것은 아니다."
   },
   {
    "id": "O45",
@@ -12930,7 +12932,7 @@
    "sources": [
     "2025 법원직 9급 민법 22번 ㄱ"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X70",
