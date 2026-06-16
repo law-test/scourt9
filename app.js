@@ -5,6 +5,7 @@
   var SUBJECTS = ["헌법", "민법", "민사소송법", "형법", "형사소송법", "상법", "부동산등기법"];
   var REG = {};
   function reg(name, slug, d, l, n){ if(window[d]) REG[name] = {name:name, slug:slug, data:window[d], lt:window[l]||{}, nt:window[n]||{desc:{},cases:{},gist:{}}}; }
+  reg("민법","civil","CIVIL","CIVILLAWTEXT","CIVILNOTES");
   reg("민사소송법","civ-proc","CIVPROC","LAWTEXT","NOTES");
   reg("형사소송법","crim-proc","CRIMPROC","CRIMLAWTEXT","CRIMNOTES");
   reg("형법","penal","PENAL","PENALLAWTEXT","PENALNOTES");
@@ -133,10 +134,14 @@
 
   function renderSubjectHome(c){
     var s=D.stats||{}; var g=grouped(); var hasOX=(D.ox||[]).length>0;
+    var reviewPending = D.review && D.review.status === "pending-legal-review";
+    var heroText = hasOX
+      ? (reviewPending
+          ? '법원직 9급 기출 OX를 조문별로 정리합니다. 2025 회차 seed 구축 완료 · 현행법 검증 진행 중.'
+          : '법원직 9급 기출 OX를 조문별로 정리하고, CBT 게임센터에서 풀이합니다. 2007–2025 · 공식 확정정답표 검증완료.')
+      : '조문 본문을 편·장별로 완비했습니다. 기출 OX(CBT)는 순차 적재 중입니다.';
     var h='<div class="main">';
-    h+='<div class="hero"><h1>'+esc(CURSUB)+'</h1><p>'+(hasOX
-        ?'법원직 9급 기출 OX를 조문별로 정리하고, CBT 게임센터에서 풀이합니다. 2007–2025 · 공식 확정정답표 검증완료.'
-        :'조문 본문을 편·장별로 완비했습니다. 기출 OX(CBT)는 순차 적재 중입니다.')+'</p>';
+    h+='<div class="hero"><h1>'+esc(CURSUB)+'</h1><p>'+heroText+'</p>';
     h+='<div class="stat-row">'
       +'<div class="stat"><b>'+(s.articles||0)+'</b><span>조문</span></div>'
       +'<div class="stat"><b>'+(s.atoms||0)+'</b><span>통합 법리</span></div>'
