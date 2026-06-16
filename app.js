@@ -51,7 +51,13 @@
     return h;
   }
   function famChips(families){
-    return (families||[]).map(function(f){ return '<span class="chip">'+esc(f)+'</span>'; }).join("");
+    return (families||[]).filter(function(f){ return f!=="변호사시험"; }).map(function(f){ return '<span class="chip">'+esc(f)+'</span>'; }).join("");
+  }
+  function refExtra(at){
+    var ref=at&&at.ref?String(at.ref):"";
+    if(!ref) return "";
+    if(/^(변시|20\d{2}\s*법원직)/.test(ref)) return "";
+    return '<span class="ref">· '+linkifyRef(ref)+'</span>';
   }
   function linkifyRef(s){
     s=esc(s||"");
@@ -201,7 +207,7 @@
       var ans=(at.ans==="X")?"X":"O", tag=(ans==="X")?"tag-x":"tag-o";
       h+='<div class="card"><div class="row"><span class="'+tag+'">'+ans+'</span><div style="flex:1;min-width:0">';
       h+='<div class="stmt">'+esc(at.o)+'</div>';
-      h+='<div class="meta">'+famChips(at.sourceFamilies)+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+linkifyRef(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
+      h+='<div class="meta">'+famChips(at.sourceFamilies)+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+refExtra(at)+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
       (at.x||[]).forEach(function(xx){
         h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span> '+famChips(xx.sourceFamilies)+srcChips(xx.sources||(xx.src?[xx.src]:[]),4)+'</div>';
       });
