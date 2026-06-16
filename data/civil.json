@@ -12,7 +12,8 @@
   "ox": 101,
   "bucket": 0,
   "legalVerified": 0,
-  "legalReviewPending": 101
+  "legalReviewPending": 101,
+  "statuteApiVerified": 101
  },
  "tree": [
   {
@@ -13344,8 +13345,20 @@
   }
  ],
  "review": {
-  "status": "pending-legal-review",
+  "status": "statute-api-verified-needs-legal-review",
   "lawAsOf": "2026-06-17",
-  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다."
+  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다.",
+  "statuteApiVerifiedAt": "2026-06-17",
+  "statuteApi": {
+   "provider": "korean_law MCP / law.go.kr 법령 API",
+   "lawName": "민법",
+   "lawId": "001706",
+   "mst": "284415",
+   "promulgatedAt": "2026-03-17",
+   "effectiveAt": "2026-03-17",
+   "method": "legal_analysis.verify_citations",
+   "verifiedCitationCount": 76,
+   "failedCitationCount": 0
+  }
  }
 }

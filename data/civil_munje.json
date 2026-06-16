@@ -119,7 +119,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -193,7 +195,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -267,7 +271,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -339,7 +345,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -415,7 +423,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -488,7 +498,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -561,7 +573,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -632,7 +646,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -704,7 +720,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -781,7 +799,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -856,7 +876,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -927,7 +949,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1000,7 +1024,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1072,7 +1098,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1144,7 +1172,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1220,7 +1250,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1295,7 +1327,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1369,7 +1403,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1441,7 +1477,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1514,7 +1552,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1586,7 +1626,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1660,7 +1702,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1736,7 +1780,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1809,7 +1855,9 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1884,10 +1932,27 @@
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "status": "pending-legal-review"
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
      }
     }
-   ]
+   ],
+   "verification": {
+    "statuteApiVerifiedAt": "2026-06-17",
+    "statuteApi": {
+     "provider": "korean_law MCP / law.go.kr 법령 API",
+     "lawName": "민법",
+     "lawId": "001706",
+     "mst": "284415",
+     "promulgatedAt": "2026-03-17",
+     "effectiveAt": "2026-03-17",
+     "method": "legal_analysis.verify_citations",
+     "verifiedCitationCount": 76,
+     "failedCitationCount": 0
+    },
+    "status": "statute-api-verified-needs-legal-review"
+   }
   }
  }
 }
