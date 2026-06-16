@@ -2,7 +2,7 @@
 # 형법: 목차(법제처) + 통합본 atom 병합 → data/penal.js
 import json, re, os
 SRC="/sessions/gallant-vibrant-lamport/mnt/cowork/scourt9_src/형법_목차.txt"
-UNI="/sessions/gallant-vibrant-lamport/mnt/cowork/법원직_형법_OX/통합본/형법_조문별_v001.json"
+UNI="/sessions/gallant-vibrant-lamport/mnt/cowork/법원직_형법_OX/통합본/형법_조문별_v002.json"
 OUT=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"data")
 os.makedirs(OUT,exist_ok=True)
 TREE=[
@@ -67,7 +67,7 @@ for a in arts:
                        "sources":[xx["src"]] if xx.get("src") else [],"truth":at["o"]})
 n_atoms=sum(len(uni.get(a["art"],[])) for a in arts)
 n_quiz=sum(1 for a in arts if a["count"]>0)
-data={"subject":"형법","slug":"penal","version":"법제처 2026-03-12 / OX v001","updatedAt":"2026-06-16",
+data={"subject":"형법","slug":"penal","version":"법제처 2026-03-12 / OX v002(정제·빈출)","updatedAt":"2026-06-16",
  "stats":{"atoms":n_atoms,"freq":sum(1 for a in arts for t in a["atoms"] if t["freq"]>=2),
           "articles":len(arts),"quizArticles":n_quiz,"ox":len(ox),"bucket":0},
  "tree":tree,"articles":arts,"bucket":[],"ox":ox}
