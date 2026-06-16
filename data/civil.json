@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 21,
-  "legalReviewPending": 80
+  "legalVerified": 25,
+  "legalReviewPending": 76
  },
  "tree": [
   {
@@ -3622,7 +3622,7 @@
       "2025 법원직 9급 민법 20번 ④"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -3673,7 +3673,7 @@
       "2025 법원직 9급 민법 20번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "하나의채권을피담보채권으로하여여러필지의토지에대하여유치권을취득한유치권자가그중일부필지의토지에대하여선량한관리자의주의의무를위반하였다면특별한사정이없는한위반행위가있었던필지의토지에대하여만유치권소멸청구가가능하다.",
@@ -3683,7 +3683,7 @@
       "2025 법원직 9급 민법 20번 ③"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 2,
@@ -12460,7 +12460,7 @@
    "sources": [
     "2025 법원직 9급 민법 20번 ④"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O34",
@@ -12473,7 +12473,7 @@
    "sources": [
     "2025 법원직 9급 민법 20번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X35",
@@ -12486,7 +12486,8 @@
    "sources": [
     "2025 법원직 9급 민법 20번 ②"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "민법 제324조 제2항을 위반한 유치물 임대행위가 있는 경우, 그 위반행위 이후 유치물의 소유권을 취득한 제3자도 특별한 사정이 없는 한 민법 제324조 제3항에 따른 유치권소멸청구를 할 수 있다."
   },
   {
    "id": "O36",
@@ -12499,7 +12500,7 @@
    "sources": [
     "2025 법원직 9급 민법 20번 ③"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O37",
