@@ -194,16 +194,16 @@
     (NT.cases[r.art]||[]).forEach(function(cn){ var g=NT.gist[cn]; if(!g) return;
       h+='<div class="casebox"><div class="ct"><span class="cb-no"><a href="'+g.url+'" target="_blank" rel="noopener">'+esc(cn)+'</a></span> <span class="cb-meta">'+esc(g.court)+' '+esc(g.date)+' · '+esc(g.name)+'</span></div><div class="cb-gist">'+esc(g.gist)+'</div><a class="cb-link" href="'+g.url+'" target="_blank" rel="noopener">원문 보기 →</a></div>'; });
     if(a.atoms.length){
-    h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">O atom '+nO+' · X atom '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
+    h+='<div class="cta"><div><div class="big">이 조문 기출 OX '+(nO+nX)+'문항</div><div class="sm">O 대표 atom '+nO+' · 종속 X '+nX+(fr?' · ★ 빈출 '+fr:'')+'</div></div>'
       +'<a class="btn-play" href="#/cbt?sub='+encodeURIComponent(CURSUB)+'&art='+encodeURIComponent(r.art)+'">🎮 이 조문 풀기</a></div>';
-    h+='<div class="sect-h"><b>조문별 기출 atom</b><span>O/X 통합 atom · 법원직/변호사시험 출처 (풀이는 CBT)</span></div>';
+    h+='<div class="sect-h"><b>조문별 기출 atom</b><span>O 대표 atom 아래에 X 함정 종속 · 법원직/변호사시험 출처</span></div>';
     a.atoms.slice().sort(function(x,y){return (y.weight||0)-(x.weight||0) || (y.freq||1)-(x.freq||1);}).forEach(function(at){
       var ans=(at.ans==="X")?"X":"O", tag=(ans==="X")?"tag-x":"tag-o";
       h+='<div class="card"><div class="row"><span class="'+tag+'">'+ans+'</span><div style="flex:1;min-width:0">';
       h+='<div class="stmt">'+esc(at.o)+'</div>';
       h+='<div class="meta">'+famChips(at.sourceFamilies)+(at.freq>=2?'<span class="badge-star">★ 빈출 '+at.freq+'회</span>':'')+srcChips(at.sources,6)+(at.ref?'<span class="ref">· '+linkifyRef(at.ref)+'</span>':'')+(at.verified?'<span class="chip-v">✓ 검증</span>':'')+'</div>';
       (at.x||[]).forEach(function(xx){
-        h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span>'+(xx.src?' <span class="chip">'+esc(fmtSrc(xx.src))+'</span>':'')+'</div>';
+        h+='<div class="trap"><span class="tag-x" style="padding:1px 7px;font-size:11px">함정 X</span> <span style="font-size:13px;color:var(--ink2)">'+esc(xx.q)+'</span> '+famChips(xx.sourceFamilies)+srcChips(xx.sources||(xx.src?[xx.src]:[]),4)+'</div>';
       });
       h+='</div></div></div>';
     });
