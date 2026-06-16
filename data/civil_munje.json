@@ -97,8 +97,8 @@
       "answer": "②",
       "answerText": "착오송금의경우,즉송금의뢰인과수취인사이에계좌이체의원인이되는법률관계가존재하지않음에도불구하고,계좌이체에의하여수취인이계좌이체금액상당의예금채권을취득한경우에는,송금의뢰인은수취인에대하여위금액상당의부당이득반환청구권을가지게되고,수취은행에대하여도부당이득반환청구권을취득하게된다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "착오송금 문항은 현행 기준으로도 공식정답 ②를 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제105조",
@@ -118,16 +118,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -182,7 +175,7 @@
       "answerText": "성년이되어친권자의친권에복종하지아니하는자와친권에복종하는미성년자인자사이에이해상반이되는경우미성년자를위하여특별대리인을선임하여야한다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제909조",
@@ -200,7 +193,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -258,7 +250,7 @@
       "answerText": "채권자대위소송의제3채무자도채무자의채권자에대한소멸시효완성의항변을원용할수있다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제162조",
@@ -276,7 +268,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -334,7 +325,7 @@
       "answerText": "공유물분할청구권은공유관계에서수반되는형성권으로서그행사여부가공유자의자유로운의사에맡겨져있으므로채권자대위권의목적이될수없다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제269조",
@@ -350,7 +341,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -408,7 +398,7 @@
       "answerText": "X토지에무효인근저당권설정등기에터잡아근저당권이전의부기등기를마친양수인에대하여위토지의소유자가소유권에기하여부기등기말소등기청구를소로제기하는것은적법하다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제213조",
@@ -428,7 +418,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -486,7 +475,7 @@
       "answerText": "주채무자또는제3자소유의부동산에관하여채권자앞으로근저당권이설정되어있고,그부동산의가액및채권최고액이당해채무액을초과하여채무전액에대하여채권자에게우선변제권이확보되어있다면그범위내에서는채무자의재산처분행위가채권자를해하지않으므로,채무자가비록재산을처분하는법률행위를하더라도채권자에대하여사해행위가성립하지않는다.다만그채무액이부동산의가액및채권최고액을초과하는경우에는,채권자의채권액전액에대하여채권자취소권이인정된다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제406조",
@@ -503,7 +492,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -561,7 +549,7 @@
       "answerText": "민법제426조는연대채무에있어서변제에관하여채무자상호간에통지의무를인정하고있는바,부진정연대채무에있어서도채무자상호간에구상요건으로서통지에관한위규정이유추적용된다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제413조",
@@ -578,7 +566,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -635,8 +622,8 @@
       "answer": "①",
       "answerText": "민법제366조의법정지상권은저당권설정당시부터저당권의목적되는토지위에건물이존재할경우에한하여인정되지만,토지에관하여저당권이설정될당시그지상에토지소유자에의한건물의건축이개시되기이전이라도건물이없는토지에관하여저당권이설정될당시근저당권자가토지소유자에의한건물의건축에동의하였다면법정지상권이성립될수있다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "법정지상권 문항은 현행 기준으로도 공식정답 ①을 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제366조"
@@ -651,16 +638,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -715,7 +695,7 @@
       "answerText": "임대차존속중차임을연체하는경우,특별한사정이없는한차임채권의소멸시효는임대차종료후목적물인도시부터진행한다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제163조",
@@ -731,7 +711,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -789,7 +768,7 @@
       "answerText": "ㄱ,ㄷ,ㄹ",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제104조",
@@ -810,7 +789,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -868,7 +846,7 @@
       "answerText": "2인으로구성된조합에서한사람이탈퇴하면조합관계는종료되나특별한사정이없는한조합은해산이나청산이되지않고,다만조합원의합유에속한조합재산은남은조합원의단독소유에속하여탈퇴조합원과남은조합원사이에는탈퇴로인한계산을해야한다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제555조",
@@ -887,7 +865,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -944,8 +921,8 @@
       "answer": "④",
       "answerText": "ㄴ,ㄹ",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "점유취득시효 문항은 현행 기준으로도 공식정답 ④를 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제245조"
@@ -960,16 +937,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1024,7 +994,7 @@
       "answerText": "위②의경우진정한소유자의말소등기청구권은소유권에기한방해배제청구권인물권적청구권의성질을갖지만,진정명의회복을위한소유권이전등기청구권은채권적청구권으로볼수있다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제162조",
@@ -1041,7 +1011,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1098,8 +1067,8 @@
       "answer": "④",
       "answerText": "상속포기의효력은피상속인의사망으로개시된상속뿐아니라,그후피상속인을피대습자로하여개시된대습상속에까지미친다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "상속의 승인과 포기 문항은 현행 기준으로도 공식정답 ④를 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제1019조",
@@ -1115,16 +1084,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1179,7 +1141,7 @@
       "answerText": "불법행위로상해를입었지만후유증등으로인하여불법행위당시에는전혀예상할수없었던후발손해가새로이발생한경우라도,최초상해시점에곧바로불법행위손해배상채권이성립하므로후발손해에관한지연손해금도최초상해시점부터발생한다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제750조",
@@ -1195,7 +1157,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1253,7 +1214,7 @@
       "answerText": "담보권실행을위한경매에서배당된배당금이담보권자가가지는수개의피담보채권전부를소멸시키기에부족한경우에는민법제476조에의한지정변제충당은허용될수없고,채권자와채무자사이에변제충당에관한합의가있었다고하여그합의에따른변제충당도허용될수없으며,획일적으로가장공평타당한충당방법인민법제477조및제479조의규정에의한법정변제충당의방법에따라충당하여야하는것이다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제473조",
@@ -1273,7 +1234,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1330,8 +1290,8 @@
       "answer": "③",
       "answerText": "법인이정관에서정한사유로이사를해임하는경우에도,위임계약의기본원칙에따라법인과이사사이의신뢰관계가더이상유지되기어려울정도에이르러야법인이비로소이사를해임할수있다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "법인 이사 해임 문항은 현행 기준으로도 공식정답 ③을 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제275조",
@@ -1350,16 +1310,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1414,7 +1367,7 @@
       "answerText": "무권리자에의한처분행위를권리자가추인한경우,권리자는무권리자에대하여무권리자가처분행위로인하여얻은이득의반환을청구할수없다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제130조",
@@ -1432,7 +1385,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1490,7 +1442,7 @@
       "answerText": "금전채권의채무자가채권자에게담보를제공한경우,특별한사정이없는한채권자의담보반환의무와채무자의변제의무는동시이행관계에있다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제536조",
@@ -1506,7 +1458,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1563,8 +1514,8 @@
       "answer": "②",
       "answerText": "민법제324조에서정한유치권소멸청구는민법제324조제2항을위반한임대행위당시의소유자가청구하여야하고,그위반행위이후에유치물의소유권을취득한제3자는특별한사정이없는한유치권소멸청구를할수없다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "유치권 문항은 현행 기준으로도 공식정답 ②를 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제320조",
@@ -1581,16 +1532,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1645,7 +1589,7 @@
       "answerText": "계약금중일부만지급된경우,수령자는약정계약금이아니라실제교부받은계약금의배액을상환하여매매계약을해제할수있다.",
       "lawAsOf": "2026-06-17",
       "legalVerifiedAt": null,
-      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제398조",
@@ -1661,7 +1605,6 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": null,
       "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
       "statuteCitationStatus": "verified"
@@ -1718,8 +1661,8 @@
       "answer": "①",
       "answerText": "ㄱ,ㄷ",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "기한의 정함이 없는 채무 문항은 현행 기준으로도 공식정답 ①을 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제1115조",
@@ -1737,16 +1680,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1800,8 +1736,8 @@
       "answer": "③",
       "answerText": "상대방으로부터점유를위법하게침탈당한점유자가상대방으로부터점유를탈환하였을경우,이러한점유자의점유탈환행위가민법제209조제2항의자력구제에해당하지않는다면,상대방은자신의점유가침탈당하였음을이유로점유자를상대로민법제204조제1항에따른점유의회수를청구할수있다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "점유 문항은 현행 기준으로도 공식정답 ③을 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제194조",
@@ -1821,16 +1757,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1884,8 +1813,8 @@
       "answer": "③",
       "answerText": "위②의경우뒤에된소유권보존등기를근거로하여등기부취득시효의완성을주장할수없지만,이에터잡은소유권이전등기를근거로하여서는등기부취득시효의완성을주장할수있다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "물권변동 문항은 현행 기준으로도 공식정답 ③을 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제186조",
@@ -1902,16 +1831,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     },
     {
@@ -1965,8 +1887,8 @@
       "answer": "④",
       "answerText": "민법상의위임계약은유상계약이든무상계약이든당사자쌍방의특별한대인적신뢰관계를기초로하는위임계약의본질상각당사자는언제든지해지할수있고,그로말미암아상대방이손해를입는일이있어도그것을배상할의무를부담하지않는것이원칙이다.다만상대방이불리한시기에해지한때에는해지가부득이한사유에의한것이아닌한그로인한손해를배상하여야하고,이때배상의범위는위임이해지되었다는사실로부터생기는손해이다.",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "note": "위임 문항은 현행 기준으로도 공식정답 ④를 유지한다."
+      "legalVerifiedAt": null,
+      "note": "법령API 조문 존재 검증 완료. 현행법 법리검증 판정 대기."
      },
      "articleRefs": [
       "제2조",
@@ -1985,16 +1907,9 @@
       "sourceExtractedAt": "2026-06-17",
       "structureVerifiedAt": "2026-06-17",
       "lawAsOf": "2026-06-17",
-      "legalVerifiedAt": "2026-06-17",
-      "status": "legal-verified",
+      "status": "statute-api-verified-needs-legal-review",
       "statuteApiVerifiedAt": "2026-06-17",
-      "statuteCitationStatus": "verified",
-      "ruling": {
-       "status": "official-answer-maintained",
-       "ruling": "공식정답 유지",
-       "ruledBy": "user",
-       "ruledAt": "2026-06-17"
-      }
+      "statuteCitationStatus": "verified"
      }
     }
    ],
