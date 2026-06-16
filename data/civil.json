@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 8,
-  "legalReviewPending": 93
+  "legalVerified": 9,
+  "legalReviewPending": 92
  },
  "tree": [
   {
@@ -12144,7 +12144,8 @@
    "sources": [
     "2025 법원직 9급 민법 10번 ㅁ"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "토지거래허가신청이 불허가되더라도 불허가의 취지가 미비한 요건의 보정을 명하는 데 있고 그 흠결 보정이 객관적으로 불가능하지 않은 경우에는, 그 불허가만으로 곧바로 거래계약이 확정적으로 무효가 된다고 단정할 수 없다."
   },
   {
    "id": "O10",
