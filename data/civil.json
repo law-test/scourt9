@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 29,
-  "legalReviewPending": 72
+  "legalVerified": 33,
+  "legalReviewPending": 68
  },
  "tree": [
   {
@@ -2255,7 +2255,7 @@
       "2025 법원직 9급 민법 23번 ②"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -2296,7 +2296,7 @@
       "2025 법원직 9급 민법 23번 ④"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -8312,7 +8312,7 @@
       "2025 법원직 9급 민법 23번 ①"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 1,
@@ -12276,7 +12276,7 @@
    "sources": [
     "2025 법원직 9급 민법 23번 ②"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O20",
@@ -12289,7 +12289,7 @@
    "sources": [
     "2025 법원직 9급 민법 23번 ④"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X21",
@@ -12302,7 +12302,8 @@
    "sources": [
     "2025 법원직 9급 민법 23번 ③"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "점유를 위법하게 침탈한 상대방은 그 점유가 다시 회복되었다는 사정만으로 당연히 민법 제204조 제1항에 따른 점유회수청구를 할 수 있는 것은 아니다."
   },
   {
    "id": "O22",
@@ -13180,7 +13181,7 @@
    "sources": [
     "2025 법원직 9급 민법 23번 ①"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O89",
