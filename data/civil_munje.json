@@ -1924,7 +1924,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -3889,7 +3889,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -5860,7 +5860,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -7853,7 +7853,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -9823,7 +9823,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -11792,7 +11792,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -13793,7 +13793,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -15780,7 +15780,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -17757,7 +17757,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -19754,7 +19754,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -21738,7 +21738,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -23710,7 +23710,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -25673,7 +25673,7 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -27638,7 +27638,1972 @@
      "effectiveAt": "2026-03-17",
      "method": "legal_analysis.verify_citations",
      "failedCitationCount": 0,
-     "verifiedCitationCount": 430,
+     "verifiedCitationCount": 445,
+     "batchCount": 15
+    },
+    "status": "statute-api-verified-needs-legal-review"
+   }
+  },
+  "2011": {
+   "examId": "2011_scourt9_civil",
+   "year": 2011,
+   "series": "법원직 9급",
+   "subject": "민법",
+   "booklet": "①책형",
+   "questionCount": 25,
+   "sources": {
+    "problemPdf": "C:\\cowork\\0gichul_법과목_기출\\민법\\2011_법원직_9급_민법.pdf",
+    "problemPageUrl": "https://0gichul.com/y2011/95508",
+    "answerPageUrl": "https://0gichul.com/y2011/95528",
+    "answerBasis": "2011 법원직 9급 정답표 법원사무직렬 ②책형 민법 열"
+   },
+   "answers": {
+    "1": "①",
+    "2": "①",
+    "3": "④",
+    "4": "④",
+    "5": "④",
+    "6": "④",
+    "7": "③",
+    "8": "①",
+    "9": "④",
+    "10": "②",
+    "11": "②",
+    "12": "③",
+    "13": "④",
+    "14": "③",
+    "15": "④",
+    "16": "③",
+    "17": "②",
+    "18": "④",
+    "19": "④",
+    "20": "②",
+    "21": "③",
+    "22": "④",
+    "23": "①",
+    "24": "④",
+    "25": "④"
+   },
+   "rawTextSha256": "42d00ed20917534d31fa9621692bee8f0dab9c1934670726d099bfa1247c4891",
+   "questions": [
+    {
+     "qid": "2011-01",
+     "no": 1,
+     "type": "single-best",
+     "original": {
+      "stem": "상속회복청구에 해당하는 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "공동상속인중1인이상속등기에갈음하여구부동산소유권이전등기등에관한특별조치법에따라그명의로경료한소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우"
+       },
+       {
+        "label": "②",
+        "text": "진정상속인이주장하는피상속인과는다른피상속인으로부터상속받았음을이유로상속등기를경료한자에대하여소유권이전등기의말소를구하는경우"
+       },
+       {
+        "label": "③",
+        "text": "피상속인사망후공동상속인중1인이다른공동상속인에게자신의상속지분을중간생략등기방식으로명의신탁하였다가그명의신탁이부동산실권리자명의등기에관한법률이정한유예기간의도과로무효가되었음을이유로명의수탁자를상대로상속지분의반환을구하는경우"
+       },
+       {
+        "label": "④",
+        "text": "공동상속인중1인이피상속인의생전에그로부터매매또는증여를원인으로경료받은소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우"
+       }
+      ],
+      "officialAnswer": "①",
+      "officialAnswerText": "공동상속인중1인이상속등기에갈음하여구부동산소유권이전등기등에관한특별조치법에따라그명의로경료한소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우"
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "상속회복청구에 해당하는 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "공동상속인중1인이상속등기에갈음하여구부동산소유권이전등기등에관한특별조치법에따라그명의로경료한소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우"
+       },
+       {
+        "label": "②",
+        "text": "진정상속인이주장하는피상속인과는다른피상속인으로부터상속받았음을이유로상속등기를경료한자에대하여소유권이전등기의말소를구하는경우"
+       },
+       {
+        "label": "③",
+        "text": "피상속인사망후공동상속인중1인이다른공동상속인에게자신의상속지분을중간생략등기방식으로명의신탁하였다가그명의신탁이부동산실권리자명의등기에관한법률이정한유예기간의도과로무효가되었음을이유로명의수탁자를상대로상속지분의반환을구하는경우"
+       },
+       {
+        "label": "④",
+        "text": "공동상속인중1인이피상속인의생전에그로부터매매또는증여를원인으로경료받은소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우"
+       }
+      ],
+      "answer": "①",
+      "answerText": "공동상속인중1인이상속등기에갈음하여구부동산소유권이전등기등에관한특별조치법에따라그명의로경료한소유권이전등기가무효라는이유로다른공동상속인이그등기의말소를구하는경우",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제1005조",
+      "제1007조",
+      "제999조"
+     ],
+     "atomIds": [
+      "2011-01-①",
+      "2011-01-②",
+      "2011-01-③",
+      "2011-01-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-02",
+     "no": 2,
+     "type": "single-best-false",
+     "original": {
+      "stem": "점유자와 회복자의 관계에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "선의의점유자는민법제201조제1항에따라과실취득권을가지는바,취득한과실내지과실취득과관련하여부당이득반환의무나불법행위로인한손해배상책임을부담하지않는다."
+       },
+       {
+        "label": "②",
+        "text": "쌍무계약이취소된경우선의의매수인에게민법제201조제1항이적용되어과실취득권이인정되는이상,선의의매도인에게도민법제587조의유추적용에의하여대금의운용이익내지법정이자의반환을부정함이형평에맞다."
+       },
+       {
+        "label": "③",
+        "text": "악의의점유자는민법제748조제2항에따라받은이익에이자를붙여반환하여야하고,이행지체가있는경우그로인한지연손해금도지급하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "계약이해제된경우에는원상회복의무를규정한민법제548조가적용되므로이익의현존여부나점유자의선의,악의에불문하고특단의사유가없는한받은이익의전부를반환하여야한다."
+       }
+      ],
+      "officialAnswer": "①",
+      "officialAnswerText": "선의의점유자는민법제201조제1항에따라과실취득권을가지는바,취득한과실내지과실취득과관련하여부당이득반환의무나불법행위로인한손해배상책임을부담하지않는다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "점유자와 회복자의 관계에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "선의의점유자는민법제201조제1항에따라과실취득권을가지는바,취득한과실내지과실취득과관련하여부당이득반환의무나불법행위로인한손해배상책임을부담하지않는다."
+       },
+       {
+        "label": "②",
+        "text": "쌍무계약이취소된경우선의의매수인에게민법제201조제1항이적용되어과실취득권이인정되는이상,선의의매도인에게도민법제587조의유추적용에의하여대금의운용이익내지법정이자의반환을부정함이형평에맞다."
+       },
+       {
+        "label": "③",
+        "text": "악의의점유자는민법제748조제2항에따라받은이익에이자를붙여반환하여야하고,이행지체가있는경우그로인한지연손해금도지급하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "계약이해제된경우에는원상회복의무를규정한민법제548조가적용되므로이익의현존여부나점유자의선의,악의에불문하고특단의사유가없는한받은이익의전부를반환하여야한다."
+       }
+      ],
+      "answer": "①",
+      "answerText": "선의의점유자는민법제201조제1항에따라과실취득권을가지는바,취득한과실내지과실취득과관련하여부당이득반환의무나불법행위로인한손해배상책임을부담하지않는다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제201조",
+      "제548조",
+      "제587조",
+      "제741조",
+      "제748조",
+      "제750조"
+     ],
+     "atomIds": [
+      "2011-02-①",
+      "2011-02-②",
+      "2011-02-③",
+      "2011-02-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-03",
+     "no": 3,
+     "type": "single-best-false",
+     "original": {
+      "stem": "다음의 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "건물을신축하여그소유권을원시취득한자로부터그건물을매수하였으나아직소유권이전등기를갖추지못한자라해도그건물의불법점거자에대하여직접자신의소유권등에기하여명도를청구할수는없다."
+       },
+       {
+        "label": "②",
+        "text": "불법점유를이유로하여그명도또는인도를청구하려면현실적으로그목적물을점유하고있는자를상대로하여야하고불법점유자라하여도그물건을다른사람에게인도하여현실적으로점유를하고있지않은이상,그를상대로하는인도또는명도청구는부당하다."
+       },
+       {
+        "label": "③",
+        "text": "토지의매수인이아직소유권이전등기를경료받지아니하였다하여도매매계약의이행으로그토지를인도받은때에는매매계약의효력으로서이를점유·사용할권리가생기므로,소유자의반환청구를거절할수있다."
+       },
+       {
+        "label": "④",
+        "text": "소유권에기한방해배제청구권에있어서‘방해’라함은현재에도지속되고있는침해뿐만아니라법익침해가과거에일어나서이미종결된경우도포함하므로,어느경우에나방해배제청구권을행사할수있다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "소유권에기한방해배제청구권에있어서‘방해’라함은현재에도지속되고있는침해뿐만아니라법익침해가과거에일어나서이미종결된경우도포함하므로,어느경우에나방해배제청구권을행사할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "다음의 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "건물을신축하여그소유권을원시취득한자로부터그건물을매수하였으나아직소유권이전등기를갖추지못한자라해도그건물의불법점거자에대하여직접자신의소유권등에기하여명도를청구할수는없다."
+       },
+       {
+        "label": "②",
+        "text": "불법점유를이유로하여그명도또는인도를청구하려면현실적으로그목적물을점유하고있는자를상대로하여야하고불법점유자라하여도그물건을다른사람에게인도하여현실적으로점유를하고있지않은이상,그를상대로하는인도또는명도청구는부당하다."
+       },
+       {
+        "label": "③",
+        "text": "토지의매수인이아직소유권이전등기를경료받지아니하였다하여도매매계약의이행으로그토지를인도받은때에는매매계약의효력으로서이를점유·사용할권리가생기므로,소유자의반환청구를거절할수있다."
+       },
+       {
+        "label": "④",
+        "text": "소유권에기한방해배제청구권에있어서‘방해’라함은현재에도지속되고있는침해뿐만아니라법익침해가과거에일어나서이미종결된경우도포함하므로,어느경우에나방해배제청구권을행사할수있다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "소유권에기한방해배제청구권에있어서‘방해’라함은현재에도지속되고있는침해뿐만아니라법익침해가과거에일어나서이미종결된경우도포함하므로,어느경우에나방해배제청구권을행사할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제186조",
+      "제213조",
+      "제214조",
+      "제568조"
+     ],
+     "atomIds": [
+      "2011-03-①",
+      "2011-03-②",
+      "2011-03-③",
+      "2011-03-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-04",
+     "no": 4,
+     "type": "single-best-false",
+     "original": {
+      "stem": "전대차관계에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "전대차계약을체결한후중도금수수시에비로소전차보증금의반환을담보하기위하여전대인이그소유부동산에근저당권을설정하여주기로약정한경우,전대인의근저당권설정등기의무가전대차계약에서의주된의무라고보기어렵다."
+       },
+       {
+        "label": "②",
+        "text": "계약의목적달성에필요불가결하지아니한부수적채무의불이행이있을뿐인경우에는,이를이유로계약을해제또는해지할수없다."
+       },
+       {
+        "label": "③",
+        "text": "계약기간중에전대차계약이해지되어종료되면전대인은이미지급받은권리금에관하여는특별한사정이없는한이를경과기간과잔존기간에대응하는것으로나누어잔존기간에대응하는부분만을전차인에게반환하면된다."
+       },
+       {
+        "label": "④",
+        "text": "임차인이임대인의동의를받지않고제3자에게전대한경우,임대인은임대차계약을해지하지않더라도제3자에게불법점유를이유로한차임상당손해배상청구나부당이득반환청구를할수있다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "임차인이임대인의동의를받지않고제3자에게전대한경우,임대인은임대차계약을해지하지않더라도제3자에게불법점유를이유로한차임상당손해배상청구나부당이득반환청구를할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "전대차관계에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "전대차계약을체결한후중도금수수시에비로소전차보증금의반환을담보하기위하여전대인이그소유부동산에근저당권을설정하여주기로약정한경우,전대인의근저당권설정등기의무가전대차계약에서의주된의무라고보기어렵다."
+       },
+       {
+        "label": "②",
+        "text": "계약의목적달성에필요불가결하지아니한부수적채무의불이행이있을뿐인경우에는,이를이유로계약을해제또는해지할수없다."
+       },
+       {
+        "label": "③",
+        "text": "계약기간중에전대차계약이해지되어종료되면전대인은이미지급받은권리금에관하여는특별한사정이없는한이를경과기간과잔존기간에대응하는것으로나누어잔존기간에대응하는부분만을전차인에게반환하면된다."
+       },
+       {
+        "label": "④",
+        "text": "임차인이임대인의동의를받지않고제3자에게전대한경우,임대인은임대차계약을해지하지않더라도제3자에게불법점유를이유로한차임상당손해배상청구나부당이득반환청구를할수있다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "임차인이임대인의동의를받지않고제3자에게전대한경우,임대인은임대차계약을해지하지않더라도제3자에게불법점유를이유로한차임상당손해배상청구나부당이득반환청구를할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제213조",
+      "제544조",
+      "제629조",
+      "제741조"
+     ],
+     "atomIds": [
+      "2011-04-①",
+      "2011-04-②",
+      "2011-04-③",
+      "2011-04-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-05",
+     "no": 5,
+     "type": "single-best-false",
+     "original": {
+      "stem": "채권자취소권에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채권자취소권에의하여보호될수있는채권은원칙적으로사해행위라고볼수있는행위가행하여지기전에발생된것임을요하나,그사해행위당시에이미채권성립의기초가되는법률관계가발생되어있고가까운장래에그법률관계에터잡아채권이성립되리라는점에대한고도의개연성이있으며,실제로가까운장래에그개연성이현실화되어채권이성립된경우에는그채권도채권자취소권의피보전채권이될수있다."
+       },
+       {
+        "label": "②",
+        "text": "특정물에대한소유권이전등기청구권을보전하기위하여채권자취소권을행사하는것은허용되지않는다."
+       },
+       {
+        "label": "③",
+        "text": "채권자취소소송에있어서수익자나전득자의선의에대한입증책임은수익자나전득자에게있다."
+       },
+       {
+        "label": "④",
+        "text": "수익자가채권자취소에따른원상회복으로서가액배상을할때채무자에대한채권이있을경우에는그채권과의상계를주장할수있다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "수익자가채권자취소에따른원상회복으로서가액배상을할때채무자에대한채권이있을경우에는그채권과의상계를주장할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "채권자취소권에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채권자취소권에의하여보호될수있는채권은원칙적으로사해행위라고볼수있는행위가행하여지기전에발생된것임을요하나,그사해행위당시에이미채권성립의기초가되는법률관계가발생되어있고가까운장래에그법률관계에터잡아채권이성립되리라는점에대한고도의개연성이있으며,실제로가까운장래에그개연성이현실화되어채권이성립된경우에는그채권도채권자취소권의피보전채권이될수있다."
+       },
+       {
+        "label": "②",
+        "text": "특정물에대한소유권이전등기청구권을보전하기위하여채권자취소권을행사하는것은허용되지않는다."
+       },
+       {
+        "label": "③",
+        "text": "채권자취소소송에있어서수익자나전득자의선의에대한입증책임은수익자나전득자에게있다."
+       },
+       {
+        "label": "④",
+        "text": "수익자가채권자취소에따른원상회복으로서가액배상을할때채무자에대한채권이있을경우에는그채권과의상계를주장할수있다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "수익자가채권자취소에따른원상회복으로서가액배상을할때채무자에대한채권이있을경우에는그채권과의상계를주장할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제406조",
+      "제407조",
+      "제492조"
+     ],
+     "atomIds": [
+      "2011-05-①",
+      "2011-05-②",
+      "2011-05-③",
+      "2011-05-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-06",
+     "no": 6,
+     "type": "single-best-false",
+     "original": {
+      "stem": "혼인의 효과에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "부부의일방이혼인중그의단독명의로취득한재산은그명의자의특유재산으로추정되는것이고,그재산의취득에있어다른일방의협력이있었다거나내조의공이있었다는것만으로는그추정이번복되지않는다."
+       },
+       {
+        "label": "②",
+        "text": "비록부부의동거의무는인격존중의이념이나부부관계의본질등에비추어일반적으로그실현에관하여간접강제를포함하여강제집행을행하여서는안된다고하더라도,동거의무또는그를위한협력의무의불이행에대하여위자료배상책임까지허용되지않는것은아니다."
+       },
+       {
+        "label": "③",
+        "text": "일상의가사가아닌법률행위를배우자를대리하여행함에있어서는별도의수권행위가필요한것이므로,부부의일방이의식불명의상태에있어사회통념상대리관계를인정할필요가있다는사정만으로그배우자가당연히대리권을갖는다고볼것은아니다."
+       },
+       {
+        "label": "④",
+        "text": "사실혼부부간에는일상가사에관한상호대리권이인정되지않는다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "사실혼부부간에는일상가사에관한상호대리권이인정되지않는다. 민법②책형(4-1)"
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "혼인의 효과에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "부부의일방이혼인중그의단독명의로취득한재산은그명의자의특유재산으로추정되는것이고,그재산의취득에있어다른일방의협력이있었다거나내조의공이있었다는것만으로는그추정이번복되지않는다."
+       },
+       {
+        "label": "②",
+        "text": "비록부부의동거의무는인격존중의이념이나부부관계의본질등에비추어일반적으로그실현에관하여간접강제를포함하여강제집행을행하여서는안된다고하더라도,동거의무또는그를위한협력의무의불이행에대하여위자료배상책임까지허용되지않는것은아니다."
+       },
+       {
+        "label": "③",
+        "text": "일상의가사가아닌법률행위를배우자를대리하여행함에있어서는별도의수권행위가필요한것이므로,부부의일방이의식불명의상태에있어사회통념상대리관계를인정할필요가있다는사정만으로그배우자가당연히대리권을갖는다고볼것은아니다."
+       },
+       {
+        "label": "④",
+        "text": "사실혼부부간에는일상가사에관한상호대리권이인정되지않는다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "사실혼부부간에는일상가사에관한상호대리권이인정되지않는다. 민법②책형(4-1)",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제750조",
+      "제826조",
+      "제827조",
+      "제830조",
+      "제832조"
+     ],
+     "atomIds": [
+      "2011-06-①",
+      "2011-06-②",
+      "2011-06-③",
+      "2011-06-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     },
+     "extraction": {
+      "note": "OCR page-header removal"
+     }
+    },
+    {
+     "qid": "2011-07",
+     "no": 7,
+     "type": "single-best-false",
+     "original": {
+      "stem": "상속에 관한 설명으로 옳지 않은 것은?",
+      "choices": [
+       {
+        "label": "①",
+        "text": "상속인은상속개시된때로부터피상속인의재산에관한포괄적권리의무를승계한다.그러나피상속인의일신에전속한것은그러하지아니하다."
+       },
+       {
+        "label": "②",
+        "text": "상속인이수인인때에는상속재산은그공유로한다.공동상속인은각자의상속분에응하여피상속인의권리의무를승계한다."
+       },
+       {
+        "label": "③",
+        "text": "상속결격자는피상속인의상속인이될수없으나,피상속인으로부터유증은받을수있다."
+       },
+       {
+        "label": "④",
+        "text": "공동상속인은상속재산분할협의가성립되지아니하는경우에는법원에그분할을청구할수있다."
+       }
+      ],
+      "officialAnswer": "③",
+      "officialAnswerText": "상속결격자는피상속인의상속인이될수없으나,피상속인으로부터유증은받을수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "상속에 관한 설명으로 옳지 않은 것은?",
+      "choices": [
+       {
+        "label": "①",
+        "text": "상속인은상속개시된때로부터피상속인의재산에관한포괄적권리의무를승계한다.그러나피상속인의일신에전속한것은그러하지아니하다."
+       },
+       {
+        "label": "②",
+        "text": "상속인이수인인때에는상속재산은그공유로한다.공동상속인은각자의상속분에응하여피상속인의권리의무를승계한다."
+       },
+       {
+        "label": "③",
+        "text": "상속결격자는피상속인의상속인이될수없으나,피상속인으로부터유증은받을수있다."
+       },
+       {
+        "label": "④",
+        "text": "공동상속인은상속재산분할협의가성립되지아니하는경우에는법원에그분할을청구할수있다."
+       }
+      ],
+      "answer": "③",
+      "answerText": "상속결격자는피상속인의상속인이될수없으나,피상속인으로부터유증은받을수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제1004조",
+      "제1005조",
+      "제1006조",
+      "제1007조",
+      "제1013조",
+      "제1064조"
+     ],
+     "atomIds": [
+      "2011-07-①",
+      "2011-07-②",
+      "2011-07-③",
+      "2011-07-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-08",
+     "no": 8,
+     "type": "single-best-false",
+     "original": {
+      "stem": "증여에 관한 설명 중 가장 옳지 않은 것은?",
+      "choices": [
+       {
+        "label": "①",
+        "text": "상대부담없는증여계약을해제하면원상회복으로이미이행한것의반환을청구할수있다."
+       },
+       {
+        "label": "②",
+        "text": "상대부담있는증여에대하여는증여자는그부담의한도에서매도인과같은담보책임을진다."
+       },
+       {
+        "label": "③",
+        "text": "정기의급여를목적으로한증여는증여자또는수증자의사망으로인하여그효력을잃는다."
+       },
+       {
+        "label": "④",
+        "text": "증여의의사가서면으로표시되지않은경우에는증여자와수증자모두이를해제할수있다."
+       }
+      ],
+      "officialAnswer": "①",
+      "officialAnswerText": "상대부담없는증여계약을해제하면원상회복으로이미이행한것의반환을청구할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "증여에 관한 설명 중 가장 옳지 않은 것은?",
+      "choices": [
+       {
+        "label": "①",
+        "text": "상대부담없는증여계약을해제하면원상회복으로이미이행한것의반환을청구할수있다."
+       },
+       {
+        "label": "②",
+        "text": "상대부담있는증여에대하여는증여자는그부담의한도에서매도인과같은담보책임을진다."
+       },
+       {
+        "label": "③",
+        "text": "정기의급여를목적으로한증여는증여자또는수증자의사망으로인하여그효력을잃는다."
+       },
+       {
+        "label": "④",
+        "text": "증여의의사가서면으로표시되지않은경우에는증여자와수증자모두이를해제할수있다."
+       }
+      ],
+      "answer": "①",
+      "answerText": "상대부담없는증여계약을해제하면원상회복으로이미이행한것의반환을청구할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제555조",
+      "제558조",
+      "제559조",
+      "제560조",
+      "제561조"
+     ],
+     "atomIds": [
+      "2011-08-①",
+      "2011-08-②",
+      "2011-08-③",
+      "2011-08-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-09",
+     "no": 9,
+     "type": "single-best-false",
+     "original": {
+      "stem": "점유에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "점유자는소유의의사로선의,평온및공연하게점유한것으로추정한다."
+       },
+       {
+        "label": "②",
+        "text": "전후양시에점유한사실이있는때에는그점유는계속한것으로추정한다."
+       },
+       {
+        "label": "③",
+        "text": "가사상,영업상기타유사한관계에의하여타인의지시를받아물건에대한사실상의지배를하는때에는그타인만을점유자로한다."
+       },
+       {
+        "label": "④",
+        "text": "직접점유자가점유의방해를받은때에는간접점유자는그방해의제거및손해의배상을청구할수없다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "직접점유자가점유의방해를받은때에는간접점유자는그방해의제거및손해의배상을청구할수없다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "점유에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "점유자는소유의의사로선의,평온및공연하게점유한것으로추정한다."
+       },
+       {
+        "label": "②",
+        "text": "전후양시에점유한사실이있는때에는그점유는계속한것으로추정한다."
+       },
+       {
+        "label": "③",
+        "text": "가사상,영업상기타유사한관계에의하여타인의지시를받아물건에대한사실상의지배를하는때에는그타인만을점유자로한다."
+       },
+       {
+        "label": "④",
+        "text": "직접점유자가점유의방해를받은때에는간접점유자는그방해의제거및손해의배상을청구할수없다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "직접점유자가점유의방해를받은때에는간접점유자는그방해의제거및손해의배상을청구할수없다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제195조",
+      "제197조",
+      "제198조",
+      "제205조",
+      "제207조"
+     ],
+     "atomIds": [
+      "2011-09-①",
+      "2011-09-②",
+      "2011-09-③",
+      "2011-09-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-10",
+     "no": 10,
+     "type": "single-best-false",
+     "original": {
+      "stem": "표현대리에 관한 다음 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "민법제126조의권한을넘는표현대리규정은법정대리에도적용이있다."
+       },
+       {
+        "label": "②",
+        "text": "표현대리가성립하는경우에도상대방에게과실이있는때에는과실상계의법리를유추적용하여본인의책임을감경할수있다."
+       },
+       {
+        "label": "③",
+        "text": "기본대리권은표현대리와동종또는유사한것임을요하지않는다."
+       },
+       {
+        "label": "④",
+        "text": "대리행위를표시하지아니하고본인명의로직접법률행위를한경우에는특별한사정이없는한권한을넘는표현대리가성립하지않는다."
+       }
+      ],
+      "officialAnswer": "②",
+      "officialAnswerText": "표현대리가성립하는경우에도상대방에게과실이있는때에는과실상계의법리를유추적용하여본인의책임을감경할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "표현대리에 관한 다음 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "민법제126조의권한을넘는표현대리규정은법정대리에도적용이있다."
+       },
+       {
+        "label": "②",
+        "text": "표현대리가성립하는경우에도상대방에게과실이있는때에는과실상계의법리를유추적용하여본인의책임을감경할수있다."
+       },
+       {
+        "label": "③",
+        "text": "기본대리권은표현대리와동종또는유사한것임을요하지않는다."
+       },
+       {
+        "label": "④",
+        "text": "대리행위를표시하지아니하고본인명의로직접법률행위를한경우에는특별한사정이없는한권한을넘는표현대리가성립하지않는다."
+       }
+      ],
+      "answer": "②",
+      "answerText": "표현대리가성립하는경우에도상대방에게과실이있는때에는과실상계의법리를유추적용하여본인의책임을감경할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제115조",
+      "제126조",
+      "제396조"
+     ],
+     "atomIds": [
+      "2011-10-①",
+      "2011-10-②",
+      "2011-10-③",
+      "2011-10-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-11",
+     "no": 11,
+     "type": "single-best",
+     "original": {
+      "stem": "다음 중 등기 없이도 물권변동(취득, 변경, 상실)이 일어나는 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "부동산에대한점유취득시효기간이경과하였다."
+       },
+       {
+        "label": "②",
+        "text": "건물신축도급계약에서수급인이자기의노력과재료를들여건물을완성하고완성된건물의소유권은도급인에게귀속시키기로합의하였는데,수급인이약정한대로건물을완성하였다."
+       },
+       {
+        "label": "③",
+        "text": "당사자사이의법률행위를원인으로하여부동산소유권이전등기절차를명하는판결이확정되었다."
+       },
+       {
+        "label": "④",
+        "text": "상속으로부동산의소유권을취득한사람이그부동산에관하여매매계약을체결하였다."
+       }
+      ],
+      "officialAnswer": "②",
+      "officialAnswerText": "건물신축도급계약에서수급인이자기의노력과재료를들여건물을완성하고완성된건물의소유권은도급인에게귀속시키기로합의하였는데,수급인이약정한대로건물을완성하였다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "다음 중 등기 없이도 물권변동(취득, 변경, 상실)이 일어나는 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "부동산에대한점유취득시효기간이경과하였다."
+       },
+       {
+        "label": "②",
+        "text": "건물신축도급계약에서수급인이자기의노력과재료를들여건물을완성하고완성된건물의소유권은도급인에게귀속시키기로합의하였는데,수급인이약정한대로건물을완성하였다."
+       },
+       {
+        "label": "③",
+        "text": "당사자사이의법률행위를원인으로하여부동산소유권이전등기절차를명하는판결이확정되었다."
+       },
+       {
+        "label": "④",
+        "text": "상속으로부동산의소유권을취득한사람이그부동산에관하여매매계약을체결하였다."
+       }
+      ],
+      "answer": "②",
+      "answerText": "건물신축도급계약에서수급인이자기의노력과재료를들여건물을완성하고완성된건물의소유권은도급인에게귀속시키기로합의하였는데,수급인이약정한대로건물을완성하였다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제186조",
+      "제187조",
+      "제245조",
+      "제664조"
+     ],
+     "atomIds": [
+      "2011-11-①",
+      "2011-11-②",
+      "2011-11-③",
+      "2011-11-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-12",
+     "no": 12,
+     "type": "single-best-false",
+     "original": {
+      "stem": "공탁에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채무자가채권자의상대의무이행과동시에변제할경우에는채권자는그의무이행을하지않으면공탁물을수령하지못한다."
+       },
+       {
+        "label": "②",
+        "text": "채권자가공탁을승인하거나공탁소에대하여공탁물을받기를통고하거나공탁유효의판결이확정되기까지는변제자는공탁물을회수할수있음이원칙이다."
+       },
+       {
+        "label": "③",
+        "text": "피공탁자아닌제3자가피공탁자를상대로하여공탁물출급청구권확인판결을받은경우그확인판결을받은제3자는직접공탁물출급청구를할수있다."
+       },
+       {
+        "label": "④",
+        "text": "채무의일부공탁은채권자가수락하지않는한공탁한부분에대하여도효력이없음이원칙이다."
+       }
+      ],
+      "officialAnswer": "③",
+      "officialAnswerText": "피공탁자아닌제3자가피공탁자를상대로하여공탁물출급청구권확인판결을받은경우그확인판결을받은제3자는직접공탁물출급청구를할수있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "공탁에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채무자가채권자의상대의무이행과동시에변제할경우에는채권자는그의무이행을하지않으면공탁물을수령하지못한다."
+       },
+       {
+        "label": "②",
+        "text": "채권자가공탁을승인하거나공탁소에대하여공탁물을받기를통고하거나공탁유효의판결이확정되기까지는변제자는공탁물을회수할수있음이원칙이다."
+       },
+       {
+        "label": "③",
+        "text": "피공탁자아닌제3자가피공탁자를상대로하여공탁물출급청구권확인판결을받은경우그확인판결을받은제3자는직접공탁물출급청구를할수있다."
+       },
+       {
+        "label": "④",
+        "text": "채무의일부공탁은채권자가수락하지않는한공탁한부분에대하여도효력이없음이원칙이다."
+       }
+      ],
+      "answer": "③",
+      "answerText": "피공탁자아닌제3자가피공탁자를상대로하여공탁물출급청구권확인판결을받은경우그확인판결을받은제3자는직접공탁물출급청구를할수있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제487조",
+      "제489조",
+      "제491조"
+     ],
+     "atomIds": [
+      "2011-12-①",
+      "2011-12-②",
+      "2011-12-③",
+      "2011-12-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-13",
+     "no": 13,
+     "type": "single-best-false",
+     "original": {
+      "stem": "금전채무불이행에 관한 설명으로 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "금전채무불이행이있는경우채권자가민법제397조에따라약정이율또는법정이율에의한손해배상을청구하는경우에는손해의증명을요하지않는다."
+       },
+       {
+        "label": "②",
+        "text": "소비대차에있어변제기후의이자약정이없는경우에는특별한사정이없는한당사자의의사는그변제기가지난후에도변제기전의이율에의한이자를지급하기로한것으로볼수있다."
+       },
+       {
+        "label": "③",
+        "text": "금전채무에관하여이행지체에대비한지연손해금비율을따로약정한경우에이는일종의손해배상액의예정으로서민법제398조제2항에의한재량감액의대상이된다."
+       },
+       {
+        "label": "④",
+        "text": "외화채권의채무불이행으로인한손해배상채권도원칙적으로외화채권이다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "외화채권의채무불이행으로인한손해배상채권도원칙적으로외화채권이다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "금전채무불이행에 관한 설명으로 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "금전채무불이행이있는경우채권자가민법제397조에따라약정이율또는법정이율에의한손해배상을청구하는경우에는손해의증명을요하지않는다."
+       },
+       {
+        "label": "②",
+        "text": "소비대차에있어변제기후의이자약정이없는경우에는특별한사정이없는한당사자의의사는그변제기가지난후에도변제기전의이율에의한이자를지급하기로한것으로볼수있다."
+       },
+       {
+        "label": "③",
+        "text": "금전채무에관하여이행지체에대비한지연손해금비율을따로약정한경우에이는일종의손해배상액의예정으로서민법제398조제2항에의한재량감액의대상이된다."
+       },
+       {
+        "label": "④",
+        "text": "외화채권의채무불이행으로인한손해배상채권도원칙적으로외화채권이다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "외화채권의채무불이행으로인한손해배상채권도원칙적으로외화채권이다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제377조",
+      "제397조",
+      "제398조",
+      "제598조"
+     ],
+     "atomIds": [
+      "2011-13-①",
+      "2011-13-②",
+      "2011-13-③",
+      "2011-13-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-14",
+     "no": 14,
+     "type": "single-best-false",
+     "original": {
+      "stem": "지명채권양도에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "가압류된채권도양도할수있다."
+       },
+       {
+        "label": "②",
+        "text": "채권양도금지특약으로대항할수있는제3자에는그특약의존재를알지못함에중대한과실이있는제3자도포함된다."
+       },
+       {
+        "label": "③",
+        "text": "채권이이중으로양도된경우의양수인상호간의우열은통지또는승낙에붙여진확정일자의선후에의하여결정한다."
+       },
+       {
+        "label": "④",
+        "text": "양도인이채무자에게채권양도를통지한때에는아직양도하지아니하였거나그양도가무효인경우에도선의인채무자는양수인에게대항할수있는사유로양도인에게대항할수있다."
+       }
+      ],
+      "officialAnswer": "③",
+      "officialAnswerText": "채권이이중으로양도된경우의양수인상호간의우열은통지또는승낙에붙여진확정일자의선후에의하여결정한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "지명채권양도에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "가압류된채권도양도할수있다."
+       },
+       {
+        "label": "②",
+        "text": "채권양도금지특약으로대항할수있는제3자에는그특약의존재를알지못함에중대한과실이있는제3자도포함된다."
+       },
+       {
+        "label": "③",
+        "text": "채권이이중으로양도된경우의양수인상호간의우열은통지또는승낙에붙여진확정일자의선후에의하여결정한다."
+       },
+       {
+        "label": "④",
+        "text": "양도인이채무자에게채권양도를통지한때에는아직양도하지아니하였거나그양도가무효인경우에도선의인채무자는양수인에게대항할수있는사유로양도인에게대항할수있다."
+       }
+      ],
+      "answer": "③",
+      "answerText": "채권이이중으로양도된경우의양수인상호간의우열은통지또는승낙에붙여진확정일자의선후에의하여결정한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제449조",
+      "제450조",
+      "제451조"
+     ],
+     "atomIds": [
+      "2011-14-①",
+      "2011-14-②",
+      "2011-14-③",
+      "2011-14-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-15",
+     "no": 15,
+     "type": "single-best-false",
+     "original": {
+      "stem": "보증채무와 관련한 설명이다. 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "주채무자에대한채권이이전되면당사자사이에별도의특약이없는한보증인에대한채권도함께이전된다."
+       },
+       {
+        "label": "②",
+        "text": "이경우채권양도의대항요건은주채권의이전에관하여구비하면족하고,별도로보증채권에관하여대항요건을갖출필요는없다."
+       },
+       {
+        "label": "③",
+        "text": "주채권과분리하여보증채권만을양도하기로하는약정은효력이없다."
+       },
+       {
+        "label": "④",
+        "text": "보증인은주채무자의항변으로채권자에게대항할수있는바,채권자가주채무자에대하여상계적상에있는자동채권을상계처리하지않고있는경우에,보증인은그보증한채무의이행을거절할수있다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "보증인은주채무자의항변으로채권자에게대항할수있는바,채권자가주채무자에대하여상계적상에있는자동채권을상계처리하지않고있는경우에,보증인은그보증한채무의이행을거절할수있다. 민법②책형(4-2)"
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "보증채무와 관련한 설명이다. 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "주채무자에대한채권이이전되면당사자사이에별도의특약이없는한보증인에대한채권도함께이전된다."
+       },
+       {
+        "label": "②",
+        "text": "이경우채권양도의대항요건은주채권의이전에관하여구비하면족하고,별도로보증채권에관하여대항요건을갖출필요는없다."
+       },
+       {
+        "label": "③",
+        "text": "주채권과분리하여보증채권만을양도하기로하는약정은효력이없다."
+       },
+       {
+        "label": "④",
+        "text": "보증인은주채무자의항변으로채권자에게대항할수있는바,채권자가주채무자에대하여상계적상에있는자동채권을상계처리하지않고있는경우에,보증인은그보증한채무의이행을거절할수있다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "보증인은주채무자의항변으로채권자에게대항할수있는바,채권자가주채무자에대하여상계적상에있는자동채권을상계처리하지않고있는경우에,보증인은그보증한채무의이행을거절할수있다. 민법②책형(4-2)",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제428조",
+      "제433조",
+      "제434조",
+      "제450조"
+     ],
+     "atomIds": [
+      "2011-15-①",
+      "2011-15-②",
+      "2011-15-③",
+      "2011-15-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     },
+     "extraction": {
+      "note": "OCR page-header removal"
+     }
+    },
+    {
+     "qid": "2011-16",
+     "no": 16,
+     "type": "single-best-false",
+     "original": {
+      "stem": "총유에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "일부교인들이교회를탈퇴하여그교회교인으로서의지위를상실하게되면종전교회의재산은잔존교인들의총유로귀속됨이원칙이다."
+       },
+       {
+        "label": "②",
+        "text": "공유물이나합유물의보존행위와달리,총유물의보존행위는특별한사정이없는한사원각자가할수없고사원총회의결의를거쳐야한다."
+       },
+       {
+        "label": "③",
+        "text": "비법인사단이타인간의금전채무를보증하는행위는장래의책임재산처분행위와그실질에있어동일하여총유물의관리·처분행위에해당하므로정관기타규약에달리정함이없는한사원총회의결의에의하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "비법인사단이총유물의매수인에게그매매계약에의하여이미부담하고있는채무의존재를인식하고있다는뜻을표시하는데불과한소멸시효중단사유로서의승인은총유물의관리·처분행위라고볼수없으므로,특별한사정이없는한그에대하여별도로사원총회의결의를거칠필요는없다."
+       }
+      ],
+      "officialAnswer": "③",
+      "officialAnswerText": "비법인사단이타인간의금전채무를보증하는행위는장래의책임재산처분행위와그실질에있어동일하여총유물의관리·처분행위에해당하므로정관기타규약에달리정함이없는한사원총회의결의에의하여야한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "총유에 관한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "일부교인들이교회를탈퇴하여그교회교인으로서의지위를상실하게되면종전교회의재산은잔존교인들의총유로귀속됨이원칙이다."
+       },
+       {
+        "label": "②",
+        "text": "공유물이나합유물의보존행위와달리,총유물의보존행위는특별한사정이없는한사원각자가할수없고사원총회의결의를거쳐야한다."
+       },
+       {
+        "label": "③",
+        "text": "비법인사단이타인간의금전채무를보증하는행위는장래의책임재산처분행위와그실질에있어동일하여총유물의관리·처분행위에해당하므로정관기타규약에달리정함이없는한사원총회의결의에의하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "비법인사단이총유물의매수인에게그매매계약에의하여이미부담하고있는채무의존재를인식하고있다는뜻을표시하는데불과한소멸시효중단사유로서의승인은총유물의관리·처분행위라고볼수없으므로,특별한사정이없는한그에대하여별도로사원총회의결의를거칠필요는없다."
+       }
+      ],
+      "answer": "③",
+      "answerText": "비법인사단이타인간의금전채무를보증하는행위는장래의책임재산처분행위와그실질에있어동일하여총유물의관리·처분행위에해당하므로정관기타규약에달리정함이없는한사원총회의결의에의하여야한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제168조",
+      "제275조",
+      "제276조"
+     ],
+     "atomIds": [
+      "2011-16-①",
+      "2011-16-②",
+      "2011-16-③",
+      "2011-16-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-17",
+     "no": 17,
+     "type": "single-best-false",
+     "original": {
+      "stem": "흠 있는 의사표시에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "통정허위표시의무효를대항할수없는제3자는선의이면족하고무과실까지요구되지않고,제3자가악의라는사실에관한주장·입증책임은그허위표시의무효를주장하는자에게있다."
+       },
+       {
+        "label": "②",
+        "text": "상대방이표의자의진의아님을모르는데과실이있는것에불과한경우에는비진의의사표시는유효하다."
+       },
+       {
+        "label": "③",
+        "text": "통정허위표시의당사자들도원칙적으로통정허위표시의무효를주장할수있다."
+       },
+       {
+        "label": "④",
+        "text": "채무자의법률행위가통정허위표시인경우에도채권자취소권의대상이된다."
+       }
+      ],
+      "officialAnswer": "②",
+      "officialAnswerText": "상대방이표의자의진의아님을모르는데과실이있는것에불과한경우에는비진의의사표시는유효하다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "흠 있는 의사표시에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "통정허위표시의무효를대항할수없는제3자는선의이면족하고무과실까지요구되지않고,제3자가악의라는사실에관한주장·입증책임은그허위표시의무효를주장하는자에게있다."
+       },
+       {
+        "label": "②",
+        "text": "상대방이표의자의진의아님을모르는데과실이있는것에불과한경우에는비진의의사표시는유효하다."
+       },
+       {
+        "label": "③",
+        "text": "통정허위표시의당사자들도원칙적으로통정허위표시의무효를주장할수있다."
+       },
+       {
+        "label": "④",
+        "text": "채무자의법률행위가통정허위표시인경우에도채권자취소권의대상이된다."
+       }
+      ],
+      "answer": "②",
+      "answerText": "상대방이표의자의진의아님을모르는데과실이있는것에불과한경우에는비진의의사표시는유효하다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제107조",
+      "제108조",
+      "제406조"
+     ],
+     "atomIds": [
+      "2011-17-①",
+      "2011-17-②",
+      "2011-17-③",
+      "2011-17-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-18",
+     "no": 18,
+     "type": "single-best-false",
+     "original": {
+      "stem": "법률행위의 동기와 관련한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "표시되거나상대방에게알려진법률행위의동기가반사회질서적인경우그법률행위는무효이다."
+       },
+       {
+        "label": "②",
+        "text": "동기의착오를이유로의사표시를취소하기위해서는그동기가상대방에게표시되고의사표시내용의중요부분의착오로인정되는경우이어야한다."
+       },
+       {
+        "label": "③",
+        "text": "다만위와같은착오가상대방에의하여유발된경우에는굳이그러한동기를표의자가상대방에게표시하지않았더라도의사표시의취소가가능하다."
+       },
+       {
+        "label": "④",
+        "text": "매매목적물의시가에관한착오는동기의착오로서원칙적으로의사표시의중요부분의착오에해당한다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "매매목적물의시가에관한착오는동기의착오로서원칙적으로의사표시의중요부분의착오에해당한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "법률행위의 동기와 관련한 설명으로 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "표시되거나상대방에게알려진법률행위의동기가반사회질서적인경우그법률행위는무효이다."
+       },
+       {
+        "label": "②",
+        "text": "동기의착오를이유로의사표시를취소하기위해서는그동기가상대방에게표시되고의사표시내용의중요부분의착오로인정되는경우이어야한다."
+       },
+       {
+        "label": "③",
+        "text": "다만위와같은착오가상대방에의하여유발된경우에는굳이그러한동기를표의자가상대방에게표시하지않았더라도의사표시의취소가가능하다."
+       },
+       {
+        "label": "④",
+        "text": "매매목적물의시가에관한착오는동기의착오로서원칙적으로의사표시의중요부분의착오에해당한다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "매매목적물의시가에관한착오는동기의착오로서원칙적으로의사표시의중요부분의착오에해당한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제103조",
+      "제109조"
+     ],
+     "atomIds": [
+      "2011-18-①",
+      "2011-18-②",
+      "2011-18-③",
+      "2011-18-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-19",
+     "no": 19,
+     "type": "single-best-false",
+     "original": {
+      "stem": "이혼에 관한 다음의 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "협의상이혼한자의재산분할청구권은이혼한날로부터2년을경과한때에는소멸한다."
+       },
+       {
+        "label": "②",
+        "text": "혼인관계의파탄에대하여책임이있는배우자에게도재산분할청구권이인정된다."
+       },
+       {
+        "label": "③",
+        "text": "협의상이혼은가정법원의확인을받아가족관계의등록등에관한법률의정한바에의하여신고함으로써그효력이생긴다."
+       },
+       {
+        "label": "④",
+        "text": "부모중한쪽만이자녀를양육하게된경우라해도현재및장래의양육비를청구할수있을뿐양육비청구이전의과거양육비의상환을청구할수는없다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "부모중한쪽만이자녀를양육하게된경우라해도현재및장래의양육비를청구할수있을뿐양육비청구이전의과거양육비의상환을청구할수는없다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "이혼에 관한 다음의 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "협의상이혼한자의재산분할청구권은이혼한날로부터2년을경과한때에는소멸한다."
+       },
+       {
+        "label": "②",
+        "text": "혼인관계의파탄에대하여책임이있는배우자에게도재산분할청구권이인정된다."
+       },
+       {
+        "label": "③",
+        "text": "협의상이혼은가정법원의확인을받아가족관계의등록등에관한법률의정한바에의하여신고함으로써그효력이생긴다."
+       },
+       {
+        "label": "④",
+        "text": "부모중한쪽만이자녀를양육하게된경우라해도현재및장래의양육비를청구할수있을뿐양육비청구이전의과거양육비의상환을청구할수는없다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "부모중한쪽만이자녀를양육하게된경우라해도현재및장래의양육비를청구할수있을뿐양육비청구이전의과거양육비의상환을청구할수는없다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제836조",
+      "제837조",
+      "제839조의2"
+     ],
+     "atomIds": [
+      "2011-19-①",
+      "2011-19-②",
+      "2011-19-③",
+      "2011-19-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-20",
+     "no": 20,
+     "type": "single-best-false",
+     "original": {
+      "stem": "부당이득에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "선의의수익자는그받은이익이현존한한도에서반환의무를지고,악의의수익자는그받은이익에이자를붙여반환하고손해가있으면이를배상하여야한다."
+       },
+       {
+        "label": "②",
+        "text": "과실로채무없음을알지못하고이를변제한때에는그반환을청구하지못한다."
+       },
+       {
+        "label": "③",
+        "text": "변제기에있지아니한채무를변제한때에는그반환을청구하지못하나,채무자가착오로인하여변제한때에는채권자는이로인하여얻은이익을반환하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "불법의원인으로인하여재산을급여하거나노무를제공한경우그불법원인이수익자에게만있는때에는그이익의반환을청구할수있다."
+       }
+      ],
+      "officialAnswer": "②",
+      "officialAnswerText": "과실로채무없음을알지못하고이를변제한때에는그반환을청구하지못한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "부당이득에 관한 설명 중 가장 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "선의의수익자는그받은이익이현존한한도에서반환의무를지고,악의의수익자는그받은이익에이자를붙여반환하고손해가있으면이를배상하여야한다."
+       },
+       {
+        "label": "②",
+        "text": "과실로채무없음을알지못하고이를변제한때에는그반환을청구하지못한다."
+       },
+       {
+        "label": "③",
+        "text": "변제기에있지아니한채무를변제한때에는그반환을청구하지못하나,채무자가착오로인하여변제한때에는채권자는이로인하여얻은이익을반환하여야한다."
+       },
+       {
+        "label": "④",
+        "text": "불법의원인으로인하여재산을급여하거나노무를제공한경우그불법원인이수익자에게만있는때에는그이익의반환을청구할수있다."
+       }
+      ],
+      "answer": "②",
+      "answerText": "과실로채무없음을알지못하고이를변제한때에는그반환을청구하지못한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제742조",
+      "제743조",
+      "제746조",
+      "제748조"
+     ],
+     "atomIds": [
+      "2011-20-①",
+      "2011-20-②",
+      "2011-20-③",
+      "2011-20-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-21",
+     "no": 21,
+     "type": "single-best-false",
+     "original": {
+      "stem": "법인 또는 비법인사단에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "이사의대표권제한은정관에기재해야효력이있고,나아가그사실을등기해야제3자에대항할수있다."
+       },
+       {
+        "label": "②",
+        "text": "비법인사단의대표자가대표권제한에위배하여거래한경우에는,상대방이그사실을알았거나알수있었을경우가아니라면그거래행위는유효하다."
+       },
+       {
+        "label": "③",
+        "text": "대표권없는이사도법인의기관에해당하므로그가불법행위를한경우에는법인도민법제35조에따른불법행위책임을부담한다."
+       },
+       {
+        "label": "④",
+        "text": "교회가아직실체를갖추지못하여비법인사단으로서성립되기이전에그설립의주체인개인이취득한권리의무는그것이앞으로성립될교회를위한것이라고하더라도그에관한별도의이전행위없이바로비법인사단인교회에귀속될수는없다."
+       }
+      ],
+      "officialAnswer": "③",
+      "officialAnswerText": "대표권없는이사도법인의기관에해당하므로그가불법행위를한경우에는법인도민법제35조에따른불법행위책임을부담한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "법인 또는 비법인사단에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "이사의대표권제한은정관에기재해야효력이있고,나아가그사실을등기해야제3자에대항할수있다."
+       },
+       {
+        "label": "②",
+        "text": "비법인사단의대표자가대표권제한에위배하여거래한경우에는,상대방이그사실을알았거나알수있었을경우가아니라면그거래행위는유효하다."
+       },
+       {
+        "label": "③",
+        "text": "대표권없는이사도법인의기관에해당하므로그가불법행위를한경우에는법인도민법제35조에따른불법행위책임을부담한다."
+       },
+       {
+        "label": "④",
+        "text": "교회가아직실체를갖추지못하여비법인사단으로서성립되기이전에그설립의주체인개인이취득한권리의무는그것이앞으로성립될교회를위한것이라고하더라도그에관한별도의이전행위없이바로비법인사단인교회에귀속될수는없다."
+       }
+      ],
+      "answer": "③",
+      "answerText": "대표권없는이사도법인의기관에해당하므로그가불법행위를한경우에는법인도민법제35조에따른불법행위책임을부담한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제275조",
+      "제276조",
+      "제31조",
+      "제35조",
+      "제41조",
+      "제60조"
+     ],
+     "atomIds": [
+      "2011-21-①",
+      "2011-21-②",
+      "2011-21-③",
+      "2011-21-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-22",
+     "no": 22,
+     "type": "single-best-false",
+     "original": {
+      "stem": "가등기 내지 등기에 관한 설명 중 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "소유권이전청구권보전을위한가등기가마쳐졌다해도소유권이전등기를청구할어떤법률관계가있다고추정되지는않는다."
+       },
+       {
+        "label": "②",
+        "text": "소유권이전등기가마쳐진경우에는그등기명의자는제3자에대해서뿐만아니라그전소유자에대해서도적법한등기원인에의하여소유권을취득한것으로추정된다."
+       },
+       {
+        "label": "③",
+        "text": "등기가원인없이말소된경우그회복등기가마쳐지기전이라도말소된등기의명의인은적법한권리자로추정된다."
+       },
+       {
+        "label": "④",
+        "text": "가등기에기한본등기가마쳐지면순위보전의효력에의해물권변동의시기는가등기시로소급한다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "가등기에기한본등기가마쳐지면순위보전의효력에의해물권변동의시기는가등기시로소급한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "가등기 내지 등기에 관한 설명 중 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "소유권이전청구권보전을위한가등기가마쳐졌다해도소유권이전등기를청구할어떤법률관계가있다고추정되지는않는다."
+       },
+       {
+        "label": "②",
+        "text": "소유권이전등기가마쳐진경우에는그등기명의자는제3자에대해서뿐만아니라그전소유자에대해서도적법한등기원인에의하여소유권을취득한것으로추정된다."
+       },
+       {
+        "label": "③",
+        "text": "등기가원인없이말소된경우그회복등기가마쳐지기전이라도말소된등기의명의인은적법한권리자로추정된다."
+       },
+       {
+        "label": "④",
+        "text": "가등기에기한본등기가마쳐지면순위보전의효력에의해물권변동의시기는가등기시로소급한다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "가등기에기한본등기가마쳐지면순위보전의효력에의해물권변동의시기는가등기시로소급한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제186조"
+     ],
+     "atomIds": [
+      "2011-22-①",
+      "2011-22-②",
+      "2011-22-③",
+      "2011-22-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-23",
+     "no": 23,
+     "type": "single-best-false",
+     "original": {
+      "stem": "계약의 해제에 관한 다음의 설명 중 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "계약해제의소급효로써제3자의권리를해할수없다고규정한민법제548조제1항의규정은해제권이행사되었을경우에관한규정이므로,당사자사이에서계약을합의해제하는경우에는위규정은적용되지아니한다."
+       },
+       {
+        "label": "②",
+        "text": "토지거래허가구역내토지에관하여매매계약을체결하고계약금만주고받은상태에서상대방의협력에의하여매수인이토지거래허가를받은경우라해도매도인이계약금의배액을상환하여매매계약을해제할수있다."
+       },
+       {
+        "label": "③",
+        "text": "계약해제내지해지의의사표시는철회하지못한다."
+       },
+       {
+        "label": "④",
+        "text": "계약의해제로인한원상회복으로그해제된계약으로부터생긴법률효과를기초로하여해제전에새로운이해관계를가지고등기,인도등으로완전한권리를취득한자에대하여는대항할수없다."
+       }
+      ],
+      "officialAnswer": "①",
+      "officialAnswerText": "계약해제의소급효로써제3자의권리를해할수없다고규정한민법제548조제1항의규정은해제권이행사되었을경우에관한규정이므로,당사자사이에서계약을합의해제하는경우에는위규정은적용되지아니한다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "계약의 해제에 관한 다음의 설명 중 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "계약해제의소급효로써제3자의권리를해할수없다고규정한민법제548조제1항의규정은해제권이행사되었을경우에관한규정이므로,당사자사이에서계약을합의해제하는경우에는위규정은적용되지아니한다."
+       },
+       {
+        "label": "②",
+        "text": "토지거래허가구역내토지에관하여매매계약을체결하고계약금만주고받은상태에서상대방의협력에의하여매수인이토지거래허가를받은경우라해도매도인이계약금의배액을상환하여매매계약을해제할수있다."
+       },
+       {
+        "label": "③",
+        "text": "계약해제내지해지의의사표시는철회하지못한다."
+       },
+       {
+        "label": "④",
+        "text": "계약의해제로인한원상회복으로그해제된계약으로부터생긴법률효과를기초로하여해제전에새로운이해관계를가지고등기,인도등으로완전한권리를취득한자에대하여는대항할수없다."
+       }
+      ],
+      "answer": "①",
+      "answerText": "계약해제의소급효로써제3자의권리를해할수없다고규정한민법제548조제1항의규정은해제권이행사되었을경우에관한규정이므로,당사자사이에서계약을합의해제하는경우에는위규정은적용되지아니한다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제543조",
+      "제548조",
+      "제565조"
+     ],
+     "atomIds": [
+      "2011-23-①",
+      "2011-23-②",
+      "2011-23-③",
+      "2011-23-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     },
+     "extraction": {
+      "note": "OCR page-header removal"
+     }
+    },
+    {
+     "qid": "2011-24",
+     "no": 24,
+     "type": "single-best-false",
+     "original": {
+      "stem": "타인의 채무를 변제함으로써 사무관리가 이루어지는 경우에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채무의변제는제3자도할수있는것인바,제3자가타인의채무를변제하여그채무를소멸시키기위해서는제3자가타인의채무를변제한다는의사를가지고있었음을요건으로한다."
+       },
+       {
+        "label": "②",
+        "text": "이러한의사는타인의채무변제임을나타내는변제지정을통하여표시되어야할것이지만,채권자가변제를수령하면서그것이제3자에의한타인의채무변제라는사실을인식하였다면그러한변제지정이있었다고볼수있다."
+       },
+       {
+        "label": "③",
+        "text": "사무관리가성립하기위해서는타인을위하여사무를처리하는의사,즉관리의사실상의이익을타인에게귀속시키려는의사가있어야함은물론나아가그사무의처리가본인에게불리하거나본인의의사에반한다는것이명백하지아니할것을요한다."
+       },
+       {
+        "label": "④",
+        "text": "여기에서타인을위하여사무를처리하는의사는최소한사무를관리할당시에는확정되어외부적으로표시될필요가있다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "여기에서타인을위하여사무를처리하는의사는최소한사무를관리할당시에는확정되어외부적으로표시될필요가있다."
+     },
+     "current": {
+      "changedByCurrentLaw": false,
+      "stem": "타인의 채무를 변제함으로써 사무관리가 이루어지는 경우에 관한 설명이다. 옳지 않은 것은?(다툼이 있는 경우 판례에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "채무의변제는제3자도할수있는것인바,제3자가타인의채무를변제하여그채무를소멸시키기위해서는제3자가타인의채무를변제한다는의사를가지고있었음을요건으로한다."
+       },
+       {
+        "label": "②",
+        "text": "이러한의사는타인의채무변제임을나타내는변제지정을통하여표시되어야할것이지만,채권자가변제를수령하면서그것이제3자에의한타인의채무변제라는사실을인식하였다면그러한변제지정이있었다고볼수있다."
+       },
+       {
+        "label": "③",
+        "text": "사무관리가성립하기위해서는타인을위하여사무를처리하는의사,즉관리의사실상의이익을타인에게귀속시키려는의사가있어야함은물론나아가그사무의처리가본인에게불리하거나본인의의사에반한다는것이명백하지아니할것을요한다."
+       },
+       {
+        "label": "④",
+        "text": "여기에서타인을위하여사무를처리하는의사는최소한사무를관리할당시에는확정되어외부적으로표시될필요가있다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "여기에서타인을위하여사무를처리하는의사는최소한사무를관리할당시에는확정되어외부적으로표시될필요가있다.",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "원문 추출 단계의 기본값이다. atom 법리검증 단계에서 현행 정답 변동 여부를 확정한다."
+     },
+     "articleRefs": [
+      "제469조",
+      "제476조",
+      "제734조"
+     ],
+     "atomIds": [
+      "2011-24-①",
+      "2011-24-②",
+      "2011-24-③",
+      "2011-24-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     }
+    },
+    {
+     "qid": "2011-25",
+     "no": 25,
+     "type": "single-best-true",
+     "original": {
+      "stem": "행위무능력자의 상대방과 무권대리인의 상대방이 가지는 최고권 등에 관련된 설명으로 옳은 것은?(다툼이 있는 경우 통설에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "양자모두상당한기간을정하여추인여부의확답을최고하여야한다."
+       },
+       {
+        "label": "②",
+        "text": "기간내에확답을발하지아니하면양자모두추인거절로간주된다."
+       },
+       {
+        "label": "③",
+        "text": "기간내에추인을하면양자모두무효행위가확정적으로유효로된다."
+       },
+       {
+        "label": "④",
+        "text": "두경우모두에있어최고의법적성질은의사의통지로서준법률행위인데반하여,그에대한추인의법적성질은법률행위내지의사표시라는점은같다."
+       }
+      ],
+      "officialAnswer": "④",
+      "officialAnswerText": "두경우모두에있어최고의법적성질은의사의통지로서준법률행위인데반하여,그에대한추인의법적성질은법률행위내지의사표시라는점은같다. 민법②책형(4-4)"
+     },
+     "current": {
+      "changedByCurrentLaw": true,
+      "stem": "제한능력자의 상대방과 무권대리인의 상대방이 가지는 최고권 등에 관련된 설명으로 옳은 것은?(다툼이 있는 경우 통설에 의함)",
+      "choices": [
+       {
+        "label": "①",
+        "text": "양자모두상당한기간을정하여추인여부의확답을최고하여야한다."
+       },
+       {
+        "label": "②",
+        "text": "기간내에확답을발하지아니하면양자모두추인거절로간주된다."
+       },
+       {
+        "label": "③",
+        "text": "기간내에추인을하면양자모두무효행위가확정적으로유효로된다."
+       },
+       {
+        "label": "④",
+        "text": "두경우모두에있어최고의법적성질은의사의통지로서준법률행위인데반하여,그에대한추인의법적성질은법률행위내지의사표시라는점은같다."
+       }
+      ],
+      "answer": "④",
+      "answerText": "두경우모두에있어최고의법적성질은의사의통지로서준법률행위인데반하여,그에대한추인의법적성질은법률행위내지의사표시라는점은같다. 민법②책형(4-4)",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "note": "행위무능력자 용어를 현행 민법의 제한능력자 용어로 보정했다."
+     },
+     "articleRefs": [
+      "제131조",
+      "제133조",
+      "제15조"
+     ],
+     "atomIds": [
+      "2011-25-①",
+      "2011-25-②",
+      "2011-25-③",
+      "2011-25-④"
+     ],
+     "verification": {
+      "sourceExtractedAt": "2026-06-17",
+      "structureVerifiedAt": "2026-06-17",
+      "lawAsOf": "2026-06-17",
+      "legalVerifiedAt": null,
+      "status": "statute-api-verified-needs-legal-review",
+      "statuteApiVerifiedAt": "2026-06-17",
+      "statuteCitationStatus": "verified"
+     },
+     "extraction": {
+      "note": "OCR page-header removal"
+     }
+    }
+   ],
+   "verification": {
+    "statuteApiVerifiedAt": "2026-06-17",
+    "statuteApi": {
+     "provider": "korean_law MCP / law.go.kr 법령 API",
+     "lawName": "민법",
+     "lawId": "001706",
+     "mst": "284415",
+     "promulgatedAt": "2026-03-17",
+     "effectiveAt": "2026-03-17",
+     "method": "legal_analysis.verify_citations",
+     "failedCitationCount": 0,
+     "verifiedCitationCount": 445,
      "batchCount": 15
     },
     "status": "statute-api-verified-needs-legal-review"
@@ -27656,7 +29621,7 @@
    "effectiveAt": "2026-03-17",
    "method": "legal_analysis.verify_citations",
    "failedCitationCount": 0,
-   "verifiedCitationCount": 430,
+   "verifiedCitationCount": 445,
    "batchCount": 15
   },
   "status": "statute-api-verified-needs-legal-review"
