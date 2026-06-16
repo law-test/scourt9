@@ -11,8 +11,8 @@
   "quizArticles": 44,
   "ox": 101,
   "bucket": 0,
-  "legalVerified": 4,
-  "legalReviewPending": 97
+  "legalVerified": 8,
+  "legalReviewPending": 93
  },
  "tree": [
   {
@@ -4124,7 +4124,7 @@
       "2025 법원직 9급 민법 8번 ②"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "민법제366조의법정지상권은저당권설정당시동일인의소유에속하던토지와건물이경매로인하여양자의소유자가다르게된때에건물의소유자를위하여발생하는것으로서,토지에관하여저당권이설정될당시토지소유자에의하여그지상에건물을건축중이었던경우그것이사회관념상독립된건물로볼수있는정도에이르지않았다하더라도건물의규모·종류가외형상예상할수있는정도까지건축이진전되어있었고,그후경매절차에서매수인이매각대금을다낸때까지최소한의기둥과지붕그리고주벽이이루어지는등독립된부동산으로서건물의요건을갖추면법정지상권이성립하며,그건물이미등기라하더라도법정지상권의성립에는아무런지장이없는것이다.",
@@ -4134,7 +4134,7 @@
       "2025 법원직 9급 민법 8번 ③"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     },
     {
      "o": "동일인소유의토지와그토지상에건립되어있는건물중어느하나만이타에처분되어토지와건물의소유자를각달리하게된경우에는관습상의법정지상권이성립한다고할것이나,건물소유자가토지소유자와사이에건물의소유를목적으로하는토지임대차계약을체결한경우에는관습상의법정지상권을포기한것으로봄이상당하다.",
@@ -4144,7 +4144,7 @@
       "2025 법원직 9급 민법 8번 ④"
      ],
      "x": [],
-     "verified": false
+     "verified": true
     }
    ],
    "count": 4,
@@ -12521,7 +12521,8 @@
    "sources": [
     "2025 법원직 9급 민법 8번 ①"
    ],
-   "verified": false
+   "verified": true,
+   "truth": "민법 제366조의 법정지상권은 저당권 설정 당시 저당권의 목적이 되는 토지 위에 건물이 존재하거나 건축 중인 건물이 일정 요건을 갖춘 경우에 인정되며, 건물이 없는 토지에 저당권이 설정될 당시 근저당권자가 장래 건축에 동의하였다는 사정만으로 성립하지 않는다."
   },
   {
    "id": "O39",
@@ -12534,7 +12535,7 @@
    "sources": [
     "2025 법원직 9급 민법 8번 ②"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O40",
@@ -12547,7 +12548,7 @@
    "sources": [
     "2025 법원직 9급 민법 8번 ③"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "O41",
@@ -12560,7 +12561,7 @@
    "sources": [
     "2025 법원직 9급 민법 8번 ④"
    ],
-   "verified": false
+   "verified": true
   },
   {
    "id": "X42",
@@ -13347,6 +13348,18 @@
  "review": {
   "status": "statute-api-verified-needs-legal-review",
   "lawAsOf": "2026-06-17",
-  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다."
+  "note": "2025년 회차 atom seed를 배포 포맷으로 변환한 초안이다. 현행법 법리검증 및 X 지문의 보정 법리는 후속 단계에서 확정한다.",
+  "statuteApiVerifiedAt": "2026-06-17",
+  "statuteApi": {
+   "provider": "korean_law MCP / law.go.kr 법령 API",
+   "lawName": "민법",
+   "lawId": "001706",
+   "mst": "284415",
+   "promulgatedAt": "2026-03-17",
+   "effectiveAt": "2026-03-17",
+   "method": "legal_analysis.verify_citations",
+   "verifiedCitationCount": 76,
+   "failedCitationCount": 0
+  }
  }
 }
