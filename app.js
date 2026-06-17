@@ -51,7 +51,7 @@
     return h;
   }
   function famChips(families){
-    return (families||[]).filter(function(f){ return f!=="변호사시험"; }).map(function(f){ return '<span class="chip">'+esc(f)+'</span>'; }).join("");
+    return (families||[]).filter(function(f){ return f!=="법원직" && f!=="변호사시험"; }).map(function(f){ return '<span class="chip">'+esc(f)+'</span>'; }).join("");
   }
   function refExtra(at){
     var ref=at&&at.ref?String(at.ref):"";
