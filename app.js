@@ -39,7 +39,7 @@
     var sub=s.match(/([①-⑳]|[ㄱ-ㅎ])\s*$/)||s.match(/-\s*(\d+)/);
     if(!ym&&!q) return s;
     var out="법원직";
-    if(ym) out+=ym[1].slice(2)+"년"+half;
+    if(ym) out+=ym[1].slice(2)+(half?half:"년");
     if(q) out+=q[1]+"번";
     if(sub){ var n=+sub[1]; out+=isNaN(n)?sub[1]:((n>=1&&n<=20)?String.fromCharCode(0x245F+n):("("+n+")")); }
     out+=" 기출";
