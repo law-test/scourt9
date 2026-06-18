@@ -68,6 +68,17 @@ GROUPS = {
     },
 }
 
+SUBJECT_FILE_NAMES = {
+    "헌법": "헌법",
+    "상법": "상법",
+    "민법": "민법",
+    "가족관계의 등록 등에 관한 법률": "가족관계등록법",
+    "민사집행법": "민사집행법",
+    "상업등기법 및 비송사건절차법": "상업등기법_비송사건절차법",
+    "부동산등기법": "부동산등기법",
+    "공탁법": "공탁법",
+}
+
 
 def today() -> str:
     return datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
@@ -99,6 +110,12 @@ def pdf_text(path: Path) -> str:
 def write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def subject_file_name(subject: str) -> str:
+    if subject in SUBJECT_FILE_NAMES:
+        return SUBJECT_FILE_NAMES[subject]
+    return re.sub(r"[^0-9A-Za-z가-힣]+", "_", subject).strip("_")
 
 
 def compact(text: str) -> str:
@@ -320,7 +337,48 @@ def build_atom_queue_items(question: dict) -> list[dict]:
     return items
 
 
-def build_year(year: int) -> tuple[Path, Path]:
+def write_subject_files(year: int, source: dict, atom_queue_doc: dict, out_dir: Path) -> dict[str, dict[str, object]]:
+    subject_dir = out_dir / str(year) / "과목별"
+    subject_paths: dict[str, dict[str, object]] = {}
+    subjects = sorted({question["subject"] for question in source["questions"]})
+    for subject in subjects:
+        file_subject = subject_file_name(subject)
+        questions = [question for question in source["questions"] if question["subject"] == subject]
+        items = [item for item in atom_queue_doc["items"] if item["subject"] == subject]
+        subject_source = {
+            **source,
+            "schema": "legal-scrivener/problem-original-current-by-subject/v1",
+            "subject": subject,
+            "questions": questions,
+            "subjectSummary": {
+                "questionCount": len(questions),
+                "atomQueueItemCount": len(items),
+            },
+        }
+        subject_queue = {
+            **atom_queue_doc,
+            "schema": "legal-scrivener/atom-queue-by-subject/v1",
+            "subject": subject,
+            "items": items,
+            "subjectSummary": {
+                "questionCount": len(questions),
+                "atomQueueItemCount": len(items),
+            },
+        }
+        source_path = subject_dir / f"{year}_법무사_{file_subject}_source.json"
+        queue_path = subject_dir / f"{year}_법무사_{file_subject}_atom_queue.json"
+        write_json(source_path, subject_source)
+        write_json(queue_path, subject_queue)
+        subject_paths[subject] = {
+            "source": str(source_path),
+            "atomQueue": str(queue_path),
+            "questionCount": len(questions),
+            "atomQueueItemCount": len(items),
+        }
+    return subject_paths
+
+
+def build_year(year: int) -> tuple[Path, Path, Path]:
     meta = EXAMS[year]
     raw_dir = PRIVATE_ROOT / "raw" / str(year)
     text_dir = PRIVATE_ROOT / "text" / str(year)
@@ -450,16 +508,30 @@ def build_year(year: int) -> tuple[Path, Path]:
 
     source_path = out_dir / f"legal_scrivener_{year}_source.json"
     queue_path = out_dir / f"legal_scrivener_{year}_atom_queue.json"
+    subject_index_path = out_dir / str(year) / "과목별" / f"{year}_법무사_과목별_index.json"
     legacy_candidate_path = out_dir / f"legal_scrivener_{year}_ox_candidates.json"
     write_json(source_path, source)
     write_json(queue_path, atom_queue_doc)
+    subject_paths = write_subject_files(year, source, atom_queue_doc, out_dir)
+    write_json(
+        subject_index_path,
+        {
+            "schema": "legal-scrivener/subject-index/v1",
+            "sourceFamily": "법무사시험",
+            "updatedAt": today(),
+            "examId": meta["examId"],
+            "year": year,
+            "round": meta["round"],
+            "subjects": subject_paths,
+        },
+    )
     if legacy_candidate_path.exists():
         legacy_candidate_path.unlink()
-    return source_path, queue_path
+    return source_path, queue_path, subject_index_path
 
 
 def main() -> None:
-    source_path, queue_path = build_year(2025)
+    source_path, queue_path, subject_index_path = build_year(2025)
     source = json.loads(source_path.read_text(encoding="utf-8"))
     queue = json.loads(queue_path.read_text(encoding="utf-8"))
     by_subject: dict[str, int] = {}
@@ -473,6 +545,7 @@ def main() -> None:
         queue_by_derivation[key] = queue_by_derivation.get(key, 0) + 1
     print(f"source={source_path}")
     print(f"atomQueue={queue_path}")
+    print(f"subjectIndex={subject_index_path}")
     print(f"questions={len(source['questions'])}")
     print(f"atomQueueItems={len(queue['items'])}")
     print("subjects=" + ", ".join(f"{k}:{v}" for k, v in by_subject.items()))
