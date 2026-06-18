@@ -317,7 +317,6 @@ def build() -> Path:
                 "xDependsOn": row["rep"] if is_x_source else None,
                 "reviewedAt": today(),
                 "currentLawCheckedAt": today(),
-                "needsFurtherCitationPinpoint": basis["basisType"] in {"판례", "판례+예규·선례", "예규·선례+판례"},
             }
         )
 
