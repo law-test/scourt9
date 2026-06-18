@@ -1596,7 +1596,7 @@
         "comboVerdictBasis": "2024 법원직 9급 헌법 해설(아쉽공) 및 확정정답"
       },
       "rawTextSha256": "0aa70b80aaca7930305c4d34e9ed7ecec42bf35b04becf3dcf59001adbf08d11",
-      "extractionTextSha256": "53ed26c3b892f1ae4862aa41e9bd0a98cc1667deb910ae26ca758ffca3efbaa0",
+      "extractionTextSha256": "21496ed751d7ce85a172e3c5faa77a08f77cbb4cd4e86e3f05a520eb07a3971e",
       "answers": {
         "1": "③",
         "2": "③",
@@ -3063,7 +3063,7 @@
         "answerBasis": "2023 법원 9급 공채 제1ㆍ2차시험 확정정답 법원사무직렬 ①책형 헌법 열"
       },
       "rawTextSha256": "2b4ecfa1a4ee15b4261b14d63e862ece3aab6b3d90a01c0fc32d47b0d1da88a7",
-      "extractionTextSha256": "3d551764af3ff49b14b59f652530e4d2f159cc64ffd8054f202923dc4489efae",
+      "extractionTextSha256": "f3f0a5fb2e9b379c69f2bb30f3b2ac9cea38e2575c369e5eef0bf11d153d26cc",
       "answers": {
         "1": "③",
         "2": "①",
@@ -4487,7 +4487,7 @@
         "comboVerdictBasis": "2022 법원직 9급 헌법 해설(아쉽공) 및 확정정답"
       },
       "rawTextSha256": "4980d6f89db94dd7b070d9afcc93778a49b50bae2b71336ed01416a83737dd44",
-      "extractionTextSha256": "deafd2c9f3c3c57a54b40fbe844ef4ecf9e5179ef578b7d891f09c8bb1bcc717",
+      "extractionTextSha256": "3a4118c675d37cfc4d0decafe785cef5425bae084e4af15e2875b36ba9feeb72",
       "answers": {
         "1": "①",
         "2": "②",
@@ -6060,7 +6060,7 @@
         "answerBasis": "2021 법원 9급 공채 제1ㆍ2차시험 확정정답 법원사무직렬 ①책형 헌법 열"
       },
       "rawTextSha256": "c09b4024584b27a2d6677c918bf23901a37fe86a072d0e0d42bb7ec94641b9bc",
-      "extractionTextSha256": "5ac4cf70f5a2b70a6d3a51a4ea4a4f11d0ed4f81638d5902f5a200757e180a15",
+      "extractionTextSha256": "01279013ef1b20e6d2a0c018c5fa05657c61385d10812174c88ce267b425d67a",
       "answers": {
         "1": "③",
         "2": "④",
@@ -7484,7 +7484,7 @@
         "comboVerdictBasis": "2020 법원직 9급 헌법 해설(김건호) 및 확정정답"
       },
       "rawTextSha256": "e39050522566e922877ea36e58878a819bba851ca13183fa6fe12fbaa0c3acde",
-      "extractionTextSha256": "bbf5becd6704d744e18820793fcbc2869a4a64500197369b042c988a416fddb5",
+      "extractionTextSha256": "22cd8f0b46cc72996cbc0378a20c6a44cb1fa7731dee9ecdb48412e568a831ed",
       "answers": {
         "1": "③",
         "2": "①",
@@ -8996,7 +8996,7 @@
         "comboVerdictBasis": "2019 법원직 9급 헌법 해설(김건호) 및 확정정답"
       },
       "rawTextSha256": "3e0d6b24bdf0d3031cdf85cd32773d760e27944970a821cba856c64175e9d4a0",
-      "extractionTextSha256": "cff1d674063cd8e2dcdff52cf9bc9e61ebf5376e9ab5aa7e3d7c84b873683176",
+      "extractionTextSha256": "2769664205d565ab5d7582c709e66cfbdaa3d9f031e738da331f5a9d3f5e52c5",
       "answers": {
         "1": "③",
         "2": "④",
@@ -10465,7 +10465,7 @@
         "comboVerdictBasis": "2018 법원직 9급 헌법 해설(김건호ㆍ윤우혁ㆍ채한태) 및 확정정답"
       },
       "rawTextSha256": "36f96498a4b2551a5ec023cac3152ea65ad8640bcdd05dbd8d175057e46fca08",
-      "extractionTextSha256": "e74ae56a05fbde021bbd0350d8cf0285737ee5219cfcb6f5409e2a761302ec7d",
+      "extractionTextSha256": "f7796ef26ce94c47ed971ed6709e30a7a993723ba524db2c7c1bbf390a247898",
       "answers": {
         "1": "③",
         "2": "②",
@@ -12092,7 +12092,7 @@
         "answerBasis": "2017.2.25. 시행 법원 9급 공채 제1ㆍ2차시험 확정정답 법원사무직렬 ①책형 헌법 열"
       },
       "rawTextSha256": "7d2a3487ec8339473bd404694f488d16a6d4fa246dc66b6fef956ba0f3af42a4",
-      "extractionTextSha256": "2fbe9fec844241ac4dc365d8cd336f32241b67ff1a376320f4c7703b00f909e8",
+      "extractionTextSha256": "4dbb322f237f7e99777f8685faf42d77fa71dd6da0b3e8595f455deafa9ee24f",
       "answers": {
         "1": "②",
         "2": "③",
@@ -13517,7 +13517,7 @@
         "comboVerdictBasis": "2016 법원직 9급 헌법 확정정답 및 문항의 개수형 선택지"
       },
       "rawTextSha256": "7d43b2e18284cae8d3342282c6dd937513f8877e86af3b71b46effaab054893f",
-      "extractionTextSha256": "50151cef9e13e6433b0ca58d4a5f7afc1abc87f523116c9649211d4821e9fdb5",
+      "extractionTextSha256": "61d85314fe745005dfac36e5cb7c53629382ba27768a0d9c541442b66bf9eafc",
       "answers": {
         "1": "②",
         "2": "④",
@@ -14986,7 +14986,7 @@
         "comboVerdictBasis": "2015 법원직 9급 헌법 확정정답 및 문항의 개수형 선택지"
       },
       "rawTextSha256": "c82de8654ac815d1e84e6757b7356fbcb6c5b2ad307d6b33acfe1d9c03c4907c",
-      "extractionTextSha256": "560be09150a8b2005006d01bb73dd8ed99f7c1f9d9135d23bcc851f37bde4c19",
+      "extractionTextSha256": "0c70fe73a55840bad4b35993ec39802b411f6723723a4fd4b38def98fccef783",
       "answers": {
         "1": "③",
         "2": "③",
@@ -16455,7 +16455,7 @@
         "comboVerdictBasis": "2014 법원직 9급 헌법 확정정답 및 문항의 개수형 선택지"
       },
       "rawTextSha256": "949c5f56819974bb11b81a91e448f46c1d07a3f64be81b5edac25e076bb4b466",
-      "extractionTextSha256": "8aef4fef58e8b2700557dabdef1697b43f538bce118a0e3f347ad06220cd6442",
+      "extractionTextSha256": "2b78507fb053089c3183f48ce56d747b56cd921906e7c8eb86d35c0aeb3ad580",
       "answers": {
         "1": "③",
         "2": "③",
@@ -17968,7 +17968,7 @@
         "comboVerdictBasis": "2013 법원직 9급 헌법 확정정답"
       },
       "rawTextSha256": "60920c7f1cd7e801846dbe93f95c77f1c9a630f485d2ad7c570ce93f79918d20",
-      "extractionTextSha256": "e939ff4cc71691c40924b0abf2b5dec1213ddc19ac0534156ee88289571d6f94",
+      "extractionTextSha256": "5949b53ed9971743b37e06dc0508ded9141fac90faf0274efd53f31423a917fd",
       "answers": {
         "1": "④",
         "2": "②",
@@ -19393,7 +19393,7 @@
         "comboVerdictBasis": "2012 법원직 9급 헌법 확정정답"
       },
       "rawTextSha256": "a390098e75bee845be5824368d4003a5f97226a6cb65af27cbe1f177b7d0425b",
-      "extractionTextSha256": "d852ccec754d7e89d186df1213af5c83cbf3b335846629e73ba56ad497342a35",
+      "extractionTextSha256": "545db97cb3f169f8893f6e98f9da5d6a21a01b821cb7f891e66ad2cea2a8490f",
       "answers": {
         "1": "②",
         "2": "④",
@@ -20818,7 +20818,7 @@
         "comboVerdictBasis": "2011 법원직 9급 헌법 정답가안 및 조합형ㆍ개수형 선택지"
       },
       "rawTextSha256": "fc2524b3990ab2e54c758241fc566263cb2b46e1c8e4a3a78f0bdc6858b48fac",
-      "extractionTextSha256": "694d112f78acff6612175fec5463bc885c631413ebe52430f651862c53d4a37a",
+      "extractionTextSha256": "4df597c10db316d4c9d4976482c7d9218f44e38dd38b09a31b82f8e9ca3b8a02",
       "answers": {
         "1": "①",
         "2": "②",
@@ -22331,7 +22331,7 @@
         "comboVerdictBasis": "2010 법원직 9급 헌법 확정정답 및 문항의 개수형 선택지"
       },
       "rawTextSha256": "ed0f7a05a707ca97d09efa03da54ce1444b6f71c33cfd94912346c8c6a0da883",
-      "extractionTextSha256": "b1cec5387fa34540b316f7c2404fc1021b228167b75fc4134138a8d25dec317d",
+      "extractionTextSha256": "2e7380a1cba0e4012e4102e8f2ebfca320b991efc25ec10e6046218a1ef22e3a",
       "answers": {
         "1": "④",
         "2": "④",
@@ -23800,7 +23800,7 @@
         "comboVerdictBasis": "2009 법원직 9급 헌법 정답 및 문항의 개수형·조합형 선택지"
       },
       "rawTextSha256": "0a114a2aa33f854f7b28506e3379ab55787c8a7225839bb0f25fbb77ec43dd15",
-      "extractionTextSha256": "c66742ac57ea0dd5094a3495c9715d49e47dd17fc1b554f81c28af6cd8b38eac",
+      "extractionTextSha256": "03d20e079aeee17b4cfc137848ac56297bdd851212fe19d39d0c3d1f4ff51770",
       "answers": {
         "1": "④",
         "2": "④",
@@ -25472,7 +25472,7 @@
         "comboVerdictBasis": "2008 법원직 9급 헌법 확정정답"
       },
       "rawTextSha256": "324d724acbe78d463c65263bcc4dc81f22938cff43f14bed1f9d2c78a4f430ba",
-      "extractionTextSha256": "0655a355e5e1176cc5bb2f58c0cdd517eb67f4b206652048716c69db67fd0fa7",
+      "extractionTextSha256": "adc7cd8dd1a48cf3526d2457c3cc31a43f0c530a4b324d65fbf868a083dd0729",
       "answers": {
         "1": "④",
         "2": "②",
@@ -26897,7 +26897,7 @@
         "comboVerdictBasis": "2007 하반기 법원직 9급 헌법 확정정답 및 조합형 선택지"
       },
       "rawTextSha256": "63f9cc6dda3ca5d0307f01dcec6915e3d1e6cce4352976b725baf9414979c4dd",
-      "extractionTextSha256": "f8c31b2a276bbc980f921e0711269d7fc7d1adc651825e38a6602de5e8d637ea",
+      "extractionTextSha256": "db9a1f9d182aeb9181ed823d89e050af8bbe973f5a52e91359c749aafa42aa0d",
       "answers": {
         "1": "①",
         "2": "②",
@@ -28375,7 +28375,7 @@
         "comboVerdictBasis": "2007 법원직 9급 헌법 확정정답 및 조합형 선택지"
       },
       "rawTextSha256": "98bd77a0b5e9e0177387b4f6fc60d987eb0c66ef69e852d8318157f9516e793e",
-      "extractionTextSha256": "a4cbe6fe937a26fc48ee5b27f0373dc868c8c821057aa4a5a1c9ff1d56b10099",
+      "extractionTextSha256": "cd064e8cca73699de11c9fc53c0f058c3a903ce3e4719217d0600bc9964e1558",
       "answers": {
         "1": "③",
         "2": "③",
@@ -29871,6 +29871,1431 @@
             ],
             "officialAnswer": "②",
             "officialAnswerText": "감사원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 중임할 수 없다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        }
+      ]
+    },
+    "2006": {
+      "examId": "2006_scourt9_constitution",
+      "year": 2006,
+      "round": "2006",
+      "roundLabel": "2006",
+      "series": "법원직 9급",
+      "subject": "헌법",
+      "booklet": "①책형",
+      "questionCount": 25,
+      "sources": {
+        "problemPdf": "C:\\cowork\\0gichul_법과목_기출\\헌법\\2006_법원직_9급_헌법.pdf",
+        "problemPageUrl": "https://0gichul.com/y2006/48259195",
+        "extractionSource": "https://0gichul.com/y2006/48259195",
+        "problemPdfUrl": "https://0gichul.com/?act=procFileDownload&file_srl=48259196&module=file&sid=caf932dbc75602665dcf36a0d2c6cb92",
+        "answerPdfUrl": null,
+        "answerBasis": "2006 법원직 9급 헌법 공개 문제 PDF 및 문항별 법리 검토 기준",
+        "comboVerdictBasis": "2006 법원직 9급 헌법 확정정답 및 조합형 선택지"
+      },
+      "rawTextSha256": "a9f496d9f7931bdb7b0da707602a81bbcdccd3e7130419f0cfdf12261c76f905",
+      "extractionTextSha256": "d8b2c632a9a5f0730c30a577ba5c76d486dbc02591e7fb65f04fb05bd3c1430d",
+      "answers": {
+        "1": "②",
+        "2": "③",
+        "3": "③",
+        "4": "④",
+        "5": "②",
+        "6": "③",
+        "7": "③",
+        "8": "②",
+        "9": "④",
+        "10": "④",
+        "11": "③",
+        "12": "③",
+        "13": "①",
+        "14": "④",
+        "15": "③",
+        "16": "③",
+        "17": "①",
+        "18": "①",
+        "19": "③",
+        "20": "②",
+        "21": "③",
+        "22": "④",
+        "23": "③",
+        "24": "①",
+        "25": "④"
+      },
+      "questions": [
+        {
+          "qid": "2006-01",
+          "no": 1,
+          "type": "single-best-true",
+          "original": {
+            "stem": "학문의 자유에 관한 설명으로 가장 타당한 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "학문의자유의주체는대학등교육기관및연구소의구성원인교수와학생이다."
+              },
+              {
+                "label": "②",
+                "text": "학문의자유는자유권적기본권인동시에제도적보장을의미한다."
+              },
+              {
+                "label": "③",
+                "text": "학문의자유는국가에대한권리이므로사인간에있어서의제3자적효력은인정되지않는다."
+              },
+              {
+                "label": "④",
+                "text": "학문의자유는사상의자유와같이법률에의한제한도허용되지아니한다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "학문의자유는자유권적기본권인동시에제도적보장을의미한다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "학문의 자유에 관한 설명으로 가장 타당한 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "학문의 자유의 주체는 대학 등 교육기관 및 연구소의 구성원인 교수와 학생이다."
+              },
+              {
+                "label": "②",
+                "text": "학문의 자유는 자유권적 기본권인 동시에 제도적 보장을 의미한다."
+              },
+              {
+                "label": "③",
+                "text": "학문의 자유는 국가에 대한 권리이므로 사인 간에 있어서의 제3자적 효력은 인정되지 않는다."
+              },
+              {
+                "label": "④",
+                "text": "학문의 자유는 사상의 자유와 같이 법률에 의한 제한도 허용되지 아니한다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "학문의 자유는 자유권적 기본권인 동시에 제도적 보장을 의미한다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-02",
+          "no": 2,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 국회의 특별정족수에 관한 설명 중 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "법률안의재의결-재적의원과반수의출석과출석의원2/3이상의찬성"
+              },
+              {
+                "label": "②",
+                "text": "의원의제명-재적의원2/3이상의찬성"
+              },
+              {
+                "label": "③",
+                "text": "헌법개정안의발의-재적의원2/3이상의출석과출석의원과반수의찬성"
+              },
+              {
+                "label": "④",
+                "text": "국무총리해임건의발의-재적의원1/3이상의찬성"
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "헌법개정안의발의-재적의원2/3이상의출석과출석의원과반수의찬성"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 국회의 특별 정족수에 관한 설명 중 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "법률안의 재의결-재적의원 과반수의 출석과 출석의원2/3이상의 찬성은 국회의 특별 정족수에 관한 설명으로 타당하다."
+              },
+              {
+                "label": "②",
+                "text": "의원의 제명-재적의원2/3이상의 찬성은 국회의 특별 정족수에 관한 설명으로 타당하다."
+              },
+              {
+                "label": "③",
+                "text": "헌법개정안의 발의-재적의원2/3이상의 출석과 출석의원 과반수의 찬성은 국회의 특별 정족수에 관한 설명으로 타당하다."
+              },
+              {
+                "label": "④",
+                "text": "국무총리 해임 건의 발의-재적의원1/3이상의 찬성은 국회의 특별 정족수에 관한 설명으로 타당하다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "헌법개정안의 발의-재적의원2/3이상의 출석과 출석의원 과반수의 찬성은 국회의 특별 정족수에 관한 설명으로 타당하다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-03",
+          "no": 3,
+          "type": "single-best-false",
+          "original": {
+            "stem": "조약에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "우리헌법상조약의체결권은행정부에속한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소는성질상국내에바로적용될수있는조약은위헌법률심판의대상이될수있음을인정하고있다."
+              },
+              {
+                "label": "③",
+                "text": "조약의체결, 비준에대한동의권은국회에속한다."
+              },
+              {
+                "label": "④",
+                "text": "법률과동일한효력을갖는조약과국내법이저촉될경우신법우선의원칙, 특별법우선의원칙이적용된다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "조약의체결, 비준에대한동의권은국회에속한다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "조약에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "우리 헌법상 조약의 체결권은 행정부에 속한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소는 성질상 국내에 바로 적용될 수 있는 조약은 위헌법률심판의 대상이 될 수 있음을 인정하고 있다."
+              },
+              {
+                "label": "③",
+                "text": "조약의 체결, 비준에 대한 동의권은 국회에 속한다."
+              },
+              {
+                "label": "④",
+                "text": "법률과 동일한 효력을 갖는 조약과 국내법이 저촉될 경우 신법 우선의 원칙, 특별법 우선의 원칙이 적용된다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "조약의 체결, 비준에 대한 동의권은 국회에 속한다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-04",
+          "no": 4,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 국회의 동의 대상이 아닌 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국무총리의임명"
+              },
+              {
+                "label": "②",
+                "text": "국군의외국파견"
+              },
+              {
+                "label": "③",
+                "text": "일반사면"
+              },
+              {
+                "label": "④",
+                "text": "계엄의선포"
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "계엄의선포"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 국회의 동의 대상이 아닌 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국무총리의 임명은 국회의 동의 대상이다."
+              },
+              {
+                "label": "②",
+                "text": "국군의 외국 파견은 국회의 동의 대상이다."
+              },
+              {
+                "label": "③",
+                "text": "일반사면은 국회의 동의 대상이다."
+              },
+              {
+                "label": "④",
+                "text": "계엄의 선포는 국회의 동의 대상이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "계엄의 선포는 국회의 동의 대상이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-05",
+          "no": 5,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 국무회의에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국무회의는행정부의권한에속하는중요한정책을심의하는최고정책심의기관으로서헌법상필수기관이다."
+              },
+              {
+                "label": "②",
+                "text": "국무회의는대통령에소속된합의제기관으로서국무총리가의장이된다."
+              },
+              {
+                "label": "③",
+                "text": "일반적으로대통령은국무회의의심의결과에구속되지않는다고본다."
+              },
+              {
+                "label": "④",
+                "text": "헌법제89조의심의사항에열거되었음에도국무회의의심의를거치지않은대통령의국무행위의효력에관하여무효설과유효설이대립하고있다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "국무회의는대통령에소속된합의제기관으로서국무총리가의장이된다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 국무회의에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국무회의는 행정부의 권한에 속하는 중요한 정책을 심의하는 최고 정책 심의 기관으로서 헌법상 필수기관이다."
+              },
+              {
+                "label": "②",
+                "text": "국무회의는 대통령에 소속된 합의제 기관으로서 국무총리가 의장이 된다."
+              },
+              {
+                "label": "③",
+                "text": "일반적으로 대통령은 국무회의의 심의 결과에 구속되지 않는다고 본다."
+              },
+              {
+                "label": "④",
+                "text": "헌법 제89조의 심의사항에 열거되었음에도 국무회의의 심의를 거치지 않은 대통령의 국무 행위의 효력에 관하여 무효 설과 유효 설이 대립하고 있다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "국무회의는 대통령에 소속된 합의제 기관으로서 국무총리가 의장이 된다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-06",
+          "no": 6,
+          "type": "single-best-true",
+          "original": {
+            "stem": "위헌법률심판의 대상이 되는 것으로 가장 옳은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "헌법의개별규정"
+              },
+              {
+                "label": "②",
+                "text": "관습법"
+              },
+              {
+                "label": "③",
+                "text": "긴급명령"
+              },
+              {
+                "label": "④",
+                "text": "외국의법률"
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "긴급명령"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "위헌법률심판의 대상이 되는 것으로 가장 옳은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "헌법의 개별 규정은 위헌법률심판의 대상이 된다."
+              },
+              {
+                "label": "②",
+                "text": "관습법은 위헌법률심판의 대상이 된다."
+              },
+              {
+                "label": "③",
+                "text": "긴급명령은 위헌법률심판의 대상이 된다."
+              },
+              {
+                "label": "④",
+                "text": "외국의 법률은 위헌법률심판의 대상이 된다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "긴급명령은 위헌법률심판의 대상이 된다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-07",
+          "no": 7,
+          "type": "single-best-false",
+          "original": {
+            "stem": "사법권의 독립에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사법권의독립은법원의독립과법관의독립을의미한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법제108조의대법원의규칙제정권도사법권독립의한내용이다."
+              },
+              {
+                "label": "③",
+                "text": "사법권의독립에도법치주의의원칙및권력분립의원칙등에의한한계가있는바, 법률에의한조직의구성, 법원예산의국회심의, 대통령의판사임명권등이그것이다."
+              },
+              {
+                "label": "④",
+                "text": "대법원장과대법관이아닌법관의임기는10년으로서연임할수있다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "사법권의독립에도법치주의의원칙및권력분립의원칙등에의한한계가있는바, 법률에의한조직의구성, 법원예산의국회심의, 대통령의판사임명권등이그것이다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "사법권의 독립에 관한 설명으로 가장 잘못된 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사법권의 독립은 법원의 독립과 법관의 독립을 의미한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법 제108조의 대법원의 규칙 제정권도 사법권독립의 한 내용이다."
+              },
+              {
+                "label": "③",
+                "text": "사법권의 독립에도 법치주의의 원칙 및 권력분립의 원칙 등에 의한 한계가 있는 바, 법률에 의한 조직의 구성, 법원 예산의 국회 심의, 대통령의 판사 임명권 등이 그것이다."
+              },
+              {
+                "label": "④",
+                "text": "대법원장과 대법관이 아닌 법관의 임기는 10년으로서 연임할 수 있다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "사법권의 독립에도 법치주의의 원칙 및 권력분립의 원칙 등에 의한 한계가 있는 바, 법률에 의한 조직의 구성, 법원 예산의 국회 심의, 대통령의 판사 임명권 등이 그것이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-08",
+          "no": 8,
+          "type": "single-best-true",
+          "original": {
+            "stem": "헌법재판소의 심판절차에 관한 설명으로 가장 타당한 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사건의심리는재판관6인이상의출석을요한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소법은각종심판절차에있어서변호사강제주의를취하고있다."
+              },
+              {
+                "label": "③",
+                "text": "위헌법률심판에있어서헌법재판소는어떠한경우에도제청된법률또는법률조항이외의위헌여부에관하여판단할수없다."
+              },
+              {
+                "label": "④",
+                "text": "탄핵소추의의결을받은자는소추의결에불구하고헌법재판소의심판이있을때까지는권한행사가정지되지아니한다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "헌법재판소법은각종심판절차에있어서변호사강제주의를취하고있다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "헌법재판소의 심판 절차에 관한 설명으로 가장 타당한 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사건의 심리는 재판관 6인 이상의 출석을 요한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소법은 각종 심판 절차에 있어서 변호사 강제 주의를 취하고 있다."
+              },
+              {
+                "label": "③",
+                "text": "위헌법률심판에 있어서 헌법재판소는 어떠한 경우에도 제청된 법률 또는 법률조항 이외의 위헌 여부에 관하여 판단할 수 없다."
+              },
+              {
+                "label": "④",
+                "text": "탄핵소추의 의결을 받은 자는 소추 의결에 불구하고 헌법재판소의 심판이 있을 때까지는 권한 행사가 정지되지 아니한다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "헌법재판소법은 각종 심판 절차에 있어서 변호사 강제 주의를 취하고 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-09",
+          "no": 9,
+          "type": "single-best",
+          "original": {
+            "stem": "다음 중 국회의 권한에 속하지 않는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국채모집에대한의결권"
+              },
+              {
+                "label": "②",
+                "text": "국가예산안의심의․확정권"
+              },
+              {
+                "label": "③",
+                "text": "국회의원의자격심사권"
+              },
+              {
+                "label": "④",
+                "text": "3인의헌법재판관임명권"
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "3인의헌법재판관임명권"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 국회의 권한에 속하지 않는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국채 모집에 대한 의결권은 국회의 권한에 속한다."
+              },
+              {
+                "label": "②",
+                "text": "국가예산안의 심의․확정권은 국회의 권한에 속한다."
+              },
+              {
+                "label": "③",
+                "text": "국회의원의 자격 심사권은 국회의 권한에 속한다."
+              },
+              {
+                "label": "④",
+                "text": "3인의 헌법재판관 임명권은 국회의 권한에 속한다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "3인의 헌법재판관 임명권은 국회의 권한에 속한다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-10",
+          "no": 10,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음은 기본권에 관한 일반적 설명이다. 가장 옳지 않은 것 은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "외국인에대하여는당연히그주체가될수있는기본권이있는가하면상호주의에의하여인정되는기본권도있다."
+              },
+              {
+                "label": "②",
+                "text": "기본권은사인간에있어서는효력을갖지않는다는것이과거의다수설이었다."
+              },
+              {
+                "label": "③",
+                "text": "반대설이있기는하나, 다수설은행복추구권, 참정권, 근로3권등일부를제외한대부분의기본권규정이사법상의일반원칙을통하여사법관계에적용된다고본다."
+              },
+              {
+                "label": "④",
+                "text": "과잉금지원칙의4가지기본원칙은목적의정당성, 수단의적정성, 본질적침해의금지, 법익비례성등이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "과잉금지원칙의4가지기본원칙은목적의정당성, 수단의적정성, 본질적침해의금지, 법익비례성등이다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음은 기본권에 관한 일반적 설명이다. 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "외국인에 대하여는 당연히 그 주체가 될 수 있는 기본권이 있는가 하면 상호주의에 의하여 인정되는 기본권도 있다."
+              },
+              {
+                "label": "②",
+                "text": "기본권은 사인 간에 있어서는 효력을 갖지 않는다는 것이 과거의 다수 설이었다."
+              },
+              {
+                "label": "③",
+                "text": "반대 설이 있기는 하나, 다수 설은 행복추구권, 참정권, 근로 3권 등 일부를 제외한 대부분의 기본권 규정이 사법상의 일반 원칙을 통하여 사법 관계에 적용된다고 본다."
+              },
+              {
+                "label": "④",
+                "text": "과잉금지원칙의 4가지 기본원칙은 목적의 정당성, 수단의 적정성, 본질적 침해의 금지, 법익 비례성 등이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "과잉금지원칙의 4가지 기본원칙은 목적의 정당성, 수단의 적정성, 본질적 침해의 금지, 법익 비례성 등이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-11",
+          "no": 11,
+          "type": "single-best-false",
+          "original": {
+            "stem": "감사원에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "감사원은중앙행정기관으로서대통령에소속하지만, 독립하여활동하는헌법기관이다."
+              },
+              {
+                "label": "②",
+                "text": "감사원장은국회의동의를얻어대통령이임명하고, 감사위원은감사원장의제청으로국회의동의절차를거치지아니하고대통령이임명한다."
+              },
+              {
+                "label": "③",
+                "text": "감사위원은1차에한하여중임할수있으나, 감사원장은중임할수없다."
+              },
+              {
+                "label": "④",
+                "text": "감사원은변상책임유무의판정권을갖는다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "감사위원은1차에한하여중임할수있으나, 감사원장은중임할수없다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "감사원에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "감사원은 중앙 행정기관으로서 대통령에 소속하지만, 독립하여 활동하는 헌법기관이다."
+              },
+              {
+                "label": "②",
+                "text": "감사원장은 국회의 동의를 얻어 대통령이 임명하고, 감사위원은 감사원장의 제청으로 국회의 동의 절차를 거치지 아니하고 대통령이 임명한다."
+              },
+              {
+                "label": "③",
+                "text": "감사위원은 1차에 한하여 중임할 수 있으나, 감사원장은 중임할 수 없다."
+              },
+              {
+                "label": "④",
+                "text": "감사원은 변상 책임 유무의 판정권을 갖는다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "감사위원은 1차에 한하여 중임할 수 있으나, 감사원장은 중임할 수 없다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-12",
+          "no": 12,
+          "type": "single-best-false",
+          "original": {
+            "stem": "국회에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국회의원은현행범인인경우에회기중이라도국회의동의없이체포또는구금될수있다."
+              },
+              {
+                "label": "②",
+                "text": "국회는예산안에대해소극적으로삭제하거나감액할수있으나, 정부의동의없이는증액수정하거나새로운비목을설치할수없다."
+              },
+              {
+                "label": "③",
+                "text": "국회는특정한국정사안에대하여조사하기위하여필요한서류의제출, 증인의출석, 증언․의견진술요구및압수․수색을할수있다."
+              },
+              {
+                "label": "④",
+                "text": "국회의원이국회내에서하는정부에대한자료제출요구는직무상발언에부수하여행하여진것으로서면책특권이인정된다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "국회는특정한국정사안에대하여조사하기위하여필요한서류의제출, 증인의출석, 증언․의견진술요구및압수․수색을할수있다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "국회에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국회의원은 현행범인인 경우에 회기 중이라도 국회의 동의 없이 체포 또는 구금될 수 있다."
+              },
+              {
+                "label": "②",
+                "text": "국회는 예산안에 대해 소극적으로 삭제하거나 감액할 수 있으나, 정부의 동의 없이는 증액 수정하거나 새로운 비목을 설치할 수 없다."
+              },
+              {
+                "label": "③",
+                "text": "국회는 특정한 국정 사안에 대하여 조사하기 위하여 필요한 서류의 제출, 증인의 출석, 증언․의견 진술 요구 및 압수․수색을 할 수 있다."
+              },
+              {
+                "label": "④",
+                "text": "국회의원이 국회 내에서 하는 정부에 대한 자료 제출 요구는 직무상 발언에 부수하여 행하여진 것으로서 면책특권이 인정된다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "국회는 특정한 국정 사안에 대하여 조사하기 위하여 필요한 서류의 제출, 증인의 출석, 증언․의견 진술 요구 및 압수․수색을 할 수 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-13",
+          "no": 13,
+          "type": "single-best-false",
+          "original": {
+            "stem": "대통령에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "긴급재정경제명령이발동요건을갖추고국회의승인을얻어유효하게성립한경우그후그발동의원인이된내우․외환․천재․지변또는중대한재정․경제상의위기가사라진때에는곧바로그효력이상실된다."
+              },
+              {
+                "label": "②",
+                "text": "대통령은국회가의결한법률안이헌법에위반된다고판단되는경우, 그법률안의집행이불가능한경우또는그법률안이정부에대한부당한정치적공세를내용으로하는경우에는거부권을행사할수있다."
+              },
+              {
+                "label": "③",
+                "text": "대통령의불소추특권은대통령개인에게특권을부여한것이아니라, 국가원수로서외국에대하여국가를대표하는지위에있는대통령에게재직중인동안만형사상특권을부여하고있는것이다."
+              },
+              {
+                "label": "④",
+                "text": "대통령이재직중범죄행위를한경우재직중이라도탄핵소추의의결이있으면그권한행사가정지되고탄핵결정이있으면대통령직에서파면된다. 또한퇴직후에는소추될수도있다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "긴급재정경제명령이발동요건을갖추고국회의승인을얻어유효하게성립한경우그후그발동의원인이된내우․외환․천재․지변또는중대한재정․경제상의위기가사라진때에는곧바로그효력이상실된다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "대통령에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "긴급 재정 경제 명령이 발동 요건을 갖추고 국회의 승인을 얻어 유효하게 성립한 경우 그 후 그 발동의 원인이 된 내 우․외환․천재․지변 또는 중대한 재정․경제상의 위기가 사라진 때에는 곧바로 그 효력이 상실된다."
+              },
+              {
+                "label": "②",
+                "text": "대통령은 국회가 의결한 법률안이 헌법에 위반된다고 판단되는 경우, 그 법률안의 집행이 불가능한 경우 또는 그 법률안이 정부에 대한 부당한 정치적 공세를 내용으로 하는 경우에는 거부권을 행사할 수 있다."
+              },
+              {
+                "label": "③",
+                "text": "대통령의 불소추 특권은 대통령 개인에게 특권을 부여한 것이 아니라, 국가 원수로서 외국에 대하여 국가를 대표하는 지위에 있는 대통령에게 재직 중인 동안만 형사상 특권을 부여하고 있는 것이다."
+              },
+              {
+                "label": "④",
+                "text": "대통령이 재직 중 범죄행위를 한 경우 재직 중이라도 탄핵소추의 의결이 있으면 그 권한 행사가 정지되고 탄핵결정이 있으면 대통령 직에서 파면된다. 또한 퇴직 후에는 소추될 수도 있다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "긴급 재정 경제 명령이 발동 요건을 갖추고 국회의 승인을 얻어 유효하게 성립한 경우 그 후 그 발동의 원인이 된 내 우․외환․천재․지변 또는 중대한 재정․경제상의 위기가 사라진 때에는 곧바로 그 효력이 상실된다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-14",
+          "no": 14,
+          "type": "single-best-false",
+          "original": {
+            "stem": "양심의 자유에 관한 다음 설명 중 가장 옳지 않은 것은? (판례에 의함)",
+            "choices": [
+              {
+                "label": "①",
+                "text": "양심의자유는양심형성의자유와양심적결정의자유을포함하는내부적자유뿐만아니라양심실현의자유를포함한다."
+              },
+              {
+                "label": "②",
+                "text": "양심형성및양심적결정의자유는절대적자유이나, 양심실현의자유는상대적자유이다."
+              },
+              {
+                "label": "③",
+                "text": "양심의자유는인간으로서의존엄성유지와개인의자유로운인격발현을위해개인의윤리적정체성을보장하는기능을담당한다."
+              },
+              {
+                "label": "④",
+                "text": "‘국가보안법’위반및‘집회및시위에관한법률’위반수형자의가석방결정시준법서약서를제출하도록한‘가석방심사등에관한규칙’제14조는서약자의양심의영역을침범하는것이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "‘국가보안법’위반및‘집회및시위에관한법률’위반수형자의가석방결정시준법서약서를제출하도록한‘가석방심사등에관한규칙’제14조는서약자의양심의영역을침범하는것이다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "양심의 자유에 관한 다음 설명 중 가장 옳지 않은 것은? (판례에 의함)",
+            "choices": [
+              {
+                "label": "①",
+                "text": "양심의 자유는 양심형성의 자유와 양심적 결정의 자유 을 포함하는 내부적 자유뿐만 아니라 양심실현의 자유를 포함한다."
+              },
+              {
+                "label": "②",
+                "text": "양심형성 및 양심적 결정의 자유는 절대적 자유이나, 양심실현의 자유는 상대적 자유이다."
+              },
+              {
+                "label": "③",
+                "text": "양심의 자유는 인간으로서의 존엄성 유지와 개인의 자유로운 인격발현을 위해 개인의 윤리적 정체성을 보장하는 기능을 담당한다."
+              },
+              {
+                "label": "④",
+                "text": "‘국가보안법’위반 및‘집회 및 시위에 관한 법률’위반 수형자의 가석방 결정 시 준법 서약서를 제출하도록 한‘가석방 심사 등에 관한 규칙’제14조는 서약자의 양심의 영역을 침범하는 것이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "‘국가보안법’위반 및‘집회 및 시위에 관한 법률’위반 수형자의 가석방 결정 시 준법 서약서를 제출하도록 한‘가석방 심사 등에 관한 규칙’제14조는 서약자의 양심의 영역을 침범하는 것이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-15",
+          "no": 15,
+          "type": "single-best",
+          "original": {
+            "stem": "우리나라 헌법 중 행복추구권이 명문으로 규정된 최초의 헌법은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "제헌헌법"
+              },
+              {
+                "label": "②",
+                "text": "1960년헌법"
+              },
+              {
+                "label": "③",
+                "text": "1980년헌법"
+              },
+              {
+                "label": "④",
+                "text": "1987년헌법"
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "1980년헌법"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "우리 나라 헌법 중 행복추구권이 명문으로 규정된 최초의 헌법은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "행복추구권은 제헌헌법에서 처음 명문으로 규정되었다."
+              },
+              {
+                "label": "②",
+                "text": "행복추구권은 1960년 헌법에서 처음 명문으로 규정되었다."
+              },
+              {
+                "label": "③",
+                "text": "행복추구권은 1980년 헌법에서 처음 명문으로 규정되었다."
+              },
+              {
+                "label": "④",
+                "text": "행복추구권은 1987년 헌법에서 처음 명문으로 규정되었다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "행복추구권은 1980년 헌법에서 처음 명문으로 규정되었다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-16",
+          "no": 16,
+          "type": "single-best-false",
+          "original": {
+            "stem": "‘알 권리’에 관한 설명 중 가장 옳지 않은 것은? (판례에 의함)",
+            "choices": [
+              {
+                "label": "①",
+                "text": "알권리는자유권적성질과청구권적성질을공유한다."
+              },
+              {
+                "label": "②",
+                "text": "알권리는정보에의접근, 수집, 처리의자유이다."
+              },
+              {
+                "label": "③",
+                "text": "알권리는언론․출판의자유의핵심적내용을이루는정신적자유권이므로헌법제37조의일반적법률유보조항에의하여제한될수없다."
+              },
+              {
+                "label": "④",
+                "text": "알권리를구체화시키는법률이제정되어있지않더라도헌법제21조에의하여직접보장될수있다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "알권리는언론․출판의자유의핵심적내용을이루는정신적자유권이므로헌법제37조의일반적법률유보조항에의하여제한될수없다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "‘알권리’에 관한 설명 중 가장 옳지 않은 것은? (판례에 의함)",
+            "choices": [
+              {
+                "label": "①",
+                "text": "알권리는 자유권적 성질과 청구권적 성질을 공유한다."
+              },
+              {
+                "label": "②",
+                "text": "알권리는 정보에의 접근, 수집, 처리의 자유이다."
+              },
+              {
+                "label": "③",
+                "text": "알권리는 언론․출판의 자유의 핵심적 내용을 이루는 정신적 자유권이므로 헌법 제37조의 일반적 법률유보 조항에 의하여 제한될 수 없다."
+              },
+              {
+                "label": "④",
+                "text": "알권리를 구체화시키는 법률이 제정되어 있지 않더라도 헌법 제21조에 의하여 직접 보장될 수 있다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "알권리는 언론․출판의 자유의 핵심적 내용을 이루는 정신적 자유권이므로 헌법 제37조의 일반적 법률유보 조항에 의하여 제한될 수 없다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-17",
+          "no": 17,
+          "type": "single-best-false",
+          "original": {
+            "stem": "대통령의 사면권에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "일반사면은형의선고를받은자만을그대상자로한다."
+              },
+              {
+                "label": "②",
+                "text": "복권은자격이상실또는정지된자중에서형의집행이종료하거나집행을면제받은자에대해서만행해진다."
+              },
+              {
+                "label": "③",
+                "text": "사면․감형․복권은어느경우든국무회의의심의를거쳐야하고, 감형․복권의경우는물론특별사면의경우에도국회의동의를필요로하지아니한다."
+              },
+              {
+                "label": "④",
+                "text": "일반사면으로형의선고는그효력을상실하고, 특별사면에의하여는형의집행이면제되며, 형의선고에의한기성의효과는어느경우에도사면으로인하여변경되지아니한다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "일반사면은형의선고를받은자만을그대상자로한다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "대통령의 사면권에 관한 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "일반사면은 형의 선고를 받은 자만을 그 대상자로 한다."
+              },
+              {
+                "label": "②",
+                "text": "복권은 자격이 상실 또는 정지된 자 중에서 형의 집행이 종료하거나 집행을 면제 받은 자에 대해서만 행해진다."
+              },
+              {
+                "label": "③",
+                "text": "사면․감형․복권은 어느 경우든 국무회의의 심의를 거쳐야하고, 감형․복권의 경우는 물론 특별사면의 경우에도 국회의 동의를 필요로 하지 아니한다."
+              },
+              {
+                "label": "④",
+                "text": "일반사면으로 형의 선고는 그 효력을 상실하고, 특별사면에 의하여는 형의 집행이 면제되며, 형의 선고에 의한 기성의 효과는 어느 경우에도 사면으로 인하여 변경되지 아니한다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "일반사면은 형의 선고를 받은 자만을 그 대상자로 한다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-18",
+          "no": 18,
+          "type": "single-best",
+          "original": {
+            "stem": "다음 중 헌법이 명문으로 검사의 신청에 의하여 법관이 발 부한 영장을 제시하여야만 제한할 수 있도록 규정하고 있는 기본권은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "주거의자유"
+              },
+              {
+                "label": "②",
+                "text": "통신의자유"
+              },
+              {
+                "label": "③",
+                "text": "언론의자유"
+              },
+              {
+                "label": "④",
+                "text": "재산권"
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "주거의자유"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 헌법이 명문으로 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야만 제한할 수 있도록 규정하고 있는 기본권은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "헌법은 주거의 자유 제한에 대하여 검사의 신청에 의하여 법관이 발부한 영장을 제시하도록 명문으로 규정하고 있다."
+              },
+              {
+                "label": "②",
+                "text": "헌법은 통신의 자유 제한에 대하여 검사의 신청에 의하여 법관이 발부한 영장을 제시하도록 명문으로 규정하고 있다."
+              },
+              {
+                "label": "③",
+                "text": "헌법은 언론의 자유 제한에 대하여 검사의 신청에 의하여 법관이 발부한 영장을 제시하도록 명문으로 규정하고 있다."
+              },
+              {
+                "label": "④",
+                "text": "헌법은 재산권 제한에 대하여 검사의 신청에 의하여 법관이 발부한 영장을 제시하도록 명문으로 규정하고 있다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "헌법은 주거의 자유 제한에 대하여 검사의 신청에 의하여 법관이 발부한 영장을 제시하도록 명문으로 규정하고 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-19",
+          "no": 19,
+          "type": "single-best",
+          "original": {
+            "stem": "다음 중 가장 확실하게 형사보상을 받을 수 있는 자는?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "형사미성년자로서무죄재판을받은자"
+              },
+              {
+                "label": "②",
+                "text": "경합범중일부에대하여만무죄재판을받은자"
+              },
+              {
+                "label": "③",
+                "text": "재심에서무죄재판을받은자"
+              },
+              {
+                "label": "④",
+                "text": "심신상실로무죄재판을받은자"
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "재심에서무죄재판을받은자"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 가장 확실하게 형사보상을 받을 수 있는 자는?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "형사 미성년자로서 무죄 재판을 받은 자는 형사보상을 받을 수 있다."
+              },
+              {
+                "label": "②",
+                "text": "경합 범 중 일부에 대하여만 무죄 재판을 받은 자는 형사보상을 받을 수 있다."
+              },
+              {
+                "label": "③",
+                "text": "재심에서 무죄 재판을 받은 자는 형사보상을 받을 수 있다."
+              },
+              {
+                "label": "④",
+                "text": "심신 상실로 무죄 재판을 받은 자는 형사보상을 받을 수 있다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "재심에서 무죄 재판을 받은 자는 형사보상을 받을 수 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-20",
+          "no": 20,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 죄형법정주의의 파생원칙이 아닌 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "절대적부정기형의금지"
+              },
+              {
+                "label": "②",
+                "text": "이중위험금지"
+              },
+              {
+                "label": "③",
+                "text": "유추해석금지"
+              },
+              {
+                "label": "④",
+                "text": "관습형법금지"
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "이중위험금지"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 죄형법정주의의 파생 원칙이 아닌 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "절대적 부정 기형의 금지는 죄형법정주의의 파생 원칙이다."
+              },
+              {
+                "label": "②",
+                "text": "이중위험금지는 죄형법정주의의 파생 원칙이다."
+              },
+              {
+                "label": "③",
+                "text": "유추 해석 금지는 죄형법정주의의 파생 원칙이다."
+              },
+              {
+                "label": "④",
+                "text": "관습 형법 금지는 죄형법정주의의 파생 원칙이다."
+              }
+            ],
+            "officialAnswer": "②",
+            "officialAnswerText": "이중위험금지는 죄형법정주의의 파생 원칙이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-21",
+          "no": 21,
+          "type": "single-best-false",
+          "original": {
+            "stem": "정당에 관한 다음 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "정당은헌법재판소의심판에의하여해산되는경우를제외하고는강제해산당하지아니한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소에서정당의해산을명하는결정을선고하면정당해산은확정된다."
+              },
+              {
+                "label": "③",
+                "text": "헌법재판소의해산결정에의하여해산된정당의잔여재산은당헌이정하는바에따라처분하되, 나머지가있을경우에는국고에귀속한다."
+              },
+              {
+                "label": "④",
+                "text": "헌법재판소의결정에의하여해산된정당의명칭과같은명칭은정당의명칭으로다시사용하지못한다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "헌법재판소의해산결정에의하여해산된정당의잔여재산은당헌이정하는바에따라처분하되, 나머지가있을경우에는국고에귀속한다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "정당에 관한 다음 설명 중 가장 옳지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "정당은 헌법재판소의 심판에 의하여 해산되는 경우를 제외하고는 강제 해산당하지 아니한다."
+              },
+              {
+                "label": "②",
+                "text": "헌법재판소에서 정당의 해산을 명하는 결정을 선고하면 정당해산은 확정된다."
+              },
+              {
+                "label": "③",
+                "text": "헌법재판소의 해산 결정에 의하여 해산된 정당의 잔여 재산은 당헌이 정하는 바에 따라 처분하되, 나머지가 있을 경우에는 국고에 귀속한다."
+              },
+              {
+                "label": "④",
+                "text": "헌법재판소의 결정에 의하여 해산된 정당의 명칭과 같은 명칭은 정당의 명칭으로 다시 사용하지 못한다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "헌법재판소의 해산 결정에 의하여 해산된 정당의 잔여 재산은 당헌이 정하는 바에 따라 처분하되, 나머지가 있을 경우에는 국고에 귀속한다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-22",
+          "no": 22,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 인간의 존엄과 가치조항(헌법 제10조)의 적용대상으로 볼 수 없는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "외국인"
+              },
+              {
+                "label": "②",
+                "text": "전과자"
+              },
+              {
+                "label": "③",
+                "text": "태아"
+              },
+              {
+                "label": "④",
+                "text": "법인"
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "법인"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 인간의 존엄과 가치 조항(헌법 제10조)의 적용대상으로 볼 수 없는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "외국인은 인간의 존엄과 가치 조항의 적용대상이다."
+              },
+              {
+                "label": "②",
+                "text": "전과자는 인간의 존엄과 가치 조항의 적용대상이다."
+              },
+              {
+                "label": "③",
+                "text": "태아는 인간의 존엄과 가치 조항의 적용대상이다."
+              },
+              {
+                "label": "④",
+                "text": "법인은 인간의 존엄과 가치 조항의 적용대상이다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "법인은 인간의 존엄과 가치 조항의 적용대상이다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-23",
+          "no": 23,
+          "type": "single-best-true",
+          "original": {
+            "stem": "우리 헌법상의 시장경제질서에 관한 다음 설명 중 가장 옳은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사유재산제는어떠한경우에도제한되지않는다."
+              },
+              {
+                "label": "②",
+                "text": "농지의합리적인경영을위하여필요한경우에는법률이정하는바에따라농지의소작제나임대차, 위탁경영을할수있다."
+              },
+              {
+                "label": "③",
+                "text": "국가는국방상필요한경우에는법률이정하는바에따라사영기업을국․공유로이전하거나그경영을통제또는관리할수있다."
+              },
+              {
+                "label": "④",
+                "text": "천연자원이나수력은특허의대상이아니다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "국가는국방상필요한경우에는법률이정하는바에따라사영기업을국․공유로이전하거나그경영을통제또는관리할수있다."
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "우리 헌법상의 시장 경제 질서에 관한 다음 설명 중 가장 옳은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "사유 재산제는 어떠한 경우에도 제한되지 않는다."
+              },
+              {
+                "label": "②",
+                "text": "농지의 합리적인 경영을 위하여 필요한 경우에는 법률이 정하는 바에 따라 농지의 소작제나 임대차, 위탁 경영을 할 수 있다."
+              },
+              {
+                "label": "③",
+                "text": "국가는 국방상 필요한 경우에는 법률이 정하는 바에 따라 사영 기업을 국․공유로 이전하거나 그 경영을 통제 또는 관리할 수 있다."
+              },
+              {
+                "label": "④",
+                "text": "천연자원이나 수력은 특허의 대상이 아니다."
+              }
+            ],
+            "officialAnswer": "③",
+            "officialAnswerText": "국가는 국방상 필요한 경우에는 법률이 정하는 바에 따라 사영 기업을 국․공유로 이전하거나 그 경영을 통제 또는 관리할 수 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-24",
+          "no": 24,
+          "type": "single-best",
+          "original": {
+            "stem": "현행 헌법상 헌법 개정을 하지 않고도 채택할 수 있는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국군의편성․조직"
+              },
+              {
+                "label": "②",
+                "text": "대통령의피선거권연령의하한을35세로낮추는것"
+              },
+              {
+                "label": "③",
+                "text": "감사원을국회소속으로이관하는것"
+              },
+              {
+                "label": "④",
+                "text": "의원의제명처분에대하여법원에제소할수있도록하는것"
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "국군의편성․조직"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "현행 헌법상 헌법개정을 하지 않고도 채택할 수 있는 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "국군의 편성․조직은 헌법개정을 하지 않고도 채택할 수 있다."
+              },
+              {
+                "label": "②",
+                "text": "대통령의 피선거권 연령의 하한을 35세로 낮추는 것은 헌법개정을 하지 않고도 채택할 수 있다."
+              },
+              {
+                "label": "③",
+                "text": "감사원을 국회 소속으로 이관하는 것은 헌법개정을 하지 않고도 채택할 수 있다."
+              },
+              {
+                "label": "④",
+                "text": "의원의 제명처분에 대하여 법원에 제소할 수 있도록 하는 것은 헌법개정을 하지 않고도 채택할 수 있다."
+              }
+            ],
+            "officialAnswer": "①",
+            "officialAnswerText": "국군의 편성․조직은 헌법개정을 하지 않고도 채택할 수 있다.",
+            "lawAsOf": "2026-06-18",
+            "legalVerifiedAt": null,
+            "note": "헌법 조문 및 헌재결정 법리검증 대기"
+          }
+        },
+        {
+          "qid": "2006-25",
+          "no": 25,
+          "type": "single-best-false",
+          "original": {
+            "stem": "다음 중 현행 헌법에 규정되어 있지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "자백의증거능력제한"
+              },
+              {
+                "label": "②",
+                "text": "일사부재리의원칙"
+              },
+              {
+                "label": "③",
+                "text": "연좌제의금지"
+              },
+              {
+                "label": "④",
+                "text": "모든형사사건에대한필요적국선변호제도"
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "모든형사사건에대한필요적국선변호제도"
+          },
+          "current": {
+            "changedByCurrentLaw": false,
+            "stem": "다음 중 현행 헌법에 규정되어 있지 않은 것은?",
+            "choices": [
+              {
+                "label": "①",
+                "text": "자백의 증거 능력 제한은 현행 헌법에 규정되어 있다."
+              },
+              {
+                "label": "②",
+                "text": "일사부재리의 원칙은 현행 헌법에 규정되어 있다."
+              },
+              {
+                "label": "③",
+                "text": "연좌제의 금지는 현행 헌법에 규정되어 있다."
+              },
+              {
+                "label": "④",
+                "text": "모든 형사 사건에 대한 필요적 국선 변호 제도는 현행 헌법에 규정되어 있다."
+              }
+            ],
+            "officialAnswer": "④",
+            "officialAnswerText": "모든 형사 사건에 대한 필요적 국선 변호 제도는 현행 헌법에 규정되어 있다.",
             "lawAsOf": "2026-06-18",
             "legalVerifiedAt": null,
             "note": "헌법 조문 및 헌재결정 법리검증 대기"
