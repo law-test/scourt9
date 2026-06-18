@@ -14,8 +14,10 @@ from pypdf import PdfReader
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 PRIVATE_ROOT = WORKSPACE / "law-test-private" / "private_problem_banks" / "법무사"
+LOCAL_PDF_ROOT = WORKSPACE / "0gichul_법과목_기출"
 
 CHOICES = "①②③④⑤"
+BOX_LABEL_RE = re.compile(r"([ㄱ-ㅎ])\s*[.)]\s*")
 
 EXAMS = {
     2025: {
@@ -106,6 +108,24 @@ def compact(text: str) -> str:
     return text
 
 
+def find_local_subject_pdfs(year: int) -> dict[str, list[dict[str, str]]]:
+    if not LOCAL_PDF_ROOT.exists():
+        return {}
+    out: dict[str, list[dict[str, str]]] = {}
+    for path in LOCAL_PDF_ROOT.rglob(f"{year}_법무사_*.pdf"):
+        subject = path.parent.name
+        kind = "commentary" if "해설" in path.name else "problem"
+        out.setdefault(subject, []).append(
+            {
+                "kind": kind,
+                "path": str(path),
+                "sha256": sha256(path),
+                "bytes": path.stat().st_size,
+            }
+        )
+    return {subject: sorted(rows, key=lambda row: (row["kind"], row["path"])) for subject, rows in sorted(out.items())}
+
+
 def subject_for(group: int, no: int) -> str:
     for start, end, subject in GROUPS[group]["subjects"]:
         if start <= no <= end:
@@ -115,9 +135,21 @@ def subject_for(group: int, no: int) -> str:
 
 def question_type(stem: str) -> str:
     stem = stem.replace(" ", "")
+    if "몇개" in stem:
+        if "옳지않은" in stem or "아닌" in stem:
+            return "count-false"
+        if "옳은" in stem:
+            return "count-true"
+        if "있는경우" in stem or "해당하는경우" in stem or "할수있는경우" in stem:
+            return "count-true"
+        return "count-unknown"
+    if "아닌것끼리고른" in stem or "아닌것을모두고른" in stem:
+        return "multi-select-false"
     if "옳지않은것을모두고른" in stem:
         return "multi-select-false"
     if "옳은것을모두고른" in stem:
+        return "multi-select-true"
+    if "경우를모두고른" in stem or "해당하는것을모두고른" in stem or "있는것을모두고른" in stem:
         return "multi-select-true"
     if "옳지않은" in stem:
         return "single-best-false"
@@ -200,20 +232,57 @@ def parse_question_text(text: str) -> tuple[str, list[dict[str, str]]]:
     return stem, choices
 
 
-def build_candidates(question: dict) -> list[dict]:
-    qtype = question["type"]
-    if qtype not in {"single-best-false", "single-best-true"}:
+def split_box_statements(stem: str) -> list[dict[str, str]]:
+    markers = list(BOX_LABEL_RE.finditer(stem))
+    if not markers:
         return []
     out = []
-    answer = question["original"]["officialAnswer"]
-    for choice in question["original"]["choices"]:
+    for i, marker in enumerate(markers):
+        end = markers[i + 1].start() if i + 1 < len(markers) else len(stem)
+        statement = compact(stem[marker.end() : end])
+        if statement:
+            out.append({"label": marker.group(1), "text": statement})
+    return out
+
+
+def selected_box_labels(question: dict) -> set[str]:
+    answer_text = question["original"].get("officialAnswerText") or ""
+    return set(re.findall(r"[ㄱ-ㅎ]", answer_text))
+
+
+def derive_verdict(question: dict, unit: dict) -> tuple[str | None, str]:
+    qtype = question["type"]
+    if unit["unitType"] == "choice" and qtype in {"single-best-false", "single-best-true"}:
+        is_answer_choice = unit["label"] == question["original"]["officialAnswer"]
         if qtype == "single-best-false":
-            verdict = "X" if choice["label"] == answer else "O"
-        else:
-            verdict = "O" if choice["label"] == answer else "X"
-        out.append(
+            return ("X" if is_answer_choice else "O"), "official-single-best"
+        return ("O" if is_answer_choice else "X"), "official-single-best"
+
+    if unit["unitType"] == "box":
+        selected = selected_box_labels(question)
+        if selected and qtype in {"multi-select-true", "single-best-true"}:
+            return ("O" if unit["label"] in selected else "X"), "official-combination"
+        if selected and qtype in {"multi-select-false", "single-best-false"}:
+            return ("X" if unit["label"] in selected else "O"), "official-combination"
+
+    return None, "requires-legal-basis-review"
+
+
+def build_atom_queue_items(question: dict) -> list[dict]:
+    box_units = split_box_statements(question["original"]["stem"])
+    if box_units:
+        units = [{"unitType": "box", **unit} for unit in box_units]
+    else:
+        units = [{"unitType": "choice", **choice} for choice in question["original"]["choices"]]
+
+    items = []
+    for unit in units:
+        verdict, derivation = derive_verdict(question, unit)
+        unit_label = unit["label"]
+        unit_id = f"{question['qid']}-{unit_label}"
+        items.append(
             {
-                "candidateId": f"{question['qid']}-{choice['label']}",
+                "unitId": unit_id,
                 "examId": question["examId"],
                 "sourceFamily": "법무사시험",
                 "source": question["sourceLabel"],
@@ -222,15 +291,33 @@ def build_candidates(question: dict) -> list[dict]:
                 "group": question["group"],
                 "subject": question["subject"],
                 "no": question["no"],
-                "choice": choice["label"],
-                "statement": choice["text"],
-                "answer": verdict,
-                "sourceQuestionType": qtype,
-                "needsAtomNormalization": True,
-                "needsLegalReview": True,
+                "unitType": unit["unitType"],
+                "unitLabel": unit_label,
+                "rawStatement": unit["text"],
+                "sourceQuestionType": question["type"],
+                "officialQuestionAnswer": question["original"]["officialAnswer"],
+                "officialQuestionAnswerText": question["original"]["officialAnswerText"],
+                "originalVerdict": verdict,
+                "verdictDerivation": derivation,
+                "atomWork": {
+                    "status": "basis-needed",
+                    "instruction": "원문 지문을 그대로 옮기지 말고, O/X 판단 근거인 조문·판례·학설 지점을 자기완결식 atom으로 작성한다.",
+                    "basisTypesAllowed": ["조문", "판례", "학설"],
+                    "basisType": None,
+                    "basisRef": None,
+                    "atomRep": None,
+                    "xDependsOn": None,
+                    "reviewedAt": None,
+                    "currentLawVerdict": None,
+                    "needs": [
+                        "legal-basis-search",
+                        "atom-normalization",
+                        "current-law-check",
+                    ],
+                },
             }
         )
-    return out
+    return items
 
 
 def build_year(year: int) -> tuple[Path, Path]:
@@ -241,6 +328,7 @@ def build_year(year: int) -> tuple[Path, Path]:
     raw_dir.mkdir(parents=True, exist_ok=True)
     text_dir.mkdir(parents=True, exist_ok=True)
 
+    local_subject_pdfs = find_local_subject_pdfs(year)
     pdf_paths: dict[str, Path] = {}
     for key, file_meta in meta["files"].items():
         path = raw_dir / file_meta["name"]
@@ -279,6 +367,17 @@ def build_year(year: int) -> tuple[Path, Path]:
                 "subject": subject,
                 "no": no,
                 "sourceLabel": f"법무사{meta['round']}회 {GROUPS[group]['label']} {no}번",
+                "extraction": {
+                    "problemPdf": str(pdf_paths[period]),
+                    "preferredLocalSubjectPdf": next(
+                        (
+                            row["path"]
+                            for row in local_subject_pdfs.get(subject, [])
+                            if row["kind"] == "problem"
+                        ),
+                        None,
+                    ),
+                },
                 "type": question_type(stem),
                 "original": {
                     "stem": stem,
@@ -303,7 +402,7 @@ def build_year(year: int) -> tuple[Path, Path]:
         "sourceFamily": "법무사시험",
         "updatedAt": today(),
         "sourcePolicy": {
-            "problemOriginal": "공개 법무사시험 제1차 문제 PDF 및 정답가안에서 추출",
+            "problemOriginal": "이미 내려받은 과목별 PDF를 우선 기준으로 확인하고, 과목별 PDF가 없는 과목은 공개 법무사시험 제1차 통합 문제 PDF와 정답가안에서 추출",
             "current": "현행법 기준 수정본은 current 필드에 별도 보존",
             "storage": "로컬 private JSON 생성 후 Supabase 적재 대상으로 사용",
         },
@@ -321,6 +420,7 @@ def build_year(year: int) -> tuple[Path, Path]:
                 "problemPdfPeriod2": str(pdf_paths["period2"]),
                 "answerPdf": str(pdf_paths["answers"]),
                 "answerBasis": "제31회 법무사 제1차 시험 정답가안 ①책형",
+                "localSubjectPdfs": local_subject_pdfs,
             },
             "pdfSha256": {key: sha256(path) for key, path in pdf_paths.items()},
             "rawTextSha256": {key: hashlib.sha256(text.encode("utf-8")).hexdigest() for key, text in texts.items()},
@@ -329,39 +429,55 @@ def build_year(year: int) -> tuple[Path, Path]:
         "questions": questions,
     }
 
-    candidates = []
+    atom_queue_items = []
     for question in questions:
-        candidates.extend(build_candidates(question))
-    candidate_doc = {
-        "schema": "legal-scrivener/ox-candidates/v1",
+        atom_queue_items.extend(build_atom_queue_items(question))
+    atom_queue_doc = {
+        "schema": "legal-scrivener/atom-queue/v1",
         "sourceFamily": "법무사시험",
         "updatedAt": today(),
         "examId": meta["examId"],
         "year": year,
         "round": meta["round"],
-        "candidatePolicy": "single-best true/false 문항만 보기별 OX 후보를 자동 산출하고, 모두 고르기 문항은 원문만 보존",
-        "items": candidates,
+        "queuePolicy": {
+            "coverage": "일반 보기, 개수형, 조합형, 박스형의 모든 판단 지문을 atom 제작 대상으로 큐에 올린다.",
+            "atomPrinciple": "atom은 지문 복사본이 아니라 O/X 판단 근거인 조문·판례·학설 지점이다.",
+            "verdict": "공식정답으로 역산 가능한 경우 originalVerdict를 채우고, 개수형 등 확정 불가능한 경우 근거 검토 대상으로 둔다.",
+            "xHandling": "X 지문은 독립 atom이 아니라 올바른 O atom 또는 근거 법리에 종속시킨다.",
+        },
+        "items": atom_queue_items,
     }
 
     source_path = out_dir / f"legal_scrivener_{year}_source.json"
-    candidate_path = out_dir / f"legal_scrivener_{year}_ox_candidates.json"
+    queue_path = out_dir / f"legal_scrivener_{year}_atom_queue.json"
+    legacy_candidate_path = out_dir / f"legal_scrivener_{year}_ox_candidates.json"
     write_json(source_path, source)
-    write_json(candidate_path, candidate_doc)
-    return source_path, candidate_path
+    write_json(queue_path, atom_queue_doc)
+    if legacy_candidate_path.exists():
+        legacy_candidate_path.unlink()
+    return source_path, queue_path
 
 
 def main() -> None:
-    source_path, candidate_path = build_year(2025)
+    source_path, queue_path = build_year(2025)
     source = json.loads(source_path.read_text(encoding="utf-8"))
-    candidates = json.loads(candidate_path.read_text(encoding="utf-8"))
+    queue = json.loads(queue_path.read_text(encoding="utf-8"))
     by_subject: dict[str, int] = {}
     for q in source["questions"]:
         by_subject[q["subject"]] = by_subject.get(q["subject"], 0) + 1
+    queue_by_subject: dict[str, int] = {}
+    queue_by_derivation: dict[str, int] = {}
+    for item in queue["items"]:
+        queue_by_subject[item["subject"]] = queue_by_subject.get(item["subject"], 0) + 1
+        key = item["verdictDerivation"]
+        queue_by_derivation[key] = queue_by_derivation.get(key, 0) + 1
     print(f"source={source_path}")
-    print(f"candidates={candidate_path}")
+    print(f"atomQueue={queue_path}")
     print(f"questions={len(source['questions'])}")
-    print(f"candidateItems={len(candidates['items'])}")
+    print(f"atomQueueItems={len(queue['items'])}")
     print("subjects=" + ", ".join(f"{k}:{v}" for k, v in by_subject.items()))
+    print("queueSubjects=" + ", ".join(f"{k}:{v}" for k, v in queue_by_subject.items()))
+    print("verdictDerivation=" + ", ".join(f"{k}:{v}" for k, v in queue_by_derivation.items()))
 
 
 if __name__ == "__main__":
