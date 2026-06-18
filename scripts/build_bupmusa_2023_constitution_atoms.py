@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 import shutil
 from collections import Counter
@@ -24,6 +25,8 @@ SOURCE_PATH = SUBJECT_DIR / "2023_법무사_헌법_source.json"
 QUEUE_PATH = SUBJECT_DIR / "2023_법무사_헌법_atom_queue.json"
 OUT_PATH = SUBJECT_DIR / "2023_법무사_헌법_atoms.json"
 SUBJECT_INDEX_PATH = SUBJECT_DIR / "2023_법무사_과목별_index.json"
+INTEGRATED_DIR = PRIVATE_ROOT / "current" / "통합본"
+INTEGRATED_PATH = INTEGRATED_DIR / "법무사_헌법_통합_atom.json"
 
 SUBJECT_NAME = "헌법"
 EXAM_ID = "2023_bupmusa_1st"
@@ -385,6 +388,10 @@ def source_label(no: int) -> str:
     return f"{YEAR} 법무사 {ROUND}회 {SUBJECT_NAME} {no}번 {OFFICIAL_ANSWERS[no]} 기출"
 
 
+def unit_source_label(no: int, label: str) -> str:
+    return f"{YEAR} 법무사 {ROUND}회 {SUBJECT_NAME} {no}번 {label} 기출"
+
+
 def basis(no: int) -> tuple[str, str, str]:
     topic = TOPICS[no]
     return (
@@ -449,7 +456,7 @@ def build_queue(source: dict[str, object]) -> dict[str, object]:
                 {
                     "unitId": unit["unitId"],
                     "sourceFamily": "법무사시험",
-                    "source": q["sourceLabel"],
+                    "source": unit_source_label(q["no"], unit["label"]),
                     "examId": EXAM_ID,
                     "year": YEAR,
                     "round": ROUND,
@@ -519,7 +526,7 @@ def build_completed(queue: dict[str, object]) -> dict[str, object]:
             }
             items.append(atom)
     return {
-        "schema": "legal-scrivener/completed-atoms-by-subject/v1",
+        "schema": "legal-scrivener/completed-atoms-by-subject/v2",
         "sourceFamily": "법무사시험",
         "examId": EXAM_ID,
         "year": YEAR,
@@ -527,8 +534,10 @@ def build_completed(queue: dict[str, object]) -> dict[str, object]:
         "subject": SUBJECT_NAME,
         "updatedAt": today(),
         "atomPrinciple": "docs/atom_원칙_v001.md",
+        "source": str(SOURCE_PATH),
         "sourceQueue": str(QUEUE_PATH),
         "sourceCount": len(queue["items"]),
+        "questionCount": QUESTION_COUNT,
         "atomCount": len(items),
         "verificationSources": LEGAL_SOURCES,
         "policy": {
@@ -540,6 +549,143 @@ def build_completed(queue: dict[str, object]) -> dict[str, object]:
         },
         "items": items,
     }
+
+
+def load_json(path: Path) -> dict[str, object]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def normalize_key(text: str) -> str:
+    cleaned = re.sub(r"\s+", "", text)
+    cleaned = cleaned.replace("·", "ㆍ").replace("∙", "ㆍ")
+    return cleaned.lower()
+
+
+def year_to_exam_date(year: int) -> float:
+    return year + 8.0 / 12.0
+
+
+def weight_for_sources(sources: list[dict[str, object]], today_year: float = 2026.46, half_life: float = 4.0) -> float:
+    total = 0.0
+    for src in sources:
+        year = int(src.get("year", YEAR))
+        source_weight = float(src.get("s", 1.0))
+        age = max(0.0, today_year - year_to_exam_date(year))
+        total += source_weight * (0.5 ** (age / half_life))
+    return round(math.log1p(total), 4)
+
+
+def grade_items(items: list[dict[str, object]]) -> None:
+    sorted_items = sorted(items, key=lambda item: (-float(item["weight"]), str(item["rep"])))
+    cuts = [(0.04, "S"), (0.11, "A+"), (0.23, "A"), (0.40, "B+"), (0.60, "B"), (0.77, "C+"), (0.89, "C"), (0.96, "D+"), (1.00, "D")]
+    n = len(sorted_items)
+    for rank, item in enumerate(sorted_items, start=1):
+        p = rank / n
+        item["grade"] = next(grade for cut, grade in cuts if p <= cut)
+        item["rank"] = rank
+
+
+def integrated_source_label(atom: dict[str, object]) -> str:
+    return f"{atom['year']} 법무사 {atom['round']}회 헌법 {atom['no']}번 {atom['unitLabel']}"
+
+
+def new_integrated_item(atom: dict[str, object], source: dict[str, object]) -> dict[str, object]:
+    return {
+        "primary": "법무사시험",
+        "sourceFamilies": ["법무사시험"],
+        "subject": SUBJECT_NAME,
+        "topic": TOPICS.get(int(atom["no"]), SUBJECT_NAME),
+        "rep": atom["rep"],
+        "a": atom["a"],
+        "why": atom["why"],
+        "basisType": atom["basisType"],
+        "basisRef": atom["basisRef"],
+        "sources": [source],
+        "refs": [source["source"]],
+        "sourceIds": [atom["atomId"]],
+        "sourceAtomCount": 1,
+        "quality": {"statementType": "declarative", "displayable": True, "normalizers": [], "changed": False},
+        "verification": {"status": "needs-legal-review", "lawAsOf": today(), "legalVerifiedAt": None, "statuteCitationStatus": "pending"},
+    }
+
+
+def source_from_atom(atom: dict[str, object]) -> dict[str, object]:
+    return {
+        "family": "법무사시험",
+        "s": 1.0,
+        "year": atom["year"],
+        "round": atom["round"],
+        "subject": SUBJECT_NAME,
+        "source": integrated_source_label(atom),
+        "sourceId": atom["atomId"],
+        "sourceUnitId": atom["sourceUnitId"],
+        "sourceVerdict": atom["sourceVerdict"],
+        "sourceTrap": atom["sourceTrap"],
+        "sourceStatement": atom["sourceStatement"],
+    }
+
+
+def rebuild_integrated(new_atoms: list[dict[str, object]]) -> dict[str, object]:
+    existing = load_json(INTEGRATED_PATH) if INTEGRATED_PATH.exists() else None
+    buckets: dict[tuple[str, str], dict[str, object]] = {}
+    if existing:
+        for old_item in existing.get("items", []):
+            item = dict(old_item)
+            item["sources"] = [src for src in item.get("sources", []) if not str(src.get("sourceId", "")).startswith("bupmusa-2023-constitution-")]
+            if not item["sources"]:
+                continue
+            item["refs"] = [src["source"] for src in item["sources"]]
+            item["sourceIds"] = [src["sourceId"] for src in item["sources"]]
+            item["sourceAtomCount"] = len(item["sources"])
+            for transient in ["id", "rank", "grade", "weight", "weightedSourceSum", "freq"]:
+                item.pop(transient, None)
+            buckets[(str(item["a"]), normalize_key(str(item["rep"])))] = item
+
+    for atom in new_atoms:
+        key = (str(atom["a"]), normalize_key(str(atom["rep"])))
+        source = source_from_atom(atom)
+        if key not in buckets:
+            buckets[key] = new_integrated_item(atom, source)
+        else:
+            item = buckets[key]
+            if source["sourceId"] not in item["sourceIds"]:
+                item["sources"].append(source)
+                item["refs"].append(source["source"])
+                item["sourceIds"].append(source["sourceId"])
+                item["sourceAtomCount"] = int(item["sourceAtomCount"]) + 1
+
+    items = list(buckets.values())
+    for index, item in enumerate(items, start=1):
+        item["sourceFamilies"] = sorted({src["family"] for src in item["sources"]})
+        item["freq"] = len(item["sources"])
+        item["weightedSourceSum"] = round(sum(float(src["s"]) * (0.5 ** (max(0.0, 2026.46 - year_to_exam_date(int(src["year"]))) / 4.0)) for src in item["sources"]), 6)
+        item["weight"] = weight_for_sources(item["sources"])
+        item["id"] = f"bupmusa-constitution-integrated-{index:05d}"
+    grade_items(items)
+    items.sort(key=lambda item: (int(item["rank"]), str(item["id"])))
+    years = sorted({int(src["year"]) for item in items for src in item["sources"]}, reverse=True)
+    input_atoms = sum(len(load_json(SUBJECT_DIR.parent.parent / str(year) / "과목별" / f"{year}_법무사_헌법_atoms.json").get("items", [])) for year in years if (SUBJECT_DIR.parent.parent / str(year) / "과목별" / f"{year}_법무사_헌법_atoms.json").exists())
+    return {
+        "title": "법무사_헌법 통합 atom",
+        "subject": SUBJECT_NAME,
+        "schema": "bupmusa/constitution-integrated-atom/v1",
+        "version": "bupmusa_constitution_v003_2023_integrated",
+        "builtAt": today(),
+        "sourceFiles": {str(year): str(SUBJECT_DIR.parent.parent / str(year) / "과목별" / f"{year}_법무사_헌법_atoms.json") for year in years},
+        "weighting": {"H": 4.0, "today": 2026.46, "formula": "W=ln(1+Σ s·0.5^(age/H)); 법무사시험 s=1.0", "gradeScope": "법무사 헌법 통합 atom 내 상대평가"},
+        "integration": {"method": "exact-normalized-text", "scope": "법무사시험 헌법 누적"},
+        "stats": {"sourceYears": years, "inputAtoms": input_atoms, "items": len(items), "duplicatesMerged": max(0, input_atoms - len(items)), "gradeCounts": dict(Counter(item["grade"] for item in items))},
+        "items": items,
+    }
+
+
+def validate_integrated(doc: dict[str, object]) -> None:
+    items = doc["items"]
+    if not items:
+        raise ValueError("empty integrated atom")
+    ids = [item["id"] for item in items]
+    if len(ids) != len(set(ids)):
+        raise ValueError("duplicate integrated ids")
 
 
 def validate_atom_text(items: list[dict[str, object]]) -> None:
@@ -555,6 +701,8 @@ def validate_atom_text(items: list[dict[str, object]]) -> None:
                 raise ValueError(f"missing X dependency: {item['atomId']}")
         elif item["sourceTrap"] is not None or item["xDependsOn"] is not None:
             raise ValueError(f"unexpected X metadata: {item['atomId']}")
+        if item["currentVerdict"] != "O" or item["a"] != "O":
+            raise ValueError(f"completed atom must be O: {item['atomId']}")
 
 
 def validate(source: dict[str, object], queue: dict[str, object], completed: dict[str, object]) -> None:
@@ -632,10 +780,15 @@ def main() -> None:
     write_json(SOURCE_PATH, source)
     write_json(QUEUE_PATH, queue)
     write_json(OUT_PATH, completed)
+    integrated = rebuild_integrated(completed["items"])
+    validate_integrated(integrated)
+    write_json(INTEGRATED_PATH, integrated)
     update_index(source, queue, completed)
     counts = Counter(item["sourceVerdict"] for item in completed["items"])
     print(f"wrote {OUT_PATH}")
+    print(f"wrote {INTEGRATED_PATH}")
     print(f"questions={source['questionCount']} atoms={completed['atomCount']} O={counts['O']} X={counts['X']}")
+    print(f"integratedItems={integrated['stats']['items']} merged={integrated['stats']['duplicatesMerged']}")
 
 
 if __name__ == "__main__":
