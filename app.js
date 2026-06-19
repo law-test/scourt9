@@ -5,7 +5,7 @@
   var SUBJECTS = ["헌법", "민법", "민사소송법", "형법", "형사소송법", "상법", "부동산등기법"];
   var REG = {};
   function reg(name, slug, d, l, n){ if(window[d]) REG[name] = {name:name, slug:slug, data:window[d], lt:window[l]||{}, nt:window[n]||{desc:{},cases:{},gist:{}}}; }
-  reg("헌법","constitution","CONST","CONSTLAWTEXT","CONSTNOTES");
+  reg("헌법","constitution","CONSTITUTION","CONSTLAWTEXT","CONSTNOTES");
   reg("민법","civil","CIVIL","CIVILLAWTEXT","CIVILNOTES");
   reg("민사소송법","civ-proc","CIVPROC","LAWTEXT","NOTES");
   reg("형사소송법","crim-proc","CRIMPROC","CRIMLAWTEXT","CRIMNOTES");
