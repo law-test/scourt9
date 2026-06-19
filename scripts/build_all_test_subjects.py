@@ -337,10 +337,11 @@ def should_accept_bar_art(task: dict, raw_art: str | None, ref: str | None, exis
     return None
 
 
-def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
+def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict, list[dict]]:
     raw = read_json(BAR_DIR / task["bar_file"])
     out = []
-    skipped = {"otherSubject": 0, "noStatement": 0}
+    skipped = {"otherSubject": 0, "noStatement": 0, "unresolvedX": 0}
+    unresolved_x = []
     for it in raw.get("items", []):
         if it.get("subject") not in task["bar_subjects"]:
             skipped["otherSubject"] += 1
@@ -349,6 +350,8 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
         if not rep:
             skipped["noStatement"] += 1
             continue
+        verdict = it.get("a") or it.get("source_answer") or "O"
+        truth = clean_text(it.get("truth"))
         srcs = it.get("src") or it.get("years") or it.get("refs") or []
         if isinstance(srcs, str):
             srcs = [srcs]
@@ -356,11 +359,42 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
             srcs = [f"변시{it.get('round') or ''}"]
         round_no = it.get("round")
         pid = it.get("pid") or it.get("id") or f"bar-{len(out)+1}"
+        if verdict == "X" and not truth:
+            skipped["unresolvedX"] += 1
+            unresolved_x.append(
+                {
+                    "sourceId": pid,
+                    "source": srcs[0],
+                    "sources": srcs,
+                    "round": round_no,
+                    "year": it.get("year") or (2011 + int(round_no) if round_no else None),
+                    "subject": it.get("subject"),
+                    "topic": it.get("topic"),
+                    "art": it.get("art"),
+                    "statement": rep,
+                    "sourceAnswer": verdict,
+                    "reason": "truth가 없어 대표 O atom에 종속시킬 수 없어 화면용 atom에서 보류",
+                }
+            )
+            continue
+        source_statement = it.get("source_statement") or it.get("q") or rep
+        false_statement = rep if verdict == "X" else None
+        if verdict == "X":
+            rep = truth
         sources = [
             make_source("변호사시험", s, f"bar-{pid}-{idx+1}", round_no)
             for idx, s in enumerate(srcs)
         ]
         art = should_accept_bar_art(task, it.get("art"), it.get("ref"), existing_arts)
+        quality_normalizers = ["bar-selfcontained-source"]
+        if verdict == "X":
+            quality_normalizers.append("bar-x-promoted-to-truth")
+        quality = {
+            "statementType": "declarative",
+            "displayable": True,
+            "normalizers": quality_normalizers,
+            "changed": verdict == "X",
+        }
         item = {
             "primary": "변호사시험",
             "sourceFamilies": ["변호사시험"],
@@ -368,7 +402,7 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
             "sourceArt": it.get("art") or it.get("topic"),
             "topic": it.get("topic"),
             "rep": rep,
-            "a": it.get("a") or it.get("source_answer") or "O",
+            "a": "O",
             "why": clean_text(it.get("why") or "변호사시험 기출 atom. 현행법 법리검증 대기."),
             "ref": srcs[0],
             "sources": sources,
@@ -377,23 +411,18 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
             "scourtIds": [],
             "barIds": [s["sourceId"] for s in sources],
             "sourceAtomCount": len(sources),
-            "quality": {
-                "statementType": "declarative",
-                "displayable": True,
-                "normalizers": ["bar-selfcontained-source"],
-                "changed": False,
-            },
+            "quality": quality,
             "variants": [
                 {
                     "primary": "변호사시험",
                     "rep": rep,
-                    "a": it.get("a") or "O",
+                    "a": "O",
                     "refs": srcs,
                     "sourceIds": [s["sourceId"] for s in sources],
                     "round": round_no,
                     "original": {
-                        "statement": it.get("source_statement") or it.get("q") or rep,
-                        "verdict": it.get("source_answer") or it.get("a"),
+                        "statement": source_statement,
+                        "verdict": verdict,
                         "source": srcs[0],
                     },
                 }
@@ -413,8 +442,24 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
                 "sourceRef": it.get("ref"),
             },
         }
+        if false_statement:
+            item["x"].append(
+                {
+                    "q": false_statement,
+                    "src": srcs[0],
+                    "freq": len(srcs),
+                    "sources": srcs,
+                    "sourceFamilies": ["변호사시험"],
+                    "truth": rep,
+                    "sourceItemId": pid,
+                    "art": art,
+                    "sourceArt": it.get("art") or it.get("topic"),
+                    "topic": it.get("topic"),
+                    "quality": quality,
+                }
+            )
         out.append(item)
-    return out, skipped
+    return out, skipped, unresolved_x
 
 
 def bupmusa_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
@@ -561,6 +606,7 @@ def merge_items(items: list[dict], prefix: str) -> list[dict]:
         item["id"] = f"{prefix}-{i:05d}"
         for j, x in enumerate(item.get("x", []), 1):
             x["allTestId"] = x.get("allTestId") or f"{item['id']}-x-{j:02d}"
+            x["truth"] = x.get("truth") or item.get("rep")
     out.sort(key=lambda x: (-x.get("weight", 0), x.get("art") or "zzz", x.get("rep") or ""))
     for i, item in enumerate(out, 1):
         item["id"] = f"{prefix}-{i:05d}"
@@ -683,6 +729,7 @@ def update_deploy_data(task: dict, base: dict, items: list[dict], stats: dict) -
         "scourtItems": stats["scourtInputAtoms"],
         "barItems": stats["barInputAtoms"],
         "bupmusaItems": stats.get("bupmusaInputAtoms", 0),
+        "barUnresolvedXItems": stats.get("barUnresolvedXItems", 0),
         "crossSourceItems": sum(1 for item in items if len(item.get("sourceFamilies", [])) >= 2),
     }
     data["integration"] = {
@@ -693,6 +740,7 @@ def update_deploy_data(task: dict, base: dict, items: list[dict], stats: dict) -
         "bupmusaSourceWeight": 0.5,
         "barSubjects": sorted(task["bar_subjects"]),
         "barUnplacedPolicy": "조문번호가 확실하지 않은 변호사시험 atom은 bucket에 둠",
+        "barUnresolvedXPolicy": "truth가 없는 변호사시험 X 지문은 대표 atom 또는 CBT 문항으로 노출하지 않음",
         "bupmusaUnplacedPolicy": "조문번호가 확실하지 않은 법무사시험 atom은 bucket에 둠",
     }
     data["weighting"] = {
@@ -710,7 +758,7 @@ def build(task: dict) -> dict:
     existing_arts = {a.get("art") for a in base.get("articles", []) if a.get("art")}
     scourt_source_path = Path(task.get("scourt_integrated_file") or base_path)
     scourt = scourt_items(task, base)
-    bar, skipped = bar_items(task, existing_arts)
+    bar, skipped, unresolved_bar_x = bar_items(task, existing_arts)
     bupmusa, bupmusa_skipped = bupmusa_items(task, existing_arts)
     inherit_article_from_existing(bupmusa, scourt + bar)
     merged = merge_items(scourt + bar + bupmusa, f"all-{task['slug']}")
@@ -737,6 +785,7 @@ def build(task: dict) -> dict:
         "weightMax": max([item.get("weight", 0) for item in merged] or [0]),
         "weightMin": min([item.get("weight", 0) for item in merged] or [0]),
         "barSkipped": skipped,
+        "barUnresolvedXItems": len(unresolved_bar_x),
         "bupmusaSkipped": bupmusa_skipped,
     }
     all_test = {
@@ -760,8 +809,10 @@ def build(task: dict) -> dict:
             "method": "exact-normalized-text-by-article",
             "barSubjectFilter": sorted(task["bar_subjects"]),
             "unplacedPolicy": "조문번호가 현행 화면 조문과 확실히 맞거나 기존 atom과 같은 법리문장으로 매칭될 때 조문에 배치",
+            "barXPolicy": "truth가 없는 변호사시험 X 지문은 대표 atom으로 만들지 않고 unresolvedBarX에 보류",
         },
         "stats": stats,
+        "unresolvedBarX": unresolved_bar_x,
         "items": merged,
     }
     write_json(task["out_dir"] / task["out_name"], all_test)
