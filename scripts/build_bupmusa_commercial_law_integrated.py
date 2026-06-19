@@ -208,7 +208,7 @@ def build() -> dict[str, object]:
         "title": "법무사_상법 통합 atom",
         "subject": SUBJECT_NAME,
         "schema": "bupmusa/commercial-law-integrated-atom/v1",
-        "version": "bupmusa_commercial_law_v002_2024_2025_integrated",
+        "version": "bupmusa_commercial_law_v003_2023_2025_integrated",
         "builtAt": today(),
         "sourceFiles": source_files,
         "weighting": {
