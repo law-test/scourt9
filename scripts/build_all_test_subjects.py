@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import math
 import re
+import sys
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
@@ -12,11 +13,13 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE = ROOT.parent
 BAR_DIR = WORKSPACE / "law-test-private" / "private_problem_banks" / "current"
+BUPMUSA_DIR = WORKSPACE / "law-test-private" / "private_problem_banks" / "법무사" / "current" / "통합본"
 DATA_DIR = ROOT / "data"
 
 TODAY_DECIMAL = 2026.46
 HALF_LIFE_YEARS = 4.0
-SOURCE_WEIGHTS = {"법원직": 1.0, "변호사시험": 0.5}
+SOURCE_WEIGHTS = {"법원직": 1.0, "변호사시험": 0.5, "법무사시험": 0.5}
+FAMILY_ORDER = {"법원직": 0, "변호사시험": 1, "법무사시험": 2}
 GRADE_CUTS = [
     (0.04, "S"),
     (0.11, "A+"),
@@ -50,9 +53,11 @@ TASKS = [
         "law": "헌법",
         "schema": "all-test/constitution-integrated-atom/v1",
         "title": "all_test(법원직 중심)_헌법 조문별 통합 atom",
-        "version": "constitution_v022_all-test_bar-integrated",
+        "version": "constitution_v023_all-test_bar-bupmusa-integrated",
+        "scourt_integrated_file": WORKSPACE / "법원직_헌법_OX" / "통합본" / "법원직_헌법_통합_atom.json",
         "bar_file": "ox_public_bar_all_minimal_atoms_selfcontained_v002.json",
         "bar_subjects": {"헌법"},
+        "bupmusa_file": "법무사_헌법_통합_atom.json",
         "out_dir": WORKSPACE / "법원직_헌법_OX" / "통합본",
         "out_name": "all_test(법원직 중심)_헌법_통합_atom.json",
     },
@@ -142,7 +147,7 @@ def weight_for_sources(sources: list[dict]) -> tuple[float, float]:
         seen.add(key)
         family = src.get("family") or "법원직"
         s = SOURCE_WEIGHTS.get(family, 1.0)
-        exam_year = source_year(src.get("source", ""), family, src.get("round"))
+        exam_year = float(src.get("year") or source_year(src.get("source", ""), family, src.get("round")))
         age = max(0.0, TODAY_DECIMAL - exam_year)
         total += s * (0.5 ** (age / HALF_LIFE_YEARS))
     return total, round(math.log1p(total), 4)
@@ -160,7 +165,10 @@ def grade_items(items: list[dict]) -> None:
 
 
 def family_from_text(source: str) -> str:
-    return "변호사시험" if "변시" in (source or "") or "변호사" in (source or "") else "법원직"
+    source = source or ""
+    if "법무사" in source:
+        return "법무사시험"
+    return "변호사시험" if "변시" in source or "변호사" in source else "법원직"
 
 
 def make_source(family: str, source: str, source_id: str, round_no: int | None = None) -> dict:
@@ -170,6 +178,22 @@ def make_source(family: str, source: str, source_id: str, round_no: int | None =
         "source": source,
         "sourceId": source_id,
         **({"round": round_no} if round_no else {}),
+    }
+
+
+def make_bupmusa_source(src: dict, fallback_id: str) -> dict:
+    source = src.get("source") or fallback_id
+    return {
+        "family": "법무사시험",
+        "s": SOURCE_WEIGHTS["법무사시험"],
+        "source": source,
+        "sourceId": src.get("sourceId") or fallback_id,
+        **({"year": src.get("year")} if src.get("year") else {}),
+        **({"round": src.get("round")} if src.get("round") else {}),
+        **({"subject": src.get("subject")} if src.get("subject") else {}),
+        **({"sourceUnitId": src.get("sourceUnitId")} if src.get("sourceUnitId") else {}),
+        **({"sourceVerdict": src.get("sourceVerdict")} if src.get("sourceVerdict") else {}),
+        **({"sourceTrap": src.get("sourceTrap")} if src.get("sourceTrap") else {}),
     }
 
 
@@ -270,6 +294,33 @@ def scourt_items_from_deploy(data: dict) -> list[dict]:
     return items
 
 
+def scourt_items_from_integrated(path: Path) -> list[dict]:
+    data = read_json(path)
+    items = []
+    for raw in data.get("items", []):
+        item = deepcopy(raw)
+        item["primary"] = "법원직"
+        item["sourceFamilies"] = ["법원직"]
+        item.setdefault("refs", [s.get("source") for s in item.get("sources", []) if s.get("source")])
+        item.setdefault("sourceIds", [s.get("sourceId") for s in item.get("sources", []) if s.get("sourceId")])
+        item["scourtIds"] = item.get("scourtIds") or item.get("sourceIds") or []
+        item.setdefault("barIds", [])
+        item.setdefault("bupmusaIds", [])
+        for source in item.get("sources", []):
+            source["family"] = "법원직"
+            source["s"] = SOURCE_WEIGHTS["법원직"]
+        item["sourceAtomCount"] = len(item.get("sources", [])) or item.get("sourceAtomCount", 1)
+        items.append(item)
+    return items
+
+
+def scourt_items(task: dict, base: dict) -> list[dict]:
+    integrated_path = task.get("scourt_integrated_file")
+    if integrated_path:
+        return scourt_items_from_integrated(Path(integrated_path))
+    return scourt_items_from_deploy(base)
+
+
 def should_accept_bar_art(task: dict, raw_art: str | None, ref: str | None, existing_arts: set[str]) -> str | None:
     art = parse_article(raw_art)
     if not art or art not in existing_arts:
@@ -366,6 +417,103 @@ def bar_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
     return out, skipped
 
 
+def bupmusa_items(task: dict, existing_arts: set[str]) -> tuple[list[dict], dict]:
+    file_name = task.get("bupmusa_file")
+    if not file_name:
+        return [], {"missingFile": 0, "noStatement": 0}
+    path = BUPMUSA_DIR / file_name
+    if not path.exists():
+        return [], {"missingFile": 1, "noStatement": 0}
+    raw = read_json(path)
+    out = []
+    skipped = {"missingFile": 0, "noStatement": 0}
+    for idx, it in enumerate(raw.get("items", []), 1):
+        rep = clean_text(it.get("rep"))
+        if not rep:
+            skipped["noStatement"] += 1
+            continue
+        raw_sources = it.get("sources") or []
+        sources = [
+            make_bupmusa_source(src, f"bupmusa-{it.get('id') or idx}-{sidx}")
+            for sidx, src in enumerate(raw_sources, 1)
+        ]
+        if not sources:
+            sources = [make_bupmusa_source({}, f"bupmusa-{it.get('id') or idx}")]
+        art = parse_article(it.get("art") or it.get("sourceArt") or it.get("basisRef") or rep)
+        if art not in existing_arts:
+            art = None
+        refs = [s["source"] for s in sources]
+        source_ids = [s["sourceId"] for s in sources]
+        item = {
+            "primary": "법무사시험",
+            "sourceFamilies": ["법무사시험"],
+            "art": art,
+            "sourceArt": it.get("basisRef") or it.get("sourceArt") or it.get("topic"),
+            "topic": it.get("topic"),
+            "rep": rep,
+            "a": it.get("a") or "O",
+            "why": clean_text(it.get("why") or "법무사시험 기출 atom. 현행법 법리검증 대기."),
+            "ref": refs[0],
+            "sources": sources,
+            "refs": refs,
+            "sourceIds": source_ids,
+            "scourtIds": [],
+            "barIds": [],
+            "bupmusaIds": source_ids,
+            "sourceAtomCount": len(sources),
+            "quality": {
+                "statementType": "declarative",
+                "displayable": True,
+                "normalizers": ["bupmusa-selfcontained-source"],
+                "changed": False,
+            },
+            "variants": [
+                {
+                    "primary": "법무사시험",
+                    "rep": rep,
+                    "a": it.get("a") or "O",
+                    "refs": refs,
+                    "sourceIds": source_ids,
+                    "original": {
+                        "statement": (raw_sources[0].get("sourceStatement") if raw_sources else None) or rep,
+                        "verdict": (raw_sources[0].get("sourceVerdict") if raw_sources else None) or it.get("a"),
+                        "source": refs[0],
+                    },
+                }
+            ],
+            "x": [],
+            "verification": it.get("verification")
+            or {
+                "status": "needs-legal-review",
+                "lawAsOf": today(),
+                "legalVerifiedAt": None,
+                "statuteCitationStatus": "pending",
+            },
+            "bupmusa": {
+                "sourceIntegratedId": it.get("id"),
+                "basisType": it.get("basisType"),
+                "basisRef": it.get("basisRef"),
+                "grade": it.get("grade"),
+            },
+        }
+        out.append(item)
+    return out, skipped
+
+
+def inherit_article_from_existing(targets: list[dict], existing: list[dict]) -> None:
+    by_rep: dict[tuple[str, str], str] = {}
+    for item in existing:
+        art = item.get("art")
+        if not art:
+            continue
+        key = (item.get("a") or "O", norm_text(item.get("rep")))
+        by_rep.setdefault(key, art)
+    for item in targets:
+        if item.get("art"):
+            continue
+        item["art"] = by_rep.get((item.get("a") or "O", norm_text(item.get("rep"))))
+
+
 def merge_items(items: list[dict], prefix: str) -> list[dict]:
     merged: dict[tuple, dict] = {}
     for item in items:
@@ -380,7 +528,7 @@ def merge_items(items: list[dict], prefix: str) -> list[dict]:
             if skey not in seen:
                 cur["sources"].append(source)
                 seen.add(skey)
-        for field in ("refs", "sourceIds", "scourtIds", "barIds"):
+        for field in ("refs", "sourceIds", "scourtIds", "barIds", "bupmusaIds"):
             vals = cur.setdefault(field, [])
             for val in item.get(field, []):
                 if val not in vals:
@@ -395,12 +543,18 @@ def merge_items(items: list[dict], prefix: str) -> list[dict]:
             if xkey not in xseen:
                 cur.setdefault("x", []).append(x)
                 xseen.add(xkey)
-        cur["primary"] = "법원직" if "법원직" in cur["sourceFamilies"] else "변호사시험"
+        if "법원직" in cur["sourceFamilies"]:
+            cur["primary"] = "법원직"
+        elif "변호사시험" in cur["sourceFamilies"]:
+            cur["primary"] = "변호사시험"
+        else:
+            cur["primary"] = "법무사시험"
     out = list(merged.values())
     for i, item in enumerate(out, 1):
-        item["sourceFamilies"] = sorted(set(item["sourceFamilies"]), key=lambda x: 0 if x == "법원직" else 1)
+        item["sourceFamilies"] = sorted(set(item["sourceFamilies"]), key=lambda x: FAMILY_ORDER.get(x, 99))
         item["scourtCount"] = sum(1 for s in item.get("sources", []) if s.get("family") == "법원직")
         item["barCount"] = sum(1 for s in item.get("sources", []) if s.get("family") == "변호사시험")
+        item["bupmusaCount"] = sum(1 for s in item.get("sources", []) if s.get("family") == "법무사시험")
         item["freq"] = len(item.get("sources", []))
         item["sourceAtomCount"] = item["freq"]
         item["weightedSourceSum"], item["weight"] = weight_for_sources(item.get("sources", []))
@@ -424,6 +578,7 @@ def to_app_atom(item: dict) -> dict:
         "sourceFamilies": item.get("sourceFamilies", []),
         "scourtCount": item.get("scourtCount", 0),
         "barCount": item.get("barCount", 0),
+        "bupmusaCount": item.get("bupmusaCount", 0),
         "topic": item.get("topic"),
         "allTestId": item.get("id"),
         "sourceAtomCount": item.get("sourceAtomCount", 1),
@@ -527,20 +682,23 @@ def update_deploy_data(task: dict, base: dict, items: list[dict], stats: dict) -
         "legalReviewPending": len(data["ox"]),
         "scourtItems": stats["scourtInputAtoms"],
         "barItems": stats["barInputAtoms"],
-        "crossSourceItems": sum(1 for item in items if item.get("scourtCount", 0) and item.get("barCount", 0)),
+        "bupmusaItems": stats.get("bupmusaInputAtoms", 0),
+        "crossSourceItems": sum(1 for item in items if len(item.get("sourceFamilies", [])) >= 2),
     }
     data["integration"] = {
         "mode": "all_test(법원직 중심)",
-        "sources": ["법원직", "변호사시험"],
+        "sources": ["법원직", "변호사시험", "법무사시험"],
         "barSourceWeight": 0.5,
         "scourtSourceWeight": 1.0,
+        "bupmusaSourceWeight": 0.5,
         "barSubjects": sorted(task["bar_subjects"]),
         "barUnplacedPolicy": "조문번호가 확실하지 않은 변호사시험 atom은 bucket에 둠",
+        "bupmusaUnplacedPolicy": "조문번호가 확실하지 않은 법무사시험 atom은 bucket에 둠",
     }
     data["weighting"] = {
         "H": HALF_LIFE_YEARS,
         "today": TODAY_DECIMAL,
-        "formula": "W=ln(1+Σ s·0.5^(age/H)); 법원직 s=1.0, 변호사시험 s=0.5",
+        "formula": "W=ln(1+Σ s·0.5^(age/H)); 법원직 s=1.0, 변호사시험 s=0.5, 법무사시험 s=0.5",
         "gradeScope": f"{task['subject']} 통합 atom 내 상대평가",
     }
     return data
@@ -550,9 +708,12 @@ def build(task: dict) -> dict:
     base_path = DATA_DIR / f"{task['slug']}.json"
     base = read_json(base_path)
     existing_arts = {a.get("art") for a in base.get("articles", []) if a.get("art")}
-    scourt = scourt_items_from_deploy(base)
+    scourt_source_path = Path(task.get("scourt_integrated_file") or base_path)
+    scourt = scourt_items(task, base)
     bar, skipped = bar_items(task, existing_arts)
-    merged = merge_items(scourt + bar, f"all-{task['slug']}")
+    bupmusa, bupmusa_skipped = bupmusa_items(task, existing_arts)
+    inherit_article_from_existing(bupmusa, scourt + bar)
+    merged = merge_items(scourt + bar + bupmusa, f"all-{task['slug']}")
     grade_counts: dict[str, int] = {}
     family_counts: dict[str, int] = {}
     for item in merged:
@@ -562,12 +723,13 @@ def build(task: dict) -> dict:
     stats = {
         "scourtInputAtoms": len(scourt),
         "barInputAtoms": len(bar),
-        "inputAtoms": len(scourt) + len(bar),
+        "bupmusaInputAtoms": len(bupmusa),
+        "inputAtoms": len(scourt) + len(bar) + len(bupmusa),
         "items": len(merged),
         "representativeOItems": sum(1 for item in merged if item.get("a") != "X"),
         "representativeXItems": sum(1 for item in merged if item.get("a") == "X"),
         "nestedXItems": sum(len(item.get("x", [])) for item in merged),
-        "exactDuplicatesMerged": len(scourt) + len(bar) - len(merged),
+        "exactDuplicatesMerged": len(scourt) + len(bar) + len(bupmusa) - len(merged),
         "articles": len({item.get("art") for item in merged if item.get("art")}),
         "bucketItems": sum(1 for item in merged if not item.get("art")),
         "gradeCounts": grade_counts,
@@ -575,6 +737,7 @@ def build(task: dict) -> dict:
         "weightMax": max([item.get("weight", 0) for item in merged] or [0]),
         "weightMin": min([item.get("weight", 0) for item in merged] or [0]),
         "barSkipped": skipped,
+        "bupmusaSkipped": bupmusa_skipped,
     }
     all_test = {
         "title": task["title"],
@@ -583,19 +746,20 @@ def build(task: dict) -> dict:
         "version": task["version"],
         "builtAt": today(),
         "sourceFiles": {
-            "법원직": str(base_path),
+            "법원직": str(scourt_source_path),
             "변호사시험": str(BAR_DIR / task["bar_file"]),
+            **({"법무사시험": str(BUPMUSA_DIR / task["bupmusa_file"])} if task.get("bupmusa_file") else {}),
         },
         "weighting": {
             "H": HALF_LIFE_YEARS,
             "today": TODAY_DECIMAL,
-            "formula": "W=ln(1+Σ s·0.5^(age/H)); 법원직 s=1.0, 변호사시험 s=0.5",
+            "formula": "W=ln(1+Σ s·0.5^(age/H)); 법원직 s=1.0, 변호사시험 s=0.5, 법무사시험 s=0.5",
             "gradeScope": f"{task['subject']} 통합 atom 내 상대평가",
         },
         "integration": {
             "method": "exact-normalized-text-by-article",
             "barSubjectFilter": sorted(task["bar_subjects"]),
-            "unplacedPolicy": "조문번호가 현행 화면 조문과 확실히 맞을 때만 조문에 배치",
+            "unplacedPolicy": "조문번호가 현행 화면 조문과 확실히 맞거나 기존 atom과 같은 법리문장으로 매칭될 때 조문에 배치",
         },
         "stats": stats,
         "items": merged,
@@ -617,7 +781,12 @@ def build(task: dict) -> dict:
 
 
 def main() -> None:
-    results = [build(task) for task in TASKS]
+    selected = set(sys.argv[1:])
+    tasks = [task for task in TASKS if not selected or task["slug"] in selected]
+    if selected and len(tasks) != len(selected):
+        known = ", ".join(task["slug"] for task in TASKS)
+        raise SystemExit(f"unknown task slug. known: {known}")
+    results = [build(task) for task in tasks]
     print(json.dumps(results, ensure_ascii=False, indent=2))
 
 
